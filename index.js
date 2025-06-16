@@ -34,6 +34,7 @@ const commands = {
         console.log('  stop - Stop current action'.white);
         console.log('  status - Show connection status'.white);
         console.log('  config - Show current configuration'.white);
+        console.log('  login - Manually send login command'.white);
         console.log('  quit/exit - Exit the bot'.white);
         console.log('');
     },
@@ -201,6 +202,8 @@ const commands = {
         console.log(`  Version: ${config.version}`.white);
         console.log(`  Auto-respawn: ${config.autoRespawn ? 'Enabled' : 'Disabled'}`.white);
         console.log(`  Anti-kick: ${config.antiKick ? 'Enabled' : 'Disabled'}`.white);
+        console.log(`  Auto-login: ${config.autoLogin ? 'Enabled' : 'Disabled'}`.white);
+        console.log(`  Login password: ${config.loginPassword}`.white);
         console.log('');
     },
 
@@ -210,6 +213,20 @@ const commands = {
         }
         console.log('Goodbye!'.cyan);
         process.exit(0);
+    },
+
+    login: () => {
+        if (!isConnected || !bot) {
+            console.log('Not connected to any server.'.red);
+            return;
+        }
+
+        try {
+            bot.autoLogin();
+            console.log('Manual login command sent.'.green);
+        } catch (error) {
+            console.log(`Login failed: ${error.message}`.red);
+        }
     },
 
     exit: () => commands.quit()

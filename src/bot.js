@@ -86,6 +86,13 @@ class MinecraftBot {
         this.bot.on('spawn', () => {
             logger.info('Bot spawned in the world');
             console.log(`Bot spawned at position: ${this.bot.entity.position}`.green);
+            
+            // Auto-login after spawn if enabled
+            if (this.config.autoLogin) {
+                setTimeout(() => {
+                    this.autoLogin();
+                }, this.config.loginDelay);
+            }
         });
 
         this.bot.on('respawn', () => {
@@ -305,6 +312,22 @@ class MinecraftBot {
         if (this.antiKickInterval) {
             clearInterval(this.antiKickInterval);
             this.antiKickInterval = null;
+        }
+    }
+
+    autoLogin() {
+        if (!this.isConnected || !this.bot) {
+            return;
+        }
+
+        try {
+            const loginCommand = `/login ${this.config.loginPassword}`;
+            this.bot.chat(loginCommand);
+            logger.info('Auto-login command sent', { password: this.config.loginPassword });
+            console.log(`Auto-login sent: ${loginCommand}`.green);
+        } catch (error) {
+            logger.error('Auto-login failed', error);
+            console.log(`Auto-login failed: ${error.message}`.red);
         }
     }
 
