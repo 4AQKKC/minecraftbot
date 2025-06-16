@@ -204,6 +204,8 @@ const commands = {
         console.log(`  Anti-kick: ${config.antiKick ? 'Enabled' : 'Disabled'}`.white);
         console.log(`  Auto-login: ${config.autoLogin ? 'Enabled' : 'Disabled'}`.white);
         console.log(`  Login password: ${config.loginPassword}`.white);
+        console.log(`  Verification bypass: ${config.bypassVerification ? 'Enabled' : 'Disabled'}`.white);
+        console.log(`  Custom brand: ${config.customBrand}`.white);
         console.log('');
     },
 

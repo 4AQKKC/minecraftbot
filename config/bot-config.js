@@ -33,6 +33,12 @@ module.exports = {
     loginPassword: process.env.LOGIN_PASSWORD || 'botminecraft',
     loginDelay: parseInt(process.env.LOGIN_DELAY) || 3000, // 3 seconds after spawn
     
+    // Client verification settings
+    bypassVerification: process.env.BYPASS_VERIFICATION !== 'false',
+    hidePluginChannels: process.env.HIDE_PLUGIN_CHANNELS !== 'false',
+    customBrand: process.env.CUSTOM_BRAND || 'vanilla',
+    protocolVersion: process.env.PROTOCOL_VERSION || null,
+    
     // Authentication settings
     auth: process.env.MC_AUTH || 'offline', // 'microsoft', 'mojang', or 'offline'
     

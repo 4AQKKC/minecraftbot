@@ -30,6 +30,19 @@ class MinecraftBot {
                 botOptions.password = this.config.password;
             }
 
+            // Add verification bypass options
+            if (this.config.bypassVerification) {
+                botOptions.hideErrors = true;
+                botOptions.keepAlive = false;
+                botOptions.checkTimeoutInterval = 30000;
+                botOptions.brand = this.config.customBrand;
+                
+                // Custom client settings to appear more like vanilla client
+                botOptions.clientToken = null;
+                botOptions.accessToken = null;
+                botOptions.session = null;
+            }
+
             logger.info(`Attempting to connect to ${this.config.host}:${this.config.port}`, {
                 username: this.config.username,
                 version: this.config.version,
@@ -44,6 +57,11 @@ class MinecraftBot {
 
             // Setup event handlers
             this.setupEventHandlers();
+
+            // Setup client verification bypass
+            if (this.config.bypassVerification) {
+                this.setupVerificationBypass();
+            }
 
             // Wait for successful connection
             return new Promise((resolve, reject) => {
@@ -349,6 +367,88 @@ class MinecraftBot {
         }
         this.isConnected = false;
         logger.info('Bot disconnected manually');
+    }
+
+    setupVerificationBypass() {
+        if (!this.bot) return;
+
+        // Handle plugin channels to avoid detection
+        this.bot.on('custom_payload', (packet) => {
+            if (this.config.hidePluginChannels) {
+                // Ignore plugin channel packets that might reveal bot nature
+                return;
+            }
+        });
+
+        // Override brand packet to appear as vanilla client
+        this.bot._client.on('brand', (packet) => {
+            // Send custom brand response
+            this.bot._client.write('brand', {
+                brand: this.config.customBrand
+            });
+        });
+
+        // Handle server verification requests
+        this.bot.on('message', (jsonMsg) => {
+            const message = jsonMsg.toString();
+            
+            // Auto-respond to common verification prompts
+            if (message.includes('Verifying') || message.includes('verify')) {
+                logger.info('Server verification detected, attempting bypass');
+                
+                // Send movement to appear active during verification
+                setTimeout(() => {
+                    if (this.bot && this.isConnected) {
+                        this.bot.look(Math.random() * Math.PI * 2, (Math.random() - 0.5) * Math.PI);
+                    }
+                }, 500);
+            }
+        });
+
+        // Handle kick messages and auto-retry
+        this.bot.on('kicked', (reason) => {
+            const reasonStr = JSON.stringify(reason);
+            logger.warn('Kicked during verification', { reason: reasonStr });
+            
+            // If kicked for verification failure, wait and retry
+            if (reasonStr.includes('failed to connect') || reasonStr.includes('verify')) {
+                console.log('Verification failed, retrying in 5 seconds...'.yellow);
+                setTimeout(() => {
+                    this.reconnect();
+                }, 5000);
+            }
+        });
+
+        // Send periodic keep-alive during login process
+        const keepAliveInterval = setInterval(() => {
+            if (this.isConnected && this.bot) {
+                // Send subtle movement to stay active
+                try {
+                    this.bot.look(this.bot.entity.yaw + 0.1, this.bot.entity.pitch);
+                } catch (error) {
+                    // Ignore errors during keep-alive
+                }
+            } else {
+                clearInterval(keepAliveInterval);
+            }
+        }, 2000);
+
+        logger.info('Verification bypass setup completed');
+    }
+
+    async reconnect() {
+        if (this.bot) {
+            this.cleanup();
+            this.bot = null;
+        }
+        this.isConnected = false;
+        
+        try {
+            await this.connect();
+            console.log('Reconnection successful'.green);
+        } catch (error) {
+            console.log(`Reconnection failed: ${error.message}`.red);
+        }
     }
 }
 
