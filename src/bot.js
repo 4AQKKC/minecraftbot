@@ -321,13 +321,23 @@ class MinecraftBot {
         }
 
         try {
-            const loginCommand = `/login ${this.config.loginPassword}`;
-            this.bot.chat(loginCommand);
-            logger.info('Auto-login command sent', { password: this.config.loginPassword });
-            console.log(`Auto-login sent: ${loginCommand}`.green);
+            // First send register command
+            const registerCommand = `/register ${this.config.loginPassword} ${this.config.loginPassword}`;
+            this.bot.chat(registerCommand);
+            logger.info('Auto-register command sent', { password: this.config.loginPassword });
+            console.log(`Auto-register sent: ${registerCommand}`.green);
+            
+            // Then send login command after a short delay
+            setTimeout(() => {
+                const loginCommand = `/login ${this.config.loginPassword}`;
+                this.bot.chat(loginCommand);
+                logger.info('Auto-login command sent', { password: this.config.loginPassword });
+                console.log(`Auto-login sent: ${loginCommand}`.green);
+            }, 1000); // 1 second delay between commands
+            
         } catch (error) {
-            logger.error('Auto-login failed', error);
-            console.log(`Auto-login failed: ${error.message}`.red);
+            logger.error('Auto-login/register failed', error);
+            console.log(`Auto-login/register failed: ${error.message}`.red);
         }
     }
 

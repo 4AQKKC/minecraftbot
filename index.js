@@ -34,7 +34,7 @@ const commands = {
         console.log('  stop - Stop current action'.white);
         console.log('  status - Show connection status'.white);
         console.log('  config - Show current configuration'.white);
-        console.log('  login - Manually send login command'.white);
+        console.log('  login - Manually send register + login commands'.white);
         console.log('  quit/exit - Exit the bot'.white);
         console.log('');
     },
@@ -223,7 +223,7 @@ const commands = {
 
         try {
             bot.autoLogin();
-            console.log('Manual login command sent.'.green);
+            console.log('Manual register + login commands sent.'.green);
         } catch (error) {
             console.log(`Login failed: ${error.message}`.red);
         }
