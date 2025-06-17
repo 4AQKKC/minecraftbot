@@ -1,0 +1,150 @@
+{"auth":"offline","level":"info","message":"Attempting to connect to mazerclub.net:25565","timestamp":"2025-06-16T14:44:57.054Z","username":"MegaNinja415","version":"1.21"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-16T14:44:59.957Z"}
+{"level":"info","message":"Chat message received Verifying your Minecraft client...","timestamp":"2025-06-16T14:45:00.184Z","username":"XCORD"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"compound","value":{"extra":{"type":"list","value":{"type":"compound","value":[{"text":{"type":"string","value":"You failed to connect to the server, please try again in a few seconds!"}}]}},"text":{"type":"string","value":""}}},"timestamp":"2025-06-16T14:45:03.519Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-16T14:45:03.520Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to mazerclub.net:25565","timestamp":"2025-06-16T14:52:09.768Z","username":"SmartNinja231","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-16T14:52:09.933Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-16T14:52:13.041Z"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"compound","value":{"extra":{"type":"list","value":{"type":"compound","value":[{"text":{"type":"string","value":"You failed to connect to the server, please try again in a few seconds!"}}]}},"text":{"type":"string","value":""}}},"timestamp":"2025-06-16T14:52:43.082Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"compound\",\"value\":[{\"text\":{\"type\":\"string\",\"value\":\"You failed to connect to the server, please try again in a few seconds!\"}}]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}","timestamp":"2025-06-16T14:52:43.083Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-16T14:52:43.084Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to mazerclub.net:25565","timestamp":"2025-06-16T14:52:48.088Z","username":"SmartNinja231","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-16T14:52:48.097Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-16T14:52:50.590Z"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"compound","value":{"extra":{"type":"list","value":{"type":"compound","value":[{"text":{"type":"string","value":"You failed to connect to the server, please try again in a few seconds!"}}]}},"text":{"type":"string","value":""}}},"timestamp":"2025-06-16T14:53:20.608Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"compound\",\"value\":[{\"text\":{\"type\":\"string\",\"value\":\"You failed to connect to the server, please try again in a few seconds!\"}}]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}","timestamp":"2025-06-16T14:53:20.609Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-16T14:53:20.609Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to mazerclub.net:25565","timestamp":"2025-06-16T14:53:25.612Z","username":"SmartNinja231","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-16T14:53:25.616Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-16T14:53:28.452Z"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"compound","value":{"extra":{"type":"list","value":{"type":"compound","value":[{"text":{"type":"string","value":"You failed to connect to the server, please try again in a few seconds!"}}]}},"text":{"type":"string","value":""}}},"timestamp":"2025-06-16T14:53:58.492Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"compound\",\"value\":[{\"text\":{\"type\":\"string\",\"value\":\"You failed to connect to the server, please try again in a few seconds!\"}}]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}","timestamp":"2025-06-16T14:53:58.492Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-16T14:53:58.493Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to mazerclub.net:25565","timestamp":"2025-06-16T14:54:03.493Z","username":"SmartNinja231","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-16T14:54:03.496Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-16T14:54:05.591Z"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"compound","value":{"extra":{"type":"list","value":{"type":"compound","value":[{"text":{"type":"string","value":"You failed to connect to the server, please try again in a few seconds!"}}]}},"text":{"type":"string","value":""}}},"timestamp":"2025-06-16T14:54:35.657Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"compound\",\"value\":[{\"text\":{\"type\":\"string\",\"value\":\"You failed to connect to the server, please try again in a few seconds!\"}}]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}","timestamp":"2025-06-16T14:54:35.657Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-16T14:54:35.658Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to mazerclub.net:25565","timestamp":"2025-06-16T14:54:40.662Z","username":"SmartNinja231","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-16T14:54:40.665Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-16T14:54:43.268Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005:25565","timestamp":"2025-06-16T14:58:03.817Z","username":"SwiftScout277","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-16T14:58:03.966Z"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"cherry.pikamc.vn:25005","level":"error","message":"Bot error getaddrinfo ENOTFOUND cherry.pikamc.vn:25005","stack":"Error: getaddrinfo ENOTFOUND cherry.pikamc.vn:25005\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)","syscall":"getaddrinfo","timestamp":"2025-06-16T14:58:04.019Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-16T14:58:04.020Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005:25005","timestamp":"2025-06-16T14:58:14.528Z","username":"SwiftScout277","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-16T14:58:14.532Z"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"cherry.pikamc.vn:25005","level":"error","message":"Bot error getaddrinfo ENOTFOUND cherry.pikamc.vn:25005","stack":"Error: getaddrinfo ENOTFOUND cherry.pikamc.vn:25005\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)","syscall":"getaddrinfo","timestamp":"2025-06-16T14:58:14.558Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-16T14:58:14.559Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-16T14:58:22.487Z","username":"SwiftScout277","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-16T14:58:22.510Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-16T14:58:24.284Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-16T14:58:24.462Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-16T14:58:24.472Z"}
+{"level":"info","message":"Auto-register command sent","password":"botminecraft","timestamp":"2025-06-16T14:58:27.467Z"}
+{"level":"info","message":"Auto-login command sent","password":"botminecraft","timestamp":"2025-06-16T14:58:28.468Z"}
+{"health":0.8871517181396484,"level":"warn","message":"Bot health is low","timestamp":"2025-06-16T14:58:38.533Z"}
+{"health":1.8871517181396484,"level":"warn","message":"Bot health is low","timestamp":"2025-06-16T14:58:38.809Z"}
+{"health":1.8871517181396484,"level":"warn","message":"Bot health is low","timestamp":"2025-06-16T14:58:38.854Z"}
+{"health":1.8871517181396484,"level":"warn","message":"Bot health is low","timestamp":"2025-06-16T14:58:38.855Z"}
+{"health":0,"level":"warn","message":"Bot health is low","timestamp":"2025-06-16T14:58:39.171Z"}
+{"level":"info","message":"Bot died","timestamp":"2025-06-16T14:58:39.171Z"}
+{"level":"info","message":"Bot respawned","timestamp":"2025-06-16T14:58:39.374Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-16T14:58:39.377Z"}
+{"level":"info","message":"Auto-register command sent","password":"botminecraft","timestamp":"2025-06-16T14:58:42.378Z"}
+{"level":"info","message":"Auto-login command sent","password":"botminecraft","timestamp":"2025-06-16T14:58:43.379Z"}
+{"level":"info","message":"Chat message sent /tpa dungkobtchs","timestamp":"2025-06-16T14:59:08.580Z"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"compound","value":{"translate":{"type":"string","value":"disconnect.timeout"}}},"timestamp":"2025-06-16T14:59:09.353Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"compound\",\"value\":{\"translate\":{\"type\":\"string\",\"value\":\"disconnect.timeout\"}}}","timestamp":"2025-06-16T14:59:09.354Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-16T14:59:09.355Z"}
+{"level":"info","message":"Bot disconnected manually","timestamp":"2025-06-16T15:34:09.073Z"}
+{"botId":"bot_1","botName":"jFv73","level":"info","message":"Bot created","timestamp":"2025-06-17T00:50:10.175Z"}
+{"botId":"bot_2","botName":"ftsc14","level":"info","message":"Bot created","timestamp":"2025-06-17T00:50:10.179Z"}
+{"botId":"bot_3","botName":"KTADG8278","level":"info","message":"Bot created","timestamp":"2025-06-17T00:50:10.180Z"}
+{"botId":"bot_4","botName":"yKLa4879","level":"info","message":"Bot created","timestamp":"2025-06-17T00:50:10.180Z"}
+{"botId":"bot_5","botName":"XhwO8152","level":"info","message":"Bot created","timestamp":"2025-06-17T00:50:10.181Z"}
+{"botId":"bot_6","botName":"Wpbj3516","level":"info","message":"Bot created","timestamp":"2025-06-17T00:50:10.181Z"}
+{"botId":"bot_7","botName":"LCm62","level":"info","message":"Bot created","timestamp":"2025-06-17T00:50:10.182Z"}
+{"botId":"bot_8","botName":"Vle66","level":"info","message":"Bot created","timestamp":"2025-06-17T00:50:10.182Z"}
+{"botId":"bot_9","botName":"LDzv660","level":"info","message":"Bot created","timestamp":"2025-06-17T00:50:10.182Z"}
+{"botId":"bot_10","botName":"UlgkM4139","level":"info","message":"Bot created","timestamp":"2025-06-17T00:50:10.183Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to minesive.com:25565","timestamp":"2025-06-17T00:51:20.080Z","username":"DQqXJ845","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-17T00:51:20.903Z"}
+{"code":"ECONNRESET","errno":-104,"level":"error","message":"Bot error read ECONNRESET","stack":"Error: read ECONNRESET\n    at TCP.onStreamRead (node:internal/stream_base_commons:218:20)","syscall":"read","timestamp":"2025-06-17T00:51:21.324Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-17T00:51:21.325Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to minesive.com:25565","timestamp":"2025-06-17T01:14:27.340Z","username":"aOTDp040","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-17T01:14:27.567Z"}
+{"code":"ECONNRESET","errno":-104,"level":"error","message":"Bot error read ECONNRESET","stack":"Error: read ECONNRESET\n    at TCP.onStreamRead (node:internal/stream_base_commons:218:20)","syscall":"read","timestamp":"2025-06-17T01:14:28.155Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-17T01:14:28.157Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to mazerclub.net:25565","timestamp":"2025-06-17T01:16:26.504Z","username":"ykNqJ039","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-17T01:16:26.665Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-17T01:16:29.942Z"}
+{"level":"info","message":"Server verification detected, attempting bypass","timestamp":"2025-06-17T01:16:30.242Z"}
+{"level":"info","message":"Chat message received Verifying your Minecraft client...","timestamp":"2025-06-17T01:16:30.243Z","username":"XCORD"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"compound","value":{"extra":{"type":"list","value":{"type":"compound","value":[{"text":{"type":"string","value":"You failed to connect to the server, please try again in a few seconds!"}}]}},"text":{"type":"string","value":""}}},"timestamp":"2025-06-17T01:16:33.883Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"compound\",\"value\":[{\"text\":{\"type\":\"string\",\"value\":\"You failed to connect to the server, please try again in a few seconds!\"}}]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}","timestamp":"2025-06-17T01:16:33.885Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-17T01:16:33.888Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to mazerclub.net:25565","timestamp":"2025-06-17T01:16:38.891Z","username":"ykNqJ039","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-17T01:16:38.894Z"}
+{"botId":"bot_1","botName":"fOuX335","level":"info","message":"Bot created","timestamp":"2025-06-17T01:24:24.355Z"}
+{"botId":"bot_2","botName":"jVOqP3184","level":"info","message":"Bot created","timestamp":"2025-06-17T01:24:24.359Z"}
+{"botId":"bot_3","botName":"WWoVs50","level":"info","message":"Bot created","timestamp":"2025-06-17T01:24:24.359Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-17T01:28:36.011Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-17T01:28:36.279Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-17T01:30:53.261Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-17T01:30:53.508Z"}
+{"botId":"bot_1","botName":"hnRy759","level":"info","message":"Bot created","timestamp":"2025-06-17T01:32:50.533Z"}
+{"botId":"bot_2","botName":"fXSQP23","level":"info","message":"Bot created","timestamp":"2025-06-17T01:32:50.533Z"}
+{"botId":"bot_3","botName":"MywtF2477","level":"info","message":"Bot created","timestamp":"2025-06-17T01:32:50.534Z"}
+{"botId":"bot_1","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.36.1:32768","timestamp":"2025-06-17T01:34:22.525Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to mazerclub.net:25565","timestamp":"2025-06-17T01:34:22.525Z","username":"hnRy759","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-17T01:34:22.799Z"}
+{"botId":"bot_2","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.46.1:32768","timestamp":"2025-06-17T01:34:22.800Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to mazerclub.net:25565","timestamp":"2025-06-17T01:34:22.800Z","username":"fXSQP23","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-17T01:34:22.804Z"}
+{"botId":"bot_3","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.192.1:32768","timestamp":"2025-06-17T01:34:22.805Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to mazerclub.net:25565","timestamp":"2025-06-17T01:34:22.805Z","username":"MywtF2477","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-17T01:34:22.816Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-17T01:34:26.246Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-17T01:34:26.489Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-17T01:34:26.495Z"}
+{"level":"info","message":"Server verification detected, attempting bypass","timestamp":"2025-06-17T01:34:26.555Z"}
+{"level":"info","message":"Chat message received Verifying your Minecraft client...","timestamp":"2025-06-17T01:34:26.568Z","username":"XCORD"}
+{"level":"info","message":"Server verification detected, attempting bypass","timestamp":"2025-06-17T01:34:26.769Z"}
+{"level":"info","message":"Chat message received Verifying your Minecraft client...","timestamp":"2025-06-17T01:34:26.769Z","username":"XCORD"}
+{"level":"info","message":"Server verification detected, attempting bypass","timestamp":"2025-06-17T01:34:26.780Z"}
+{"level":"info","message":"Chat message received Verifying your Minecraft client...","timestamp":"2025-06-17T01:34:26.780Z","username":"XCORD"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"compound","value":{"extra":{"type":"list","value":{"type":"compound","value":[{"text":{"type":"string","value":"You failed to connect to the server, please try again in a few seconds!"}}]}},"text":{"type":"string","value":""}}},"timestamp":"2025-06-17T01:34:30.091Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"compound\",\"value\":[{\"text\":{\"type\":\"string\",\"value\":\"You failed to connect to the server, please try again in a few seconds!\"}}]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}","timestamp":"2025-06-17T01:34:30.092Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-17T01:34:30.093Z"}
+{"botId":"bot_3","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-17T01:34:30.095Z"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"compound","value":{"extra":{"type":"list","value":{"type":"compound","value":[{"text":{"type":"string","value":"You failed to connect to the server, please try again in a few seconds!"}}]}},"text":{"type":"string","value":""}}},"timestamp":"2025-06-17T01:34:30.147Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"compound\",\"value\":[{\"text\":{\"type\":\"string\",\"value\":\"You failed to connect to the server, please try again in a few seconds!\"}}]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}","timestamp":"2025-06-17T01:34:30.149Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-17T01:34:30.150Z"}
+{"botId":"bot_1","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-17T01:34:30.151Z"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"compound","value":{"extra":{"type":"list","value":{"type":"compound","value":[{"text":{"type":"string","value":"You failed to connect to the server, please try again in a few seconds!"}}]}},"text":{"type":"string","value":""}}},"timestamp":"2025-06-17T01:34:30.420Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"compound\",\"value\":[{\"text\":{\"type\":\"string\",\"value\":\"You failed to connect to the server, please try again in a few seconds!\"}}]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}","timestamp":"2025-06-17T01:34:30.421Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-17T01:34:30.422Z"}
+{"botId":"bot_2","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-17T01:34:30.424Z"}
+{"botId":"bot_3","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.195.1:32768","timestamp":"2025-06-17T01:34:35.097Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to mazerclub.net:25565","timestamp":"2025-06-17T01:34:35.098Z","username":"MywtF2477","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-17T01:34:35.101Z"}
+{"botId":"bot_1","level":"info","message":"Using proxy for connection","proxy":"http://proxy1.example.com:8080","timestamp":"2025-06-17T01:34:35.151Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to mazerclub.net:25565","timestamp":"2025-06-17T01:34:35.151Z","username":"hnRy759","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-17T01:34:35.153Z"}
+{"botId":"bot_2","level":"info","message":"Using proxy for connection","proxy":"http://proxy2.example.com:3128","timestamp":"2025-06-17T01:34:35.422Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to mazerclub.net:25565","timestamp":"2025-06-17T01:34:35.423Z","username":"fXSQP23","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-17T01:34:35.427Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-17T01:34:35.693Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-17T01:34:35.709Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-17T01:34:37.996Z"}
+{"level":"info","message":"Server verification detected, attempting bypass","timestamp":"2025-06-17T01:34:38.283Z"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"compound","value":{"extra":{"type":"list","value":{"type":"compound","value":[{"text":{"type":"string","value":"You failed to connect to the server, please try again in a few seconds!"}}]}},"text":{"type":"string","value":""}}},"timestamp":"2025-06-17T01:34:41.896Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"compound\",\"value\":{\"extra\":{\"type\":\"list\",\"value\":{\"type\":\"compound\",\"value\":[{\"text\":{\"type\":\"string\",\"value\":\"You failed to connect to the server, please try again in a few seconds!\"}}]}},\"text\":{\"type\":\"string\",\"value\":\"\"}}}","timestamp":"2025-06-17T01:34:41.896Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-17T01:34:41.897Z"}
+{"botId":"bot_2","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.36.1:32768","timestamp":"2025-06-17T01:34:46.902Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to mazerclub.net:25565","timestamp":"2025-06-17T01:34:46.903Z","username":"fXSQP23","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-17T01:34:46.905Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-17T01:34:47.461Z"}
