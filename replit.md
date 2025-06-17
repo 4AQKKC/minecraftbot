@@ -121,6 +121,9 @@ Preferred communication style: Simple, everyday language.
 - Error handling improved with specific troubleshooting messages
 - Support for both offline and online authentication modes
 - Pathfinding and movement systems operational
+- **New**: Bot numbering system with indexed management
+- **New**: Individual bot control by number (connect, chat, disconnect, remove)
+- **New**: Enhanced list display with sequential numbering
 
 ## User Preferences
 

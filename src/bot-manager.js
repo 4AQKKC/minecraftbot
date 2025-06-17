@@ -143,16 +143,18 @@ class BotManager {
     }
 
     /**
-     * Get list of all bots
+     * Get list of all bots with sequential numbering
      */
     listBots() {
         const botList = [];
+        let index = 1;
         
         for (const [botId, botInfo] of this.bots) {
             const connectionDuration = botInfo.connectionTime ? 
                 Math.floor((Date.now() - botInfo.connectionTime.getTime()) / 1000) : 0;
             
             botList.push({
+                index: index++,
                 id: botId,
                 name: botInfo.name,
                 status: botInfo.status,
@@ -164,6 +166,72 @@ class BotManager {
         }
         
         return botList;
+    }
+
+    /**
+     * Get bot by index number
+     */
+    getBotByIndex(index) {
+        const botList = Array.from(this.bots.values());
+        if (index < 1 || index > botList.length) {
+            return null;
+        }
+        return botList[index - 1];
+    }
+
+    /**
+     * Connect bot by index number
+     */
+    async connectBotByIndex(index, host, port = 25565) {
+        const botInfo = this.getBotByIndex(index);
+        if (!botInfo) {
+            throw new Error(`Bot number ${index} not found. Use 'list' to see available bots.`);
+        }
+        
+        return await this.connectBot(botInfo.id, host, port);
+    }
+
+    /**
+     * Disconnect bot by index number
+     */
+    disconnectBotByIndex(index) {
+        const botInfo = this.getBotByIndex(index);
+        if (!botInfo) {
+            throw new Error(`Bot number ${index} not found. Use 'list' to see available bots.`);
+        }
+        
+        this.disconnectBot(botInfo.id);
+        return botInfo;
+    }
+
+    /**
+     * Remove bot by index number
+     */
+    removeBotByIndex(index) {
+        const botInfo = this.getBotByIndex(index);
+        if (!botInfo) {
+            throw new Error(`Bot number ${index} not found. Use 'list' to see available bots.`);
+        }
+        
+        this.removeBot(botInfo.id);
+        return botInfo;
+    }
+
+    /**
+     * Send chat message from specific bot by index
+     */
+    chatBotByIndex(index, message) {
+        const botInfo = this.getBotByIndex(index);
+        if (!botInfo) {
+            throw new Error(`Bot number ${index} not found. Use 'list' to see available bots.`);
+        }
+        
+        if (botInfo.status !== 'connected' || !botInfo.bot.isConnected) {
+            throw new Error(`Bot #${index} (${botInfo.name}) is not connected to any server.`);
+        }
+        
+        botInfo.bot.chat(message);
+        return botInfo;
     }
 
     /**

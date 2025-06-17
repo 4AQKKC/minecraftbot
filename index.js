@@ -45,8 +45,12 @@ const commands = {
         console.log('');
         console.log('  Multi-Bot Commands:'.cyan.bold);
         console.log('  create <count> - Create multiple bots'.white);
+        console.log('  connect <number> <host> [port] - Connect specific bot by number'.white);
+        console.log('  disconnect <number> - Disconnect specific bot by number'.white);
+        console.log('  chat <number> <message> - Send message from specific bot'.white);
+        console.log('  remove <number> - Remove specific bot by number'.white);
         console.log('  connectall <host> [port] - Connect all bots to server'.white);
-        console.log('  list - Show all bots status'.white);
+        console.log('  list - Show all bots status with numbers'.white);
         console.log('  chatall <message> - Send message from all bots'.white);
         console.log('  removeall - Remove all bots'.white);
         console.log('');
@@ -56,41 +60,74 @@ const commands = {
         console.log('  quit/exit - Exit the bot'.white);
         console.log('');
         console.log('Examples:'.yellow.bold);
-        console.log('  connect localhost 25565'.gray);
-        console.log('  connect play.cubecraft.net'.gray);
-        console.log('  connect mc.hypixel.net'.gray);
+        console.log('  create 3'.gray + '                   # Tạo 3 bot');
+        console.log('  list'.gray + '                      # Xem danh sách bot có số thứ tự');
+        console.log('  connect 1 localhost 25565'.gray + '  # Kết nối bot số 1 với server');
+        console.log('  connect 2 mc.hypixel.net'.gray + '   # Kết nối bot số 2 với Hypixel');
+        console.log('  chat 1 Hello everyone!'.gray + '     # Bot số 1 gửi tin nhắn');
+        console.log('  disconnect 2'.gray + '               # Ngắt kết nối bot số 2');
+        console.log('  remove 3'.gray + '                   # Xóa bot số 3');
         console.log('');
     },
 
     connect: (args) => {
-        if (isConnected) {
-            console.log('Already connected to a server. Use "disconnect" first.'.yellow);
-            return;
-        }
-
         if (args.length < 1) {
-            console.log('Usage: connect <host> [port]'.red);
+            console.log('Usage: connect <host> [port] OR connect <bot_number> <host> [port]'.red);
+            console.log('Examples:'.yellow);
+            console.log('  connect localhost 25565'.gray);
+            console.log('  connect 1 mc.hypixel.net'.gray);
+            console.log('  connect 2 localhost 25566'.gray);
             return;
         }
 
-        const host = args[0];
-        const port = args[1] ? parseInt(args[1]) : 25565;
+        // Check if first argument is a number (bot index)
+        const firstArg = args[0];
+        const isNumber = !isNaN(parseInt(firstArg)) && isFinite(firstArg);
 
-        console.log(`Connecting to ${host}:${port}...`.yellow);
-        
-        bot = new Bot({
-            ...config,
-            host: host,
-            port: port
-        });
+        if (isNumber) {
+            // Connect specific bot by number
+            const botIndex = parseInt(firstArg);
+            const host = args[1];
+            const port = args[2] ? parseInt(args[2]) : 25565;
 
-        bot.connect().then(() => {
-            isConnected = true;
-            console.log(`Successfully connected to ${host}:${port}`.green);
-        }).catch((error) => {
-            console.log(`Failed to connect: ${error.message}`.red);
-            bot = null;
-        });
+            if (!host) {
+                console.log('Usage: connect <bot_number> <host> [port]'.red);
+                return;
+            }
+
+            console.log(`Connecting bot #${botIndex} to ${host}:${port}...`.yellow);
+            
+            botManager.connectBotByIndex(botIndex, host, port).then(() => {
+                console.log(`Bot #${botIndex} successfully connected to ${host}:${port}`.green);
+            }).catch((error) => {
+                console.log(`Bot #${botIndex} failed to connect: ${error.message}`.red);
+            });
+        } else {
+            // Original single bot connection
+            if (isConnected) {
+                console.log('Already connected to a server. Use "disconnect" first.'.yellow);
+                return;
+            }
+
+            const host = args[0];
+            const port = args[1] ? parseInt(args[1]) : 25565;
+
+            console.log(`Connecting to ${host}:${port}...`.yellow);
+            
+            bot = new Bot({
+                ...config,
+                host: host,
+                port: port
+            });
+
+            bot.connect().then(() => {
+                isConnected = true;
+                console.log(`Successfully connected to ${host}:${port}`.green);
+            }).catch((error) => {
+                console.log(`Failed to connect: ${error.message}`.red);
+                bot = null;
+            });
+        }
     },
 
     disconnect: () => {
@@ -326,7 +363,7 @@ const commands = {
         if (bots.length === 0) {
             console.log('No bots created yet.'.yellow);
         } else {
-            console.log('ID'.padEnd(12) + 'Name'.padEnd(15) + 'Status'.padEnd(12) + 'Server'.padEnd(25) + 'Duration'.white);
+            console.log('#'.padEnd(4) + 'Name'.padEnd(15) + 'Status'.padEnd(12) + 'Server'.padEnd(25) + 'Duration'.white);
             console.log('-'.repeat(80).gray);
             
             bots.forEach(bot => {
@@ -334,7 +371,7 @@ const commands = {
                                   bot.status === 'failed' ? 'red' : 'yellow';
                 
                 console.log(
-                    bot.id.padEnd(12) +
+                    bot.index.toString().padEnd(4) +
                     bot.name.padEnd(15) +
                     bot.status.padEnd(12)[statusColor] +
                     bot.connectedTo.padEnd(25) +
@@ -344,6 +381,7 @@ const commands = {
         }
         
         console.log(`\nSystem: ${systemInfo.cores} cores, ${systemInfo.usedMemoryGB}GB/${systemInfo.totalMemoryGB}GB RAM used`.gray);
+        console.log('Note: Use "connect <number> <host> [port]" to connect specific bot'.yellow);
         console.log('');
     },
 
@@ -381,6 +419,99 @@ const commands = {
         console.log(`  Free RAM: ${systemInfo.freeMemoryGB} GB`.white);
         console.log(`  Estimated bots capacity: ${Math.floor(parseFloat(systemInfo.freeMemoryGB) * 20)}`.white);
         console.log('');
+    },
+
+    // Additional bot management commands
+    remove: (args) => {
+        if (args.length < 1) {
+            console.log('Usage: remove <bot_number>'.red);
+            console.log('Example: remove 1'.gray);
+            return;
+        }
+
+        const botIndex = parseInt(args[0]);
+        if (isNaN(botIndex)) {
+            console.log('Bot number must be a valid number.'.red);
+            return;
+        }
+
+        try {
+            const removedBot = botManager.removeBotByIndex(botIndex);
+            console.log(`Bot #${botIndex} (${removedBot.name}) removed successfully.`.green);
+        } catch (error) {
+            console.log(`Error: ${error.message}`.red);
+        }
+    },
+
+    disconnect: (args) => {
+        if (args.length === 0) {
+            // Original single bot disconnect
+            if (!isConnected || !bot) {
+                console.log('Not connected to any server.'.yellow);
+                return;
+            }
+
+            bot.disconnect();
+            bot = null;
+            isConnected = false;
+            console.log('Disconnected from server.'.yellow);
+        } else {
+            // Disconnect specific bot by number
+            const botIndex = parseInt(args[0]);
+            if (isNaN(botIndex)) {
+                console.log('Bot number must be a valid number.'.red);
+                return;
+            }
+
+            try {
+                const disconnectedBot = botManager.disconnectBotByIndex(botIndex);
+                console.log(`Bot #${botIndex} (${disconnectedBot.name}) disconnected.`.yellow);
+            } catch (error) {
+                console.log(`Error: ${error.message}`.red);
+            }
+        }
+    },
+
+    chat: (args) => {
+        if (args.length === 0) {
+            console.log('Usage: chat <message> OR chat <bot_number> <message>'.red);
+            console.log('Examples:'.yellow);
+            console.log('  chat Hello everyone!'.gray);
+            console.log('  chat 1 Hello from bot 1!'.gray);
+            return;
+        }
+
+        // Check if first argument is a number (bot index)
+        const firstArg = args[0];
+        const isNumber = !isNaN(parseInt(firstArg)) && isFinite(firstArg);
+
+        if (isNumber) {
+            // Send message from specific bot
+            const botIndex = parseInt(firstArg);
+            const message = args.slice(1).join(' ');
+
+            if (!message) {
+                console.log('Usage: chat <bot_number> <message>'.red);
+                return;
+            }
+
+            try {
+                const chatBot = botManager.chatBotByIndex(botIndex, message);
+                console.log(`[Bot #${botIndex} - ${chatBot.name}] ${message}`.green);
+            } catch (error) {
+                console.log(`Error: ${error.message}`.red);
+            }
+        } else {
+            // Original single bot chat
+            if (!isConnected || !bot) {
+                console.log('Not connected to any server.'.red);
+                return;
+            }
+
+            const message = args.join(' ');
+            bot.chat(message);
+            console.log(`[CHAT] ${message}`.green);
+        }
     },
 
     // Test server commands
