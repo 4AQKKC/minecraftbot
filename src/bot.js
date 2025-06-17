@@ -3,15 +3,18 @@ const { pathfinder, Movements, goals } = require('mineflayer-pathfinder');
 const logger = require('./logger');
 const auth = require('./auth');
 const behaviors = require('./behaviors');
+const ProxyManager = require('./proxy-manager');
 
 class MinecraftBot {
-    constructor(config) {
+    constructor(config, proxyManager = null) {
         this.config = config;
         this.bot = null;
         this.isConnected = false;
         this.currentGoal = null;
         this.followTarget = null;
         this.antiKickInterval = null;
+        this.proxyManager = proxyManager;
+        this.currentProxy = null;
     }
 
     async connect() {
@@ -45,6 +48,21 @@ class MinecraftBot {
             botOptions.skipValidation = true;
             botOptions.viewDistance = 'far';
             botOptions.chatLengthLimit = 256;
+
+            // Add proxy support if proxy manager is available
+            if (this.proxyManager && this.config.useProxy !== false) {
+                this.currentProxy = this.proxyManager.getNextProxy();
+                if (this.currentProxy) {
+                    const proxyAgent = this.proxyManager.getProxyAgent(this.currentProxy);
+                    if (proxyAgent) {
+                        botOptions.agent = proxyAgent;
+                        logger.info('Using proxy for connection', { 
+                            proxy: this.currentProxy,
+                            botId: this.config.botId 
+                        });
+                    }
+                }
+            }
 
             logger.info(`Attempting to connect to ${this.config.host}:${this.config.port}`, {
                 username: this.config.username,

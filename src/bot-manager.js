@@ -1,11 +1,14 @@
 const MinecraftBot = require('./bot');
 const logger = require('./logger');
+const ProxyManager = require('./proxy-manager');
 const os = require('os');
 
 class BotManager {
     constructor() {
         this.bots = new Map();
         this.nextBotId = 1;
+        this.proxyManager = new ProxyManager();
+        this.proxyManager.initializeDefaultProxies();
     }
 
     /**
@@ -62,7 +65,7 @@ class BotManager {
             botId: botId
         };
 
-        const bot = new MinecraftBot(botConfig);
+        const bot = new MinecraftBot(botConfig, this.proxyManager);
         
         const botInfo = {
             id: botId,
@@ -235,6 +238,83 @@ class BotManager {
     }
 
     /**
+     * Connect all bots to same server with delays
+     */
+    async connectAllBots(host, port = 25565, delayMs = 2000) {
+        const bots = Array.from(this.bots.values());
+        let successCount = 0;
+        
+        console.log(`Starting mass connection: ${bots.length} bots to ${host}:${port}...`.yellow);
+        
+        for (let i = 0; i < bots.length; i++) {
+            const botInfo = bots[i];
+            
+            try {
+                console.log(`[${i+1}/${bots.length}] Connecting ${botInfo.name}...`.cyan);
+                await this.connectBot(botInfo.id, host, port);
+                successCount++;
+                console.log(`✓ ${botInfo.name} connected successfully`.green);
+                
+                // Add delay between connections to avoid rate limiting
+                if (i < bots.length - 1) {
+                    console.log(`Waiting ${delayMs}ms before next connection...`.gray);
+                    await new Promise(resolve => setTimeout(resolve, delayMs));
+                }
+            } catch (error) {
+                console.log(`✗ ${botInfo.name} failed: ${error.message}`.red);
+            }
+        }
+        
+        console.log(`Mass connection completed: ${successCount}/${bots.length} bots connected`.cyan);
+        return successCount;
+    }
+
+    /**
+     * Connect bots in parallel groups to improve speed
+     */
+    async connectAllBotsParallel(host, port = 25565, groupSize = 3, delayBetweenGroups = 5000) {
+        const bots = Array.from(this.bots.values());
+        let successCount = 0;
+        
+        console.log(`Starting parallel mass connection: ${bots.length} bots in groups of ${groupSize}...`.yellow);
+        
+        for (let i = 0; i < bots.length; i += groupSize) {
+            const group = bots.slice(i, i + groupSize);
+            const groupNumber = Math.floor(i / groupSize) + 1;
+            const totalGroups = Math.ceil(bots.length / groupSize);
+            
+            console.log(`[Group ${groupNumber}/${totalGroups}] Connecting ${group.length} bots...`.cyan);
+            
+            // Connect bots in current group in parallel
+            const promises = group.map(async (botInfo) => {
+                try {
+                    await this.connectBot(botInfo.id, host, port);
+                    console.log(`✓ ${botInfo.name} connected`.green);
+                    return true;
+                } catch (error) {
+                    console.log(`✗ ${botInfo.name} failed: ${error.message}`.red);
+                    return false;
+                }
+            });
+            
+            const results = await Promise.allSettled(promises);
+            const groupSuccessCount = results.filter(r => r.status === 'fulfilled' && r.value).length;
+            successCount += groupSuccessCount;
+            
+            console.log(`Group ${groupNumber} completed: ${groupSuccessCount}/${group.length} connected`.cyan);
+            
+            // Delay between groups to avoid overwhelming the server
+            if (i + groupSize < bots.length) {
+                console.log(`Waiting ${delayBetweenGroups}ms before next group...`.gray);
+                await new Promise(resolve => setTimeout(resolve, delayBetweenGroups));
+            }
+        }
+        
+        console.log(`Parallel mass connection completed: ${successCount}/${bots.length} bots connected`.cyan);
+        return successCount;
+    }
+
+    /**
      * Send chat message to all connected bots
      */
     chatAll(message) {
@@ -297,6 +377,41 @@ class BotManager {
      */
     getTotalBotsCount() {
         return this.bots.size;
+    }
+
+    /**
+     * Get proxy manager for external access
+     */
+    getProxyManager() {
+        return this.proxyManager;
+    }
+
+    /**
+     * Add proxy to the manager
+     */
+    addProxy(proxyUrl) {
+        return this.proxyManager.addProxy(proxyUrl);
+    }
+
+    /**
+     * Remove proxy from the manager
+     */
+    removeProxy(proxyUrl) {
+        return this.proxyManager.removeProxy(proxyUrl);
+    }
+
+    /**
+     * Test all proxies
+     */
+    async testProxies() {
+        return await this.proxyManager.getWorkingProxies();
+    }
+
+    /**
+     * Get proxy statistics
+     */
+    getProxyStats() {
+        return this.proxyManager.getStats();
     }
 
     /**

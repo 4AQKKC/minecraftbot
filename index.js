@@ -49,10 +49,19 @@ const commands = {
         console.log('  disconnect <number> - Disconnect specific bot by number'.white);
         console.log('  chat <number> <message> - Send message from specific bot'.white);
         console.log('  remove <number> - Remove specific bot by number'.white);
-        console.log('  connectall <host> [port] - Connect all bots to server'.white);
+        console.log('  connectall <host> [port] - Connect all bots (sequential)'.white);
+        console.log('  connectfast <host> [port] - Connect all bots (parallel groups)'.white);
         console.log('  list - Show all bots status with numbers'.white);
         console.log('  chatall <message> - Send message from all bots'.white);
         console.log('  removeall - Remove all bots'.white);
+        console.log('');
+        console.log('  Proxy Commands:'.cyan.bold);
+        console.log('  proxyadd <proxy_url> - Add proxy (socks5://ip:port or http://ip:port)'.white);
+        console.log('  proxyremove <proxy_url> - Remove proxy'.white);
+        console.log('  proxylist - Show all proxies and status'.white);
+        console.log('  proxytest - Test all proxies'.white);
+        console.log('  proxyon - Enable proxy rotation'.white);
+        console.log('  proxyoff - Disable proxy rotation'.white);
         console.log('');
         console.log('  System Commands:'.cyan.bold);
         console.log('  core - Show CPU cores available'.white);
@@ -60,13 +69,13 @@ const commands = {
         console.log('  quit/exit - Exit the bot'.white);
         console.log('');
         console.log('Examples:'.yellow.bold);
-        console.log('  create 3'.gray + '                   # Tạo 3 bot');
-        console.log('  list'.gray + '                      # Xem danh sách bot có số thứ tự');
-        console.log('  connect 1 localhost 25565'.gray + '  # Kết nối bot số 1 với server');
-        console.log('  connect 2 mc.hypixel.net'.gray + '   # Kết nối bot số 2 với Hypixel');
+        console.log('  create 50'.gray + '                  # Tạo 50 bot');
+        console.log('  connectall mc.hypixel.net'.gray + '   # Kết nối tất cả bot tuần tự');
+        console.log('  connectfast localhost'.gray + '       # Kết nối tất cả bot song song (nhanh)');
+        console.log('  proxyadd socks5://1.1.1.1:1080'.gray + ' # Thêm proxy Cloudflare');
+        console.log('  proxylist'.gray + '                   # Xem danh sách proxy');
         console.log('  chat 1 Hello everyone!'.gray + '     # Bot số 1 gửi tin nhắn');
-        console.log('  disconnect 2'.gray + '               # Ngắt kết nối bot số 2');
-        console.log('  remove 3'.gray + '                   # Xóa bot số 3');
+        console.log('  chatall Hello from all bots!'.gray + ' # Tất cả bot gửi tin nhắn');
         console.log('');
     },
 
