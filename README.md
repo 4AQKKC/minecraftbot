@@ -66,11 +66,34 @@ disconnect               - Ngắt kết nối
 ### Quản lý nhiều bot
 
 ```
-create <số_lượng>        - Tạo nhiều bot
-connectall <server>      - Kết nối tất cả bot
-list                     - Hiển thị danh sách bot
-chatall <tin_nhắn>       - Gửi tin nhắn từ tất cả bot
-removeall               - Xóa tất cả bot
+create <số_lượng>           - Tạo nhiều bot
+connect <số> <server>       - Kết nối bot theo số thứ tự
+connectall <server>         - Kết nối tất cả bot (tuần tự)
+connectfast <server>        - Kết nối tất cả bot (song song nhanh)
+chat <số> <tin_nhắn>        - Bot cụ thể gửi tin nhắn
+disconnect <số>             - Ngắt kết nối bot cụ thể
+remove <số>                 - Xóa bot cụ thể
+list                        - Hiển thị danh sách bot có số thứ tự
+chatall <tin_nhắn>          - Gửi tin nhắn từ tất cả bot
+removeall                  - Xóa tất cả bot
+```
+
+### Quản lý Proxy (Chống ban IP)
+
+```
+proxyadd <proxy_url>       - Thêm proxy
+proxyremove <proxy_url>    - Xóa proxy  
+proxylist                  - Xem danh sách proxy
+proxytest                  - Test tất cả proxy
+proxyon                    - Bật rotation proxy
+proxyoff                   - Tắt rotation proxy
+```
+
+**Ví dụ proxy Cloudflare WARP miễn phí:**
+```
+proxyadd socks5://162.159.36.1:32768
+proxyadd socks5://162.159.46.1:32768
+proxyadd socks5://162.159.192.1:32768
 ```
 
 ### Lệnh trong game
@@ -115,26 +138,52 @@ Bot sử dụng file `config/bot-config.js` để cấu hình. Các tùy chọn 
 
 ## Ví dụ sử dụng
 
+### Kết nối cơ bản với 1 bot
 ```bash
 # Khởi chạy bot
 node index.js
 
-# Kết nối với server local
+# Kết nối với server
 MinecraftBot> connect localhost
-
-# Gửi tin nhắn
 MinecraftBot> chat Hello everyone!
+```
 
-# Di chuyển bot
-MinecraftBot> move forward 10
+### Kết nối hàng loạt với proxy
+```bash
+# Tạo 50 bot
+MinecraftBot> create 50
 
-# Tạo nhiều bot
-MinecraftBot> create 5
-MinecraftBot> connectall play.example.com
+# Thêm proxy Cloudflare để tránh ban IP
+MinecraftBot> proxyadd socks5://162.159.36.1:32768
+MinecraftBot> proxyadd socks5://162.159.46.1:32768
+MinecraftBot> proxyon
 
-# Kiểm tra trạng thái
+# Kết nối tất cả bot nhanh (song song)
+MinecraftBot> connectfast mc.hypixel.net
+
+# Hoặc kết nối tuần tự (chậm hơn nhưng ổn định)
+MinecraftBot> connectall localhost 25565
+
+# Xem trạng thái kết nối
 MinecraftBot> list
-MinecraftBot> status
+
+# Gửi tin nhắn từ tất cả bot
+MinecraftBot> chatall Hello from bot army!
+
+# Gửi tin nhắn từ bot cụ thể
+MinecraftBot> chat 1 Hello from bot number 1!
+```
+
+### Quản lý từng bot riêng lẻ
+```bash
+# Kết nối bot cụ thể
+MinecraftBot> connect 5 play.cubecraft.net
+
+# Ngắt kết nối bot cụ thể
+MinecraftBot> disconnect 3
+
+# Xóa bot cụ thể
+MinecraftBot> remove 10
 ```
 
 ## Log và Debug

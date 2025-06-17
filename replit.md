@@ -124,6 +124,9 @@ Preferred communication style: Simple, everyday language.
 - **New**: Bot numbering system with indexed management
 - **New**: Individual bot control by number (connect, chat, disconnect, remove)
 - **New**: Enhanced list display with sequential numbering
+- **New**: Cloudflare proxy integration for IP ban protection
+- **New**: Mass connection commands (connectall/connectfast)
+- **New**: Proxy rotation system with SOCKS5/HTTP support
 
 ## User Preferences
 

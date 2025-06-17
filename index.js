@@ -333,31 +333,39 @@ const commands = {
         const host = args[0];
         const port = args[1] ? parseInt(args[1]) : 25565;
         const bots = botManager.listBots();
-        
+
         if (bots.length === 0) {
-            console.log('No bots available. Create bots first with "create <count>"'.yellow);
+            console.log('No bots available to connect. Use "create <count>" first.'.yellow);
             return;
         }
 
-        console.log(`Connecting ${bots.length} bots to ${host}:${port}...`.yellow);
-        let successCount = 0;
-        
-        bots.forEach(async (botInfo, index) => {
-            setTimeout(async () => {
-                try {
-                    await botManager.connectBot(botInfo.id, host, port);
-                    successCount++;
-                    console.log(`Bot ${botInfo.name} connected successfully`.green);
-                } catch (error) {
-                    console.log(`Bot ${botInfo.name} failed to connect: ${error.message}`.red);
-                }
-                
-                if (index === bots.length - 1) {
-                    setTimeout(() => {
-                        console.log(`Connection complete: ${successCount}/${bots.length} bots connected`.cyan);
-                    }, 1000);
-                }
-            }, index * 2000); // 2 second delay between connections
+        botManager.connectAllBots(host, port).then((successCount) => {
+            console.log(`Final result: ${successCount}/${bots.length} bots connected to ${host}:${port}`.cyan.bold);
+        }).catch((error) => {
+            console.log(`Mass connection failed: ${error.message}`.red);
+        });
+    },
+
+    connectfast: (args) => {
+        if (args.length < 1) {
+            console.log('Usage: connectfast <host> [port]'.red);
+            console.log('This connects all bots in parallel groups for faster connection'.gray);
+            return;
+        }
+
+        const host = args[0];
+        const port = args[1] ? parseInt(args[1]) : 25565;
+        const bots = botManager.listBots();
+
+        if (bots.length === 0) {
+            console.log('No bots available to connect. Use "create <count>" first.'.yellow);
+            return;
+        }
+
+        botManager.connectAllBotsParallel(host, port).then((successCount) => {
+            console.log(`Final result: ${successCount}/${bots.length} bots connected to ${host}:${port}`.cyan.bold);
+        }).catch((error) => {
+            console.log(`Fast mass connection failed: ${error.message}`.red);
         });
     },
 
@@ -521,6 +529,102 @@ const commands = {
             bot.chat(message);
             console.log(`[CHAT] ${message}`.green);
         }
+    },
+
+    // Proxy management commands
+    proxyadd: (args) => {
+        if (args.length < 1) {
+            console.log('Usage: proxyadd <proxy_url>'.red);
+            console.log('Examples:'.yellow);
+            console.log('  proxyadd socks5://1.1.1.1:1080'.gray);
+            console.log('  proxyadd http://proxy.example.com:8080'.gray);
+            return;
+        }
+
+        const proxyUrl = args[0];
+        try {
+            botManager.addProxy(proxyUrl);
+            console.log(`Proxy added successfully: ${proxyUrl}`.green);
+        } catch (error) {
+            console.log(`Failed to add proxy: ${error.message}`.red);
+        }
+    },
+
+    proxyremove: (args) => {
+        if (args.length < 1) {
+            console.log('Usage: proxyremove <proxy_url>'.red);
+            return;
+        }
+
+        const proxyUrl = args[0];
+        try {
+            botManager.removeProxy(proxyUrl);
+            console.log(`Proxy removed: ${proxyUrl}`.yellow);
+        } catch (error) {
+            console.log(`Failed to remove proxy: ${error.message}`.red);
+        }
+    },
+
+    proxylist: () => {
+        const stats = botManager.getProxyStats();
+        
+        console.log('\nProxy Status:'.cyan.bold);
+        console.log(`Total proxies: ${stats.totalProxies}, Rotation: ${stats.rotationEnabled ? 'ON' : 'OFF'}`.white);
+        console.log('');
+        
+        if (stats.proxies.length === 0) {
+            console.log('No proxies configured. Use "proxyadd <url>" to add proxies.'.yellow);
+            console.log('');
+            console.log('Cloudflare WARP examples:'.gray);
+            console.log('  proxyadd socks5://162.159.36.1:32768'.gray);
+            console.log('  proxyadd socks5://162.159.46.1:32768'.gray);
+        } else {
+            console.log('URL'.padEnd(40) + 'Status'.padEnd(10) + 'Active'.white);
+            console.log('-'.repeat(60).gray);
+            
+            stats.proxies.forEach((proxy, index) => {
+                const status = 'Unknown';
+                const active = proxy.active ? '✓' : '';
+                console.log(
+                    `${index + 1}. `.padEnd(4) +
+                    proxy.url.padEnd(40) +
+                    status.padEnd(10) +
+                    active
+                );
+            });
+        }
+        console.log('');
+    },
+
+    proxytest: async () => {
+        console.log('Testing all proxies...'.yellow);
+        try {
+            const workingProxies = await botManager.testProxies();
+            console.log(`Proxy test completed: ${workingProxies.length} working proxies found`.green);
+            
+            if (workingProxies.length > 0) {
+                console.log('Working proxies:'.cyan);
+                workingProxies.forEach((proxy, index) => {
+                    console.log(`  ${index + 1}. ${proxy}`.green);
+                });
+            } else {
+                console.log('No working proxies found. Consider adding new ones.'.red);
+            }
+        } catch (error) {
+            console.log(`Proxy test failed: ${error.message}`.red);
+        }
+    },
+
+    proxyon: () => {
+        const proxyManager = botManager.getProxyManager();
+        proxyManager.setRotationEnabled(true);
+        console.log('Proxy rotation enabled. Bots will use different proxies when connecting.'.green);
+    },
+
+    proxyoff: () => {
+        const proxyManager = botManager.getProxyManager();
+        proxyManager.setRotationEnabled(false);
+        console.log('Proxy rotation disabled. Bots will connect directly.'.yellow);
     },
 
     // Test server commands
