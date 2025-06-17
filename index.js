@@ -38,6 +38,11 @@ const commands = {
         console.log('  config - Show current configuration'.white);
         console.log('  login - Manually send register + login commands'.white);
         console.log('');
+        console.log('  Test Servers:'.cyan.bold);
+        console.log('  testlocal - Try connecting to localhost:25565'.white);
+        console.log('  testhypixel - Try connecting to mc.hypixel.net'.white);
+        console.log('  testminehut - Try connecting to minehut.com'.white);
+        console.log('');
         console.log('  Multi-Bot Commands:'.cyan.bold);
         console.log('  create <count> - Create multiple bots'.white);
         console.log('  connectall <host> [port] - Connect all bots to server'.white);
@@ -49,6 +54,11 @@ const commands = {
         console.log('  core - Show CPU cores available'.white);
         console.log('  ram - Show RAM usage information'.white);
         console.log('  quit/exit - Exit the bot'.white);
+        console.log('');
+        console.log('Examples:'.yellow.bold);
+        console.log('  connect localhost 25565'.gray);
+        console.log('  connect play.cubecraft.net'.gray);
+        console.log('  connect mc.hypixel.net'.gray);
         console.log('');
     },
 
@@ -371,6 +381,22 @@ const commands = {
         console.log(`  Free RAM: ${systemInfo.freeMemoryGB} GB`.white);
         console.log(`  Estimated bots capacity: ${Math.floor(parseFloat(systemInfo.freeMemoryGB) * 20)}`.white);
         console.log('');
+    },
+
+    // Test server commands
+    testlocal: () => {
+        console.log('Testing connection to localhost:25565...'.yellow);
+        commands.connect(['localhost', '25565']);
+    },
+
+    testhypixel: () => {
+        console.log('Testing connection to mc.hypixel.net...'.yellow);
+        commands.connect(['mc.hypixel.net']);
+    },
+
+    testminehut: () => {
+        console.log('Testing connection to minehut.com...'.yellow);
+        commands.connect(['minehut.com']);
     },
 
     exit: () => commands.quit()

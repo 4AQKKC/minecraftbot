@@ -16,13 +16,16 @@ class MinecraftBot {
 
     async connect() {
         try {
-            // Setup bot options
+            // Setup bot options with better compatibility
             const botOptions = {
                 host: this.config.host,
                 port: this.config.port,
                 username: this.config.username,
-                version: this.config.version,
-                auth: this.config.auth
+                version: this.config.version || '1.19.4', // Use stable version
+                auth: this.config.auth || 'offline',
+                hideErrors: false,
+                keepAlive: true,
+                checkTimeoutInterval: 30000
             };
 
             // Add authentication if provided
@@ -30,18 +33,18 @@ class MinecraftBot {
                 botOptions.password = this.config.password;
             }
 
-            // Add verification bypass options
+            // Add verification bypass options for better server compatibility
             if (this.config.bypassVerification) {
-                botOptions.hideErrors = true;
-                botOptions.keepAlive = false;
+                botOptions.hideErrors = false; // Show errors for debugging
+                botOptions.keepAlive = true;
                 botOptions.checkTimeoutInterval = 30000;
-                botOptions.brand = this.config.customBrand;
-                
-                // Custom client settings to appear more like vanilla client
-                botOptions.clientToken = null;
-                botOptions.accessToken = null;
-                botOptions.session = null;
+                botOptions.brand = this.config.customBrand || 'vanilla';
             }
+
+            // Additional connection options for better compatibility
+            botOptions.skipValidation = true;
+            botOptions.viewDistance = 'far';
+            botOptions.chatLengthLimit = 256;
 
             logger.info(`Attempting to connect to ${this.config.host}:${this.config.port}`, {
                 username: this.config.username,
@@ -63,29 +66,58 @@ class MinecraftBot {
                 this.setupVerificationBypass();
             }
 
-            // Wait for successful connection
+            // Wait for successful connection with better error handling
             return new Promise((resolve, reject) => {
                 const timeout = setTimeout(() => {
-                    reject(new Error('Connection timeout'));
-                }, 30000);
+                    if (this.bot) {
+                        this.bot.quit();
+                    }
+                    reject(new Error('Connection timeout - server may be offline or unreachable'));
+                }, 15000); // Reduce timeout to 15 seconds
 
                 this.bot.once('spawn', () => {
                     clearTimeout(timeout);
                     this.isConnected = true;
                     this.setupBehaviors();
+                    console.log(`Successfully connected to ${this.config.host}:${this.config.port}`.green);
                     resolve();
                 });
 
                 this.bot.once('error', (error) => {
                     clearTimeout(timeout);
-                    reject(error);
+                    
+                    // Clean up bot instance on error
+                    if (this.bot) {
+                        try {
+                            this.bot.quit();
+                        } catch (e) {
+                            // Ignore cleanup errors
+                        }
+                    }
+                    
+                    // Provide more helpful error messages
+                    let errorMessage = error.message;
+                    if (error.code === 'ECONNRESET') {
+                        errorMessage = 'Server closed the connection. This might be due to:\n  - Server anti-bot protection\n  - Invalid client version\n  - Server whitelist/IP restrictions';
+                    } else if (error.code === 'ENOTFOUND') {
+                        errorMessage = 'Server not found. Check the server address';
+                    } else if (error.code === 'ECONNREFUSED') {
+                        errorMessage = 'Connection refused. Server might be offline or port blocked';
+                    }
+                    
+                    reject(new Error(errorMessage));
                 });
 
                 this.bot.once('end', (reason) => {
                     clearTimeout(timeout);
                     if (!this.isConnected) {
-                        reject(new Error(`Connection ended: ${reason}`));
+                        reject(new Error(`Connection ended before spawn: ${reason}`));
                     }
+                });
+
+                // Add login event handler for better connection tracking
+                this.bot.once('login', () => {
+                    console.log(`Logged in as ${this.bot.username}`.cyan);
                 });
             });
 
@@ -144,6 +176,17 @@ class MinecraftBot {
         this.bot.on('error', (error) => {
             logger.error('Bot error', error);
             console.log(`Bot error: ${error.message}`.red);
+            
+            // Handle specific errors
+            if (error.message.includes('ENOTFOUND')) {
+                console.log('Server not found. Check the server address.'.yellow);
+            } else if (error.message.includes('ECONNREFUSED')) {
+                console.log('Connection refused. Server might be offline or port blocked.'.yellow);
+            } else if (error.message.includes('ETIMEDOUT')) {
+                console.log('Connection timed out. Server might be slow or unreachable.'.yellow);
+            } else if (error.message.includes('Invalid username')) {
+                console.log('Invalid username format. Try a different username.'.yellow);
+            }
         });
 
         this.bot.on('end', (reason) => {
