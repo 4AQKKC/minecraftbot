@@ -1,15 +1,24 @@
 require('dotenv').config();
 
-// Function to generate random username
+// Function to generate random username with letters and numbers
 function generateRandomUsername() {
-    const adjectives = ['Quick', 'Smart', 'Fast', 'Cool', 'Super', 'Mega', 'Ultra', 'Pro', 'Epic', 'Swift'];
-    const nouns = ['Player', 'Gamer', 'Bot', 'Hero', 'Ninja', 'Master', 'King', 'Lord', 'Scout', 'Hunter'];
-    const numbers = Math.floor(Math.random() * 999) + 1;
+    const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const numbers = '0123456789';
+    let name = '';
     
-    const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
-    const noun = nouns[Math.floor(Math.random() * nouns.length)];
+    // 3-5 random letters
+    const letterCount = 3 + Math.floor(Math.random() * 3);
+    for (let i = 0; i < letterCount; i++) {
+        name += letters.charAt(Math.floor(Math.random() * letters.length));
+    }
     
-    return `${adjective}${noun}${numbers}`;
+    // 2-4 random numbers
+    const numberCount = 2 + Math.floor(Math.random() * 3);
+    for (let i = 0; i < numberCount; i++) {
+        name += numbers.charAt(Math.floor(Math.random() * numbers.length));
+    }
+    
+    return name;
 }
 
 module.exports = {
