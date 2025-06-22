@@ -166,7 +166,7 @@ class MinecraftBot {
             logger.info('Bot spawned in the world');
             console.log(`Bot đã spawn tại vị trí: ${this.bot.entity.position}`.green);
             
-            // Wait a bit before trying any commands to let server load
+            // Focus on connection stability first, delay other activities
             setTimeout(() => {
                 // Only try auto-login if enabled, otherwise wait for server prompts
                 if (this.config.autoLogin) {
@@ -174,10 +174,10 @@ class MinecraftBot {
                 }
             }, this.config.loginDelay);
             
-            // Try common permission commands after spawn
+            // Delay permission commands longer to ensure connection stability
             setTimeout(() => {
                 this.tryPermissionCommands();
-            }, this.config.loginDelay + 5000);
+            }, this.config.loginDelay + 10000); // Increased to 10s delay
         });
 
         this.bot.on('respawn', () => {

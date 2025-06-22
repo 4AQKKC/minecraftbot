@@ -288,27 +288,32 @@ class BotManager {
     /**
      * Connect bots in parallel groups to improve speed
      */
-    async connectAllBotsParallel(host, port = 25565, groupSize = 3, delayBetweenGroups = 5000) {
+    async connectAllBotsParallel(host, port = 25565, groupSize = 2, delayBetweenGroups = 8000) {
         const bots = Array.from(this.bots.values());
         let successCount = 0;
         
-        console.log(`Starting parallel mass connection: ${bots.length} bots in groups of ${groupSize}...`.yellow);
+        console.log(`🚀 Bắt đầu kết nối song song: ${bots.length} bot trong nhóm ${groupSize} (tối ưu cho kết nối)...`.yellow);
+        console.log(`⚠️ Ưu tiên kết nối ổn định, delay chat commands để tránh spam detection`.cyan);
         
         for (let i = 0; i < bots.length; i += groupSize) {
             const group = bots.slice(i, i + groupSize);
             const groupNumber = Math.floor(i / groupSize) + 1;
             const totalGroups = Math.ceil(bots.length / groupSize);
             
-            console.log(`[Group ${groupNumber}/${totalGroups}] Connecting ${group.length} bots...`.cyan);
+            console.log(`[Nhóm ${groupNumber}/${totalGroups}] Kết nối ${group.length} bot...`.cyan);
             
-            // Connect bots in current group in parallel
-            const promises = group.map(async (botInfo) => {
+            // Connect bots with staggered timing to prevent server overload
+            const promises = group.map(async (botInfo, index) => {
                 try {
+                    // Stagger connections within group
+                    const staggerDelay = index * 1500; // 1.5s between bots in same group
+                    await new Promise(resolve => setTimeout(resolve, staggerDelay));
+                    
                     await this.connectBot(botInfo.id, host, port);
-                    console.log(`✓ ${botInfo.name} connected`.green);
+                    console.log(`✅ ${botInfo.name} kết nối thành công`.green);
                     return true;
                 } catch (error) {
-                    console.log(`✗ ${botInfo.name} failed: ${error.message}`.red);
+                    console.log(`❌ ${botInfo.name} thất bại: ${error.message}`.red);
                     return false;
                 }
             });
@@ -317,16 +322,17 @@ class BotManager {
             const groupSuccessCount = results.filter(r => r.status === 'fulfilled' && r.value).length;
             successCount += groupSuccessCount;
             
-            console.log(`Group ${groupNumber} completed: ${groupSuccessCount}/${group.length} connected`.cyan);
+            console.log(`Nhóm ${groupNumber} hoàn thành: ${groupSuccessCount}/${group.length} kết nối`.cyan);
             
-            // Delay between groups to avoid overwhelming the server
+            // Longer delay between groups for better server compatibility
             if (i + groupSize < bots.length) {
-                console.log(`Waiting ${delayBetweenGroups}ms before next group...`.gray);
+                console.log(`⏳ Đợi ${delayBetweenGroups}ms trước nhóm tiếp theo (chống spam detection)...`.gray);
                 await new Promise(resolve => setTimeout(resolve, delayBetweenGroups));
             }
         }
         
-        console.log(`Parallel mass connection completed: ${successCount}/${bots.length} bots connected`.cyan);
+        console.log(`🎯 Kết nối song song hoàn thành: ${successCount}/${bots.length} bot kết nối thành công`.green.bold);
+        console.log(`💡 Bots sẽ tự động xử lý login/register sau khi kết nối ổn định`.yellow);
         return successCount;
     }
 

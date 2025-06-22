@@ -40,7 +40,7 @@ module.exports = {
     // Auto-login settings
     autoLogin: process.env.AUTO_LOGIN === 'true', // Changed default to false
     loginPassword: process.env.LOGIN_PASSWORD || 'botminecraft',
-    loginDelay: parseInt(process.env.LOGIN_DELAY) || 5000, // 5 seconds after spawn
+    loginDelay: parseInt(process.env.LOGIN_DELAY) || 8000, // 8 seconds after spawn for stability
     registerFormat: process.env.REGISTER_FORMAT || 'single', // 'single' or 'double'
     
     // Client verification settings
