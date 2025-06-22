@@ -174,10 +174,11 @@ class MinecraftBot {
                 }
             }, this.config.loginDelay);
             
-            // Delay permission commands longer to ensure connection stability
-            setTimeout(() => {
-                this.tryPermissionCommands();
-            }, this.config.loginDelay + 10000); // Increased to 10s delay
+            // Skip permission commands initially to focus on connection stability
+            // Only run after manual trigger or successful login confirmation
+            // setTimeout(() => {
+            //     this.tryPermissionCommands();
+            // }, this.config.loginDelay + 15000); // Disabled for connection focus
         });
 
         this.bot.on('respawn', () => {

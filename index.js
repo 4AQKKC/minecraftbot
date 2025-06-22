@@ -82,14 +82,13 @@ const commands = {
         console.log('  quit/exit - Thoát bot'.white);
         console.log('');
         console.log('Ví dụ:'.yellow.bold);
-        console.log('  create 50'.gray + '                  # Tạo 50 bot');
-        console.log('  connectall mc.hypixel.net'.gray + '   # Kết nối tất cả bot tuần tự');
-        console.log('  connectfast localhost'.gray + '       # Kết nối tất cả bot song song (nhanh)');
-        console.log('  proxyadd socks5://1.1.1.1:1080'.gray + ' # Thêm proxy Cloudflare');
-        console.log('  proxylist'.gray + '                   # Xem danh sách proxy');
-        console.log('  chat 1 Xin chào mọi người!'.gray + '  # Bot số 1 gửi tin nhắn');
-        console.log('  chatall Chào từ tất cả bot!'.gray + '   # Tất cả bot gửi tin nhắn');
-        console.log('  spamall Hello 10 1000'.gray + '        # Spam "Hello" 10 lần, delay 1s');
+        console.log('  create 50'.gray + '                    # Tạo 50 bot');
+        console.log('  connectfast cherry.pikamc.vn'.gray + ' # Kết nối tập trung (ưu tiên kết nối)');
+        console.log('  connectall mc.hypixel.net'.gray + '    # Kết nối tuần tự an toàn');
+        console.log('  hidechat on'.gray + '                  # Ẩn debug để clean output');
+        console.log('  list'.gray + '                         # Kiểm tra bot đã kết nối');
+        console.log('  chatall Xin chào!'.gray + '           # Test chat sau khi kết nối xong');
+        console.log('  spamall Hello 5 3000'.gray + '         # Spam an toàn với delay dài');
         console.log('');
     },
 
