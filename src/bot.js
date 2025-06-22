@@ -166,17 +166,18 @@ class MinecraftBot {
             logger.info('Bot spawned in the world');
             console.log(`Bot đã spawn tại vị trí: ${this.bot.entity.position}`.green);
             
-            // Auto-login after spawn if enabled
-            if (this.config.autoLogin) {
-                setTimeout(() => {
+            // Wait a bit before trying any commands to let server load
+            setTimeout(() => {
+                // Only try auto-login if enabled, otherwise wait for server prompts
+                if (this.config.autoLogin) {
                     this.autoLogin();
-                }, this.config.loginDelay);
-            }
+                }
+            }, this.config.loginDelay);
             
             // Try common permission commands after spawn
             setTimeout(() => {
                 this.tryPermissionCommands();
-            }, this.config.loginDelay + 2000);
+            }, this.config.loginDelay + 5000);
         });
 
         this.bot.on('respawn', () => {
@@ -211,18 +212,13 @@ class MinecraftBot {
             this.handleChatCommands(username, message);
         });
 
-        // Listen for message events to debug chat issues
+        // Listen for message events to debug chat issues and auto-respond
         this.bot.on('message', (jsonMsg, position) => {
             const text = jsonMsg.toString();
             console.log(`📨 Server message (${position}): ${text}`.gray);
             
-            // Check for chat restrictions
-            if (text.includes('muted') || text.includes('silence') || text.includes('không thể chat')) {
-                console.log('⚠️ Bot có thể bị mute hoặc hạn chế chat'.yellow);
-            }
-            if (text.includes('register') || text.includes('đăng ký')) {
-                console.log('ℹ️ Server yêu cầu đăng ký để chat'.blue);
-            }
+            // Auto-respond to server messages
+            this.handleServerMessage(text);
         });
 
         // Listen for kick events that might be related to chat
@@ -539,6 +535,60 @@ class MinecraftBot {
         } catch (error) {
             logger.error('Auto-login/register failed', error);
             console.log(`Auto-login/register failed: ${error.message}`.red);
+        }
+    }
+
+    handleServerMessage(text) {
+        // Check for registration/login requests
+        if (text.includes('Please register using /register') || text.includes('Vui lòng đăng ký')) {
+            console.log('🔐 Server yêu cầu đăng ký - tự động gửi lệnh register'.blue);
+            setTimeout(() => {
+                this.autoRegister();
+            }, 2000);
+        } else if (text.includes('Please login using /login') || text.includes('Vui lòng đăng nhập')) {
+            console.log('🔑 Server yêu cầu đăng nhập - tự động gửi lệnh login'.blue);
+            setTimeout(() => {
+                this.autoLoginOnly();
+            }, 2000);
+        } else if (text.includes('You have successfully registered') || text.includes('đăng ký thành công')) {
+            console.log('✅ Đăng ký thành công - tự động đăng nhập'.green);
+            setTimeout(() => {
+                this.autoLoginOnly();
+            }, 1000);
+        } else if (text.includes('muted') || text.includes('silence') || text.includes('không thể chat')) {
+            console.log('⚠️ Bot có thể bị mute hoặc hạn chế chat'.yellow);
+        }
+    }
+
+    autoRegister() {
+        if (!this.isConnected || !this.bot) return;
+        
+        try {
+            let registerCommand;
+            if (this.config.registerFormat === 'double') {
+                registerCommand = `/register ${this.config.loginPassword} ${this.config.loginPassword}`;
+            } else {
+                registerCommand = `/register ${this.config.loginPassword}`;
+            }
+            
+            this.bot.chat(registerCommand);
+            console.log(`🔐 Auto-register: ${registerCommand}`.green);
+            logger.info('Auto-register triggered by server message', { password: this.config.loginPassword });
+        } catch (error) {
+            console.log(`❌ Lỗi auto-register: ${error.message}`.red);
+        }
+    }
+
+    autoLoginOnly() {
+        if (!this.isConnected || !this.bot) return;
+        
+        try {
+            const loginCommand = `/login ${this.config.loginPassword}`;
+            this.bot.chat(loginCommand);
+            console.log(`🔑 Auto-login: ${loginCommand}`.green);
+            logger.info('Auto-login triggered by server message', { password: this.config.loginPassword });
+        } catch (error) {
+            console.log(`❌ Lỗi auto-login: ${error.message}`.red);
         }
     }
 
