@@ -13,3 +13,5 @@
 {"botId":"bot_3","error":"Server closed the connection. This might be due to:\n  - Server anti-bot protection\n  - Invalid client version\n  - Server whitelist/IP restrictions","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T02:57:35.761Z"}
 {"botId":"bot_6","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T02:57:47.287Z"}
 {"botId":"bot_8","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T02:57:59.955Z"}
+{"botId":"bot_9","error":"Connection timeout - server may be offline or unreachable","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T03:05:06.534Z"}
+{"botId":"bot_10","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T03:05:07.799Z"}

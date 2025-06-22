@@ -335,19 +335,25 @@ class BotManager {
      */
     chatAll(message) {
         let sentCount = 0;
+        let successCount = 0;
         
         for (const [botId, botInfo] of this.bots) {
             if (botInfo.status === 'connected' && botInfo.bot.isConnected) {
                 try {
-                    botInfo.bot.chat(message);
+                    const success = botInfo.bot.chat(message);
                     sentCount++;
+                    if (success !== false) {
+                        successCount++;
+                    }
                 } catch (error) {
+                    console.log(`❌ Bot ${botInfo.name} không thể gửi: ${error.message}`.red);
                     logger.error('Failed to send chat from bot', { botId, error: error.message });
                 }
             }
         }
         
-        logger.info('Chat sent to all bots', { message, sentCount });
+        console.log(`📤 Đã gửi từ ${successCount}/${sentCount} bot thành công`.cyan);
+        logger.info('Chat sent to all bots', { message, sentCount, successCount });
         return sentCount;
     }
 

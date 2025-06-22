@@ -784,3 +784,320 @@
 {"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T02:59:45.536Z"}
 {"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T02:59:45.570Z"}
 {"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T03:02:38.746Z"}
+{"botId":"bot_1","botName":"jSr860","level":"info","message":"Bot created","timestamp":"2025-06-22T03:03:47.874Z"}
+{"botId":"bot_2","botName":"cjQUb227","level":"info","message":"Bot created","timestamp":"2025-06-22T03:03:47.874Z"}
+{"botId":"bot_3","botName":"Tvyl01","level":"info","message":"Bot created","timestamp":"2025-06-22T03:03:47.875Z"}
+{"botId":"bot_4","botName":"Ldn34","level":"info","message":"Bot created","timestamp":"2025-06-22T03:03:47.876Z"}
+{"botId":"bot_5","botName":"feQNf083","level":"info","message":"Bot created","timestamp":"2025-06-22T03:03:47.876Z"}
+{"botId":"bot_6","botName":"xaMgK48","level":"info","message":"Bot created","timestamp":"2025-06-22T03:03:47.876Z"}
+{"botId":"bot_7","botName":"VKO3624","level":"info","message":"Bot created","timestamp":"2025-06-22T03:03:47.877Z"}
+{"botId":"bot_8","botName":"AiTc6330","level":"info","message":"Bot created","timestamp":"2025-06-22T03:03:47.877Z"}
+{"botId":"bot_9","botName":"HWzVL9892","level":"info","message":"Bot created","timestamp":"2025-06-22T03:03:47.878Z"}
+{"botId":"bot_10","botName":"MNo39","level":"info","message":"Bot created","timestamp":"2025-06-22T03:03:47.878Z"}
+{"botId":"bot_1","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.36.1:32768","timestamp":"2025-06-22T03:04:10.889Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:04:10.889Z","username":"jSr860","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:04:11.032Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:04:12.859Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:04:13.060Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:04:13.073Z"}
+{"botId":"bot_1","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:04:13.076Z"}
+{"botId":"bot_2","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.46.1:32768","timestamp":"2025-06-22T03:04:15.889Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:04:15.889Z","username":"cjQUb227","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:04:15.893Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:04:17.645Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:04:17.816Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:04:17.826Z"}
+{"botId":"bot_2","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:04:17.827Z"}
+{"botId":"bot_3","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.192.1:32768","timestamp":"2025-06-22T03:04:20.890Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:04:20.891Z","username":"Tvyl01","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:04:20.894Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:04:22.248Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:04:22.425Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:04:22.430Z"}
+{"botId":"bot_3","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:04:22.431Z"}
+{"botId":"bot_4","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.195.1:32768","timestamp":"2025-06-22T03:04:25.890Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:04:25.891Z","username":"Ldn34","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:04:25.894Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:04:27.547Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:04:27.715Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:04:27.720Z"}
+{"botId":"bot_4","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:04:27.721Z"}
+{"botId":"bot_5","level":"info","message":"Using proxy for connection","proxy":"http://proxy1.example.com:8080","timestamp":"2025-06-22T03:04:30.891Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:04:30.892Z","username":"feQNf083","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:04:30.895Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:04:32.348Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:04:32.520Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:04:32.525Z"}
+{"botId":"bot_5","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:04:32.525Z"}
+{"botId":"bot_6","level":"info","message":"Using proxy for connection","proxy":"http://proxy2.example.com:3128","timestamp":"2025-06-22T03:04:35.891Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:04:35.891Z","username":"xaMgK48","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:04:35.893Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:04:38.792Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:04:38.959Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:04:38.963Z"}
+{"botId":"bot_6","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:04:38.964Z"}
+{"botId":"bot_7","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.36.1:32768","timestamp":"2025-06-22T03:04:40.963Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:04:40.964Z","username":"VKO3624","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:04:40.966Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:04:42.790Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:04:42.958Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:04:42.964Z"}
+{"botId":"bot_7","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:04:42.965Z"}
+{"botId":"bot_8","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.46.1:32768","timestamp":"2025-06-22T03:04:45.963Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:04:45.963Z","username":"AiTc6330","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:04:45.966Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:04:49.350Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:04:49.525Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:04:49.529Z"}
+{"botId":"bot_8","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:04:49.529Z"}
+{"botId":"bot_9","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.192.1:32768","timestamp":"2025-06-22T03:04:51.529Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:04:51.529Z","username":"HWzVL9892","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:04:51.532Z"}
+{"botId":"bot_9","error":"Connection timeout - server may be offline or unreachable","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T03:05:06.534Z"}
+{"botId":"bot_10","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.195.1:32768","timestamp":"2025-06-22T03:05:06.534Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:05:06.535Z","username":"MNo39","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:05:06.537Z"}
+{"level":"info","message":"Bot disconnected","reason":"disconnect.quitting","timestamp":"2025-06-22T03:05:06.879Z"}
+{"level":"warn","message":"Bot was kicked","reason":"\"Connection throttled! Please wait before reconnecting.\"","timestamp":"2025-06-22T03:05:07.797Z"}
+{"level":"warn","message":"Kicked during verification","reason":"\"\\\"Connection throttled! Please wait before reconnecting.\\\"\"","timestamp":"2025-06-22T03:05:07.798Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T03:05:07.798Z"}
+{"botId":"bot_10","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T03:05:07.799Z"}
+{"botId":"bot_10","level":"info","message":"Using proxy for connection","proxy":"http://proxy1.example.com:8080","timestamp":"2025-06-22T03:05:47.801Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:05:47.801Z","username":"MNo39","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:05:47.805Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:05:49.295Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:05:49.463Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:05:49.468Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:57.895Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:57.895Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:57.895Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:57.896Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:57.896Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:57.896Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:57.896Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:57.897Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":8,"timestamp":"2025-06-22T03:05:57.897Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:58.398Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:58.398Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:58.398Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:58.398Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:58.399Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:58.399Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:58.399Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:58.399Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":8,"timestamp":"2025-06-22T03:05:58.399Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:58.900Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:58.900Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:58.901Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:58.901Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:58.901Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:58.901Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:58.901Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:58.902Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":8,"timestamp":"2025-06-22T03:05:58.902Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:59.403Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:59.403Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:59.403Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:59.404Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:59.404Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:59.404Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:59.405Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:59.405Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":8,"timestamp":"2025-06-22T03:05:59.405Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:59.905Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:59.905Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:59.906Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:59.906Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:59.906Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:59.906Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:59.907Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:05:59.907Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":8,"timestamp":"2025-06-22T03:05:59.907Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:00.408Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:00.408Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:00.408Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:00.408Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:00.408Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:00.409Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:00.409Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:00.409Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":8,"timestamp":"2025-06-22T03:06:00.409Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:00.909Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:00.910Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:00.910Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:00.910Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:00.910Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:00.910Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:00.911Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:00.911Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":8,"timestamp":"2025-06-22T03:06:00.911Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:01.411Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:01.412Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:01.412Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:01.412Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:01.412Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:01.413Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:01.413Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:01.413Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":8,"timestamp":"2025-06-22T03:06:01.413Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:01.914Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:01.914Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:01.915Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:01.915Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:01.915Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:01.915Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:01.915Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:01.915Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":8,"timestamp":"2025-06-22T03:06:01.915Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:02.415Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:02.417Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:02.417Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:02.418Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:02.419Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:02.419Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:02.420Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:06:02.421Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":8,"timestamp":"2025-06-22T03:06:02.421Z"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"string","value":"Login timed out!"},"timestamp":"2025-06-22T03:06:12.659Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"string\",\"value\":\"Login timed out!\"}","timestamp":"2025-06-22T03:06:12.662Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T03:06:12.664Z"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"string","value":"Login timed out!"},"timestamp":"2025-06-22T03:06:17.659Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"string\",\"value\":\"Login timed out!\"}","timestamp":"2025-06-22T03:06:17.660Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T03:06:17.660Z"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"string","value":"Login timed out!"},"timestamp":"2025-06-22T03:06:22.658Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"string\",\"value\":\"Login timed out!\"}","timestamp":"2025-06-22T03:06:22.658Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T03:06:22.659Z"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"string","value":"Login timed out!"},"timestamp":"2025-06-22T03:06:27.655Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"string\",\"value\":\"Login timed out!\"}","timestamp":"2025-06-22T03:06:27.655Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T03:06:27.655Z"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"string","value":"Login timed out!"},"timestamp":"2025-06-22T03:06:31.655Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"string\",\"value\":\"Login timed out!\"}","timestamp":"2025-06-22T03:06:31.656Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T03:06:31.656Z"}
+{"botId":"bot_1","level":"info","message":"Using proxy for connection","proxy":"http://proxy2.example.com:3128","timestamp":"2025-06-22T03:06:32.663Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:06:32.663Z","username":"jSr860","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:06:32.667Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:06:34.195Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:06:34.365Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:06:34.370Z"}
+{"botId":"bot_2","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.36.1:32768","timestamp":"2025-06-22T03:06:37.659Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:06:37.660Z","username":"cjQUb227","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:06:37.661Z"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"string","value":"Login timed out!"},"timestamp":"2025-06-22T03:06:38.656Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"string\",\"value\":\"Login timed out!\"}","timestamp":"2025-06-22T03:06:38.657Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T03:06:38.658Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:06:39.098Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:06:39.268Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:06:39.273Z"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"string","value":"Login timed out!"},"timestamp":"2025-06-22T03:06:42.656Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"string\",\"value\":\"Login timed out!\"}","timestamp":"2025-06-22T03:06:42.656Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T03:06:42.656Z"}
+{"botId":"bot_3","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.46.1:32768","timestamp":"2025-06-22T03:06:42.659Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:06:42.659Z","username":"Tvyl01","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:06:42.661Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:06:44.098Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:06:44.271Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:06:44.275Z"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"string","value":"Login timed out!"},"timestamp":"2025-06-22T03:06:47.655Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"string\",\"value\":\"Login timed out!\"}","timestamp":"2025-06-22T03:06:47.655Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T03:06:47.656Z"}
+{"botId":"bot_4","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.192.1:32768","timestamp":"2025-06-22T03:06:47.656Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:06:47.657Z","username":"Ldn34","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:06:47.659Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:06:49.099Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:06:49.272Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:06:49.277Z"}
+{"botId":"bot_5","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.195.1:32768","timestamp":"2025-06-22T03:06:51.658Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:06:51.658Z","username":"feQNf083","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:06:51.660Z"}
+{"level":"warn","message":"Bot was kicked","reason":"\"Connection throttled! Please wait before reconnecting.\"","timestamp":"2025-06-22T03:06:51.995Z"}
+{"level":"warn","message":"Kicked during verification","reason":"\"\\\"Connection throttled! Please wait before reconnecting.\\\"\"","timestamp":"2025-06-22T03:06:51.995Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T03:06:51.996Z"}
+{"botId":"bot_6","level":"info","message":"Using proxy for connection","proxy":"http://proxy1.example.com:8080","timestamp":"2025-06-22T03:06:58.656Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:06:58.657Z","username":"xaMgK48","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:06:58.659Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:06:59.810Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:06:59.980Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:06:59.985Z"}
+{"botId":"bot_7","level":"info","message":"Using proxy for connection","proxy":"http://proxy2.example.com:3128","timestamp":"2025-06-22T03:07:02.656Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:07:02.656Z","username":"VKO3624","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:07:02.658Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:03.837Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:03.838Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:03.838Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:03.838Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:03.838Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":5,"timestamp":"2025-06-22T03:07:03.838Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:07:04.099Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:07:04.267Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:07:04.274Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:04.339Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:04.339Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:04.339Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:04.340Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:04.340Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:04.340Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":6,"timestamp":"2025-06-22T03:07:04.340Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:04.840Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:04.840Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:04.841Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:04.841Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:04.841Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:04.841Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":6,"timestamp":"2025-06-22T03:07:04.841Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:05.341Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:05.342Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:05.342Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:05.342Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:05.342Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:05.343Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":6,"timestamp":"2025-06-22T03:07:05.343Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:05.843Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:05.844Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:05.844Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:05.844Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:05.844Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:05.844Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":6,"timestamp":"2025-06-22T03:07:05.845Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:06.345Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:06.346Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:06.346Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:06.346Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:06.346Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:06.347Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":6,"timestamp":"2025-06-22T03:07:06.347Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:06.847Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:06.848Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:06.849Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:06.849Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:06.849Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:06.849Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":6,"timestamp":"2025-06-22T03:07:06.849Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:07.349Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:07.349Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:07.350Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:07.350Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:07.350Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:07.351Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":6,"timestamp":"2025-06-22T03:07:07.351Z"}
+{"botId":"bot_8","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.36.1:32768","timestamp":"2025-06-22T03:07:07.656Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:07:07.656Z","username":"AiTc6330","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:07:07.658Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:07.851Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:07.851Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:07.852Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:07.852Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:07.852Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:07.852Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":6,"timestamp":"2025-06-22T03:07:07.853Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:08.354Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:08.354Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:08.355Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:08.355Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:08.355Z"}
+{"level":"info","message":"Chat message sent admincac","timestamp":"2025-06-22T03:07:08.355Z"}
+{"level":"info","message":"Chat sent to all bots admincac","sentCount":6,"timestamp":"2025-06-22T03:07:08.355Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:07:09.101Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:07:09.271Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:07:09.276Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T03:08:12.711Z"}
+{"botId":"bot_1","botName":"JgYQ09","level":"info","message":"Bot created","timestamp":"2025-06-22T03:08:33.225Z"}

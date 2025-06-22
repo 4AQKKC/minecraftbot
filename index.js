@@ -58,6 +58,7 @@ const commands = {
         console.log('  list - Hiển thị trạng thái tất cả bot với số'.white);
         console.log('  chatall <tin nhắn> - Gửi tin nhắn từ tất cả bot'.white);
         console.log('  spamall <tin nhắn> <số lần> [delay_ms] - Spam tin nhắn từ tất cả bot'.white);
+        console.log('  testchat <tin nhắn> - Test gửi 1 tin nhắn từ bot đầu tiên'.white);
         console.log('  removeall - Xóa tất cả bot'.white);
         console.log('');
         console.log('  Lệnh Proxy:'.cyan.bold);
@@ -791,6 +792,35 @@ const commands = {
             console.log(recentErrors.gray);
         } catch (error) {
             console.log('Không thể đọc log lỗi'.gray);
+        }
+    },
+
+    // Test chat function
+    testchat: (args) => {
+        if (args.length === 0) {
+            console.log('Cách dùng: testchat <tin nhắn>'.red);
+            return;
+        }
+
+        const message = args.join(' ');
+        const bots = Array.from(botManager.bots.values());
+        const connectedBot = bots.find(bot => bot.status === 'connected' && bot.bot.isConnected);
+        
+        if (!connectedBot) {
+            console.log('❌ Không có bot nào đang kết nối'.red);
+            return;
+        }
+
+        console.log(`🧪 Test gửi "${message}" từ bot ${connectedBot.name}...`.yellow);
+        try {
+            const success = connectedBot.bot.chat(message);
+            if (success !== false) {
+                console.log('✅ Lệnh gửi thành công - chờ phản hồi từ server...'.green);
+            } else {
+                console.log('⚠️ Lệnh gửi có vấn đề'.yellow);
+            }
+        } catch (error) {
+            console.log(`❌ Lỗi test chat: ${error.message}`.red);
         }
     },
 

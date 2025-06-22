@@ -194,13 +194,26 @@ class MinecraftBot {
 
         // Chat events
         this.bot.on('chat', (username, message) => {
-            if (username === this.bot.username) return;
+            if (username === this.bot.username) {
+                console.log(`✅ Tin nhắn của bot xuất hiện: ${message}`.green);
+                return;
+            }
             
             logger.info('Chat message received', { username, message });
-            console.log(`[${username}] ${message}`.cyan);
+            console.log(`💬 [${username}] ${message}`.cyan);
             
             // Handle basic commands from other players
             this.handleChatCommands(username, message);
+        });
+
+        // Listen for message events to debug chat issues
+        this.bot.on('message', (jsonMsg, position) => {
+            if (position === 'chat') {
+                const text = jsonMsg.toString();
+                if (!text.includes(this.bot.username)) {
+                    console.log(`📨 Server message: ${text}`.gray);
+                }
+            }
         });
 
         // Error handling
@@ -331,11 +344,25 @@ class MinecraftBot {
     // Bot actions
     chat(message) {
         if (!this.isConnected || !this.bot) {
-            throw new Error('Bot is not connected');
+            throw new Error('Bot không kết nối');
         }
 
-        this.bot.chat(message);
-        logger.info('Chat message sent', { message });
+        try {
+            // Check if bot can actually chat
+            if (!this.bot.entity || !this.bot.entity.position) {
+                console.log('Bot chưa spawn hoàn toàn, đợi trước khi chat...'.yellow);
+                return false;
+            }
+
+            this.bot.chat(message);
+            console.log(`📤 Gửi: "${message}" từ ${this.bot.username}`.green);
+            logger.info('Chat message sent', { message, username: this.bot.username });
+            return true;
+        } catch (error) {
+            console.log(`❌ Lỗi gửi chat: ${error.message}`.red);
+            logger.error('Chat failed', { error: error.message, message });
+            return false;
+        }
     }
 
     move(direction, distance) {
