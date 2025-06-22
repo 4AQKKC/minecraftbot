@@ -1,6 +1,7 @@
 const MinecraftBot = require('./bot');
 const logger = require('./logger');
 const ProxyManager = require('./proxy-manager');
+const ProxyScraper = require('./proxy-scraper');
 const os = require('os');
 
 class BotManager {
@@ -9,6 +10,7 @@ class BotManager {
         this.nextBotId = 1;
         this.proxyManager = new ProxyManager();
         this.proxyManager.initializeDefaultProxies();
+        this.proxyScraper = new ProxyScraper();
     }
 
     /**
@@ -288,13 +290,13 @@ class BotManager {
     /**
      * Connect bots in parallel groups to improve speed
      */
-    async connectAllBotsParallel(host, port = 25565, groupSize = 1, delayBetweenGroups = 12000) {
+    async connectAllBotsParallel(host, port = 25565, groupSize = 5, delayBetweenGroups = 12000) {
         const bots = Array.from(this.bots.values());
         let successCount = 0;
         let connectedBots = [];
         
-        console.log(`🎯 BẮT ĐẦU KẾT NỐI TẬP TRUNG: ${bots.length} bot từng cái một (tối đa ổn định)`.yellow.bold);
-        console.log(`🔒 CHẾ ĐỘ: Chỉ kết nối, tự động /register mỗi 5 bot`.cyan);
+        console.log(`🎯 BẮT ĐẦU KẾT NỐI THEO NHÓM: ${bots.length} bot, mỗi nhóm ${groupSize} bot`.yellow.bold);
+        console.log(`🔒 CHẾ ĐỘ: Kết nối ${groupSize} bot cùng lúc, auto /register mỗi 5 bot`.cyan);
         
         for (let i = 0; i < bots.length; i += groupSize) {
             const group = bots.slice(i, i + groupSize);
@@ -303,19 +305,18 @@ class BotManager {
             
             console.log(`[Nhóm ${groupNumber}/${totalGroups}] Kết nối ${group.length} bot...`.cyan);
             
-            // Kết nối từng bot một cách cẩn thận để tránh mọi vấn đề
+            // Kết nối 5 bot song song với delay nhỏ
             const promises = group.map(async (botInfo, index) => {
                 try {
-                    // Delay lớn giữa các bot để tránh detection
-                    const staggerDelay = index * 3000; // 3s giữa mỗi bot
+                    // Delay nhỏ giữa các bot trong cùng nhóm
+                    const staggerDelay = index * 1000; // 1s giữa mỗi bot trong nhóm
                     if (staggerDelay > 0) {
-                        console.log(`⏳ Đợi ${staggerDelay/1000}s trước khi kết nối bot tiếp theo...`.gray);
                         await new Promise(resolve => setTimeout(resolve, staggerDelay));
                     }
                     
-                    console.log(`🔗 Đang kết nối bot ${botInfo.name}... (${index + 1}/${group.length}) với proxy rotation`.cyan);
+                    console.log(`🔗 Kết nối bot ${botInfo.name}... (${index + 1}/${group.length}) nhóm ${groupNumber}`.cyan);
                     await this.connectBot(botInfo.id, host, port);
-                    console.log(`✅ Bot ${botInfo.name} kết nối thành công với proxy protection`.green);
+                    console.log(`✅ Bot ${botInfo.name} kết nối thành công`.green);
                     
                     // Thêm bot vào danh sách đã kết nối
                     connectedBots.push(botInfo);
@@ -333,10 +334,11 @@ class BotManager {
             
             console.log(`📊 Nhóm ${groupNumber} hoàn thành: ${groupSuccessCount}/${group.length} bot kết nối thành công`.cyan);
             
-            // Tự động register mỗi 5 bot
-            if (connectedBots.length >= 5 && connectedBots.length % 5 === 0) {
-                console.log(`🔐 Đã có ${connectedBots.length} bot kết nối - bắt đầu auto /register...`.blue.bold);
-                await this.autoRegisterBatch(connectedBots.slice(-5)); // 5 bot gần đây nhất
+            // Tự động register cho nhóm vừa kết nối (nếu có bot thành công)
+            if (groupSuccessCount > 0) {
+                const recentlyConnected = connectedBots.slice(-groupSuccessCount);
+                console.log(`🔐 Auto /register cho ${groupSuccessCount} bot vừa kết nối...`.blue.bold);
+                await this.autoRegisterBatch(recentlyConnected);
             }
             
             // Delay cực dài giữa các nhóm để đảm bảo server không phát hiện
@@ -347,16 +349,9 @@ class BotManager {
             }
         }
         
-        console.log(`🎯 HOÀN TẤT KẾT NỐI TẬP TRUNG: ${successCount}/${bots.length} bot đã kết nối ổn định`.green.bold);
-        console.log(`🔐 Đã auto-register theo batch 5 bot`.yellow);
+        console.log(`🎯 HOÀN TẤT KẾT NỐI THEO NHÓM: ${successCount}/${bots.length} bot đã kết nối ổn định`.green.bold);
+        console.log(`🔐 Đã auto-register cho tất cả bot theo từng nhóm`.yellow);
         console.log(`⚡ Tất cả bot đã sẵn sàng và đã đăng ký`.green);
-        
-        // Register batch cuối cùng nếu còn sót lại
-        const remainingBots = connectedBots.length % 5;
-        if (remainingBots > 0) {
-            console.log(`🔐 Register ${remainingBots} bot còn lại...`.blue);
-            await this.autoRegisterBatch(connectedBots.slice(-remainingBots));
-        }
         
         if (successCount > 0) {
             console.log(`🏁 BƯỚC TIẾP THEO:`.cyan.bold);
@@ -577,6 +572,39 @@ class BotManager {
         }
         
         return updatedCount;
+    }
+
+    /**
+     * Scrape proxies from public sources
+     */
+    async scrapeProxies(mode = 'quick') {
+        try {
+            let newProxies = [];
+            
+            if (mode === 'full') {
+                newProxies = await this.proxyScraper.scrapeAll();
+            } else {
+                newProxies = await this.proxyScraper.quickScrape();
+            }
+            
+            // Add scraped proxies to proxy manager
+            let addedCount = 0;
+            for (const proxy of newProxies) {
+                try {
+                    this.proxyManager.addProxy(proxy);
+                    addedCount++;
+                } catch (error) {
+                    // Skip invalid proxies
+                }
+            }
+            
+            console.log(`🎯 Đã thêm ${addedCount} proxy mới từ việc đào tự động`.green);
+            return addedCount;
+            
+        } catch (error) {
+            console.log(`❌ Lỗi đào proxy: ${error.message}`.red);
+            return 0;
+        }
     }
 
     cleanup() {

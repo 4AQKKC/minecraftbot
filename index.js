@@ -72,6 +72,7 @@ const commands = {
         console.log('  proxyremove <proxy_url> - Xóa proxy'.white);
         console.log('  proxylist - Hiển thị tất cả proxy và trạng thái'.white);
         console.log('  proxytest - Kiểm tra tất cả proxy'.white);
+        console.log('  proxyscrape [quick|full] - Tự động đào proxy từ internet'.white);
         console.log('  proxyon - Bật xoay proxy'.white);
         console.log('  proxyoff - Tắt xoay proxy'.white);
         console.log('');
@@ -83,14 +84,14 @@ const commands = {
         console.log('');
         console.log('Ví dụ:'.yellow.bold);
         console.log('  create 20'.gray + '                    # Tạo 20 bot với proxy rotation');
-        console.log('  connectfast cherry.pikamc.vn'.gray + ' # KẾT NỐI với auto-switch proxy');
+        console.log('  connectfast cherry.pikamc.vn'.gray + ' # KẾT NỐI 5 bot/lần với auto-register');
+        console.log('  proxyscrape quick'.gray + '            # Tự động đào proxy từ internet');
         console.log('  list'.gray + '                         # Kiểm tra trạng thái kết nối');
-        console.log('  autologin on'.gray + '                # Bật đăng nhập nếu server yêu cầu');
         console.log('  proxystats'.gray + '                   # Xem thống kê proxy');
-        console.log('  chatall Xin chào!'.gray + '           # Test chat CHỈ sau khi kết nối xong');
+        console.log('  chatall Xin chào!'.gray + '           # Test chat sau khi register xong');
         console.log('');
-        console.log('🎯 WORKFLOW VỚI AUTO-REGISTER:'.green.bold);
-        console.log('  1. create → 2. connectfast → 3. auto /register mỗi 5 bot → 4. chatall'.cyan);
+        console.log('🎯 WORKFLOW VỚI TỰ ĐỘNG ĐÀO PROXY:'.green.bold);
+        console.log('  1. proxyscrape → 2. create → 3. connectfast → 4. chatall'.cyan);
         console.log('');
     },
 
