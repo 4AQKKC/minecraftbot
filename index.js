@@ -37,6 +37,8 @@ const commands = {
         console.log('  status - Hiển thị trạng thái kết nối'.white);
         console.log('  config - Hiển thị cấu hình hiện tại'.white);
         console.log('  login - Gửi lệnh đăng ký + đăng nhập thủ công'.white);
+        console.log('  autologin <on/off> - Bật/tắt tự động đăng nhập'.white);
+        console.log('  hidemessages <on/off> - Ẩn/hiện thông báo damage/death'.white);
         console.log('');
         console.log('  Test Servers:'.cyan.bold);
         console.log('  testlocal - Thử kết nối localhost:25565'.white);
@@ -641,6 +643,53 @@ const commands = {
     testminehut: () => {
         console.log('Testing connection to minehut.com...'.yellow);
         commands.connect(['minehut.com']);
+    },
+
+    // Auto-login control
+    autologin: (args) => {
+        if (args.length < 1) {
+            console.log('Cách dùng: autologin <on/off>'.red);
+            console.log('Hiện tại: ' + (config.autoLogin ? 'BẬT' : 'TẮT').green);
+            return;
+        }
+
+        const setting = args[0].toLowerCase();
+        if (setting === 'on' || setting === 'true') {
+            config.autoLogin = true;
+            console.log('Tự động đăng nhập đã được BẬT'.green);
+        } else if (setting === 'off' || setting === 'false') {
+            config.autoLogin = false;
+            console.log('Tự động đăng nhập đã được TẮT'.yellow);
+        } else {
+            console.log('Giá trị không hợp lệ. Sử dụng: on hoặc off'.red);
+        }
+    },
+
+    // Hide messages control
+    hidemessages: (args) => {
+        if (args.length < 1) {
+            console.log('Cách dùng: hidemessages <on/off>'.red);
+            console.log('Hiện tại:'.white);
+            console.log(`  Ẩn thông báo máu: ${config.hideHealthMessages ? 'BẬT' : 'TẮT'}`);
+            console.log(`  Ẩn thông báo chết: ${config.hideDeathMessages ? 'BẬT' : 'TẮT'}`);
+            console.log(`  Ẩn thông báo sát thương: ${config.hideDamageMessages ? 'BẬT' : 'TẮT'}`);
+            return;
+        }
+
+        const setting = args[0].toLowerCase();
+        if (setting === 'on' || setting === 'true') {
+            config.hideHealthMessages = true;
+            config.hideDeathMessages = true;
+            config.hideDamageMessages = true;
+            console.log('Đã ẨN tất cả thông báo damage/death'.green);
+        } else if (setting === 'off' || setting === 'false') {
+            config.hideHealthMessages = false;
+            config.hideDeathMessages = false;
+            config.hideDamageMessages = false;
+            console.log('Đã HIỆN tất cả thông báo damage/death'.yellow);
+        } else {
+            console.log('Giá trị không hợp lệ. Sử dụng: on hoặc off'.red);
+        }
     },
 
     exit: () => commands.quit()

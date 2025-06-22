@@ -38,7 +38,7 @@ module.exports = {
     moveTimeout: parseInt(process.env.MOVE_TIMEOUT) || 10000,
     
     // Auto-login settings
-    autoLogin: process.env.AUTO_LOGIN !== 'false',
+    autoLogin: process.env.AUTO_LOGIN === 'true', // Changed default to false
     loginPassword: process.env.LOGIN_PASSWORD || 'botminecraft',
     loginDelay: parseInt(process.env.LOGIN_DELAY) || 3000, // 3 seconds after spawn
     
@@ -68,5 +68,10 @@ module.exports = {
     connectionDelay: parseInt(process.env.CONNECTION_DELAY) || 5000, // 5 seconds between connections
     maxRetries: parseInt(process.env.MAX_RETRIES) || 3,
     retryDelay: parseInt(process.env.RETRY_DELAY) || 10000, // 10 seconds between retries
-    throttleDelay: parseInt(process.env.THROTTLE_DELAY) || 30000 // 30 seconds if throttled
+    throttleDelay: parseInt(process.env.THROTTLE_DELAY) || 30000, // 30 seconds if throttled
+    
+    // Display settings
+    hideHealthMessages: process.env.HIDE_HEALTH_MESSAGES === 'true',
+    hideDeathMessages: process.env.HIDE_DEATH_MESSAGES === 'true',
+    hideDamageMessages: process.env.HIDE_DAMAGE_MESSAGES === 'true'
 };

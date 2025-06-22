@@ -164,7 +164,7 @@ class MinecraftBot {
 
         this.bot.on('spawn', () => {
             logger.info('Bot spawned in the world');
-            console.log(`Bot spawned at position: ${this.bot.entity.position}`.green);
+            console.log(`Bot đã spawn tại vị trí: ${this.bot.entity.position}`.green);
             
             // Auto-login after spawn if enabled
             if (this.config.autoLogin) {
@@ -181,7 +181,9 @@ class MinecraftBot {
 
         this.bot.on('death', () => {
             logger.info('Bot died');
-            console.log('Bot died!'.red);
+            if (!this.config.hideDeathMessages) {
+                console.log('Bot đã chết!'.red);
+            }
             
             if (this.config.autoRespawn) {
                 setTimeout(() => {
@@ -227,9 +229,17 @@ class MinecraftBot {
 
         // Health monitoring
         this.bot.on('health', () => {
-            if (this.bot.health < 5) {
+            if (this.bot.health < 5 && !this.config.hideHealthMessages) {
                 logger.warn('Bot health is low', { health: this.bot.health });
-                console.log(`Warning: Health is low (${this.bot.health})`.red);
+                console.log(`Cảnh báo: Máu thấp (${this.bot.health})`.red);
+            }
+        });
+
+        // Damage monitoring
+        this.bot.on('entityHurt', (entity) => {
+            if (entity === this.bot.entity && !this.config.hideDamageMessages) {
+                logger.info('Bot took damage', { health: this.bot.health });
+                console.log(`Bot bị sát thương - Máu còn: ${this.bot.health}`.yellow);
             }
         });
 
