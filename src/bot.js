@@ -246,7 +246,8 @@ class MinecraftBot {
         // Kicked handling with reconnection logic
         this.bot.on('kicked', (reason) => {
             logger.warn('Bot was kicked', { reason });
-            console.log(`Bot was kicked: ${reason}`.red);
+            const reasonText = typeof reason === 'object' ? reason.value || reason.text || JSON.stringify(reason) : reason;
+            console.log(`Bot bị kick: ${reasonText}`.red);
             
             // Handle specific kick reasons
             if (reason.includes('Connection throttled') || reason.includes('Please wait before reconnecting')) {

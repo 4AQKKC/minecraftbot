@@ -55,6 +55,7 @@ const commands = {
         console.log('  connectfast <host> [port] - Kết nối tất cả bot (song song)'.white);
         console.log('  list - Hiển thị trạng thái tất cả bot với số'.white);
         console.log('  chatall <tin nhắn> - Gửi tin nhắn từ tất cả bot'.white);
+        console.log('  spamall <tin nhắn> <số lần> [delay_ms] - Spam tin nhắn từ tất cả bot'.white);
         console.log('  removeall - Xóa tất cả bot'.white);
         console.log('');
         console.log('  Lệnh Proxy:'.cyan.bold);
@@ -78,6 +79,7 @@ const commands = {
         console.log('  proxylist'.gray + '                   # Xem danh sách proxy');
         console.log('  chat 1 Xin chào mọi người!'.gray + '  # Bot số 1 gửi tin nhắn');
         console.log('  chatall Chào từ tất cả bot!'.gray + '   # Tất cả bot gửi tin nhắn');
+        console.log('  spamall Hello 10 1000'.gray + '        # Spam "Hello" 10 lần, delay 1s');
         console.log('');
     },
 
@@ -406,13 +408,59 @@ const commands = {
 
     chatall: (args) => {
         if (args.length === 0) {
-            console.log('Usage: chatall <message>'.red);
+            console.log('Cách dùng: chatall <tin nhắn>'.red);
             return;
         }
 
         const message = args.join(' ');
         const sentCount = botManager.chatAll(message);
-        console.log(`Message sent from ${sentCount} bots: "${message}"`.green);
+        console.log(`Đã gửi tin nhắn từ ${sentCount} bot: "${message}"`.green);
+    },
+
+    spamall: async (args) => {
+        if (args.length < 2) {
+            console.log('Cách dùng: spamall <tin nhắn> <số lần> [delay_ms]'.red);
+            console.log('Ví dụ:'.yellow);
+            console.log('  spamall Hello 10 1000    # Gửi "Hello" 10 lần, delay 1 giây'.gray);
+            console.log('  spamall Test 5           # Gửi "Test" 5 lần, delay 500ms'.gray);
+            return;
+        }
+
+        const lastArg = args[args.length - 1];
+        const secondLastArg = args.length > 2 ? args[args.length - 2] : null;
+        
+        let message, count, delay;
+        
+        // Parse arguments based on whether delay is provided
+        if (secondLastArg && !isNaN(parseInt(secondLastArg)) && !isNaN(parseInt(lastArg))) {
+            // Both count and delay provided
+            message = args.slice(0, -2).join(' ');
+            count = parseInt(secondLastArg);
+            delay = parseInt(lastArg);
+        } else {
+            // Only count provided
+            message = args.slice(0, -1).join(' ');
+            count = parseInt(lastArg);
+            delay = 500; // default delay
+        }
+
+        if (isNaN(count) || count <= 0) {
+            console.log('Số lần phải là số dương'.red);
+            return;
+        }
+
+        if (delay < 100) {
+            console.log('Delay tối thiểu là 100ms'.red);
+            return;
+        }
+
+        try {
+            console.log(`Bắt đầu spam "${message}" ${count} lần với delay ${delay}ms...`.cyan);
+            const botCount = await botManager.spamAllBots(message, count, delay);
+            console.log(`Hoàn thành spam ${count} lần từ ${botCount} bot!`.yellow);
+        } catch (error) {
+            console.log(`Lỗi spam: ${error.message}`.red);
+        }
     },
 
     removeall: () => {

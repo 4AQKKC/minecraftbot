@@ -352,6 +352,32 @@ class BotManager {
     }
 
     /**
+     * Spam chat messages from all connected bots with intervals
+     */
+    async spamAllBots(message, count, delayMs = 500) {
+        const connectedBots = Array.from(this.bots.values()).filter(
+            botInfo => botInfo.status === 'connected' && botInfo.bot.isConnected
+        );
+        
+        if (connectedBots.length === 0) {
+            throw new Error('Không có bot nào đang kết nối để spam');
+        }
+        
+        console.log(`Bắt đầu spam từ ${connectedBots.length} bot...`.cyan);
+        
+        for (let i = 0; i < count; i++) {
+            const sentCount = this.chatAll(message);
+            console.log(`[${i + 1}/${count}] Gửi từ ${sentCount} bot: "${message}"`.green);
+            
+            if (i < count - 1) {
+                await new Promise(resolve => setTimeout(resolve, delayMs));
+            }
+        }
+        
+        return connectedBots.length;
+    }
+
+    /**
      * Get connected bots count
      */
     getConnectedBotsCount() {
