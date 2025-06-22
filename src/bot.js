@@ -516,10 +516,16 @@ class MinecraftBot {
         }
 
         try {
-            // First send register command
-            const registerCommand = `/register ${this.config.loginPassword} ${this.config.loginPassword}`;
+            // Create register command based on format
+            let registerCommand;
+            if (this.config.registerFormat === 'double') {
+                registerCommand = `/register ${this.config.loginPassword} ${this.config.loginPassword}`;
+            } else {
+                registerCommand = `/register ${this.config.loginPassword}`;
+            }
+            
             this.bot.chat(registerCommand);
-            logger.info('Auto-register command sent', { password: this.config.loginPassword });
+            logger.info('Auto-register command sent', { password: this.config.loginPassword, format: this.config.registerFormat });
             console.log(`Auto-register sent: ${registerCommand}`.green);
             
             // Then send login command after a short delay

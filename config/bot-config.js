@@ -41,6 +41,7 @@ module.exports = {
     autoLogin: process.env.AUTO_LOGIN === 'true', // Changed default to false
     loginPassword: process.env.LOGIN_PASSWORD || 'botminecraft',
     loginDelay: parseInt(process.env.LOGIN_DELAY) || 3000, // 3 seconds after spawn
+    registerFormat: process.env.REGISTER_FORMAT || 'single', // 'single' or 'double'
     
     // Client verification settings
     bypassVerification: process.env.BYPASS_VERIFICATION !== 'false',

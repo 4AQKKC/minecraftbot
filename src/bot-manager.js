@@ -414,6 +414,23 @@ class BotManager {
     }
 
     /**
+     * Update register format for all bots
+     */
+    updateAllBotsRegisterFormat(format) {
+        let updatedCount = 0;
+        
+        for (const [botId, botInfo] of this.bots) {
+            botInfo.config.registerFormat = format;
+            if (botInfo.bot) {
+                botInfo.bot.config.registerFormat = format;
+            }
+            updatedCount++;
+        }
+        
+        return updatedCount;
+    }
+
+    /**
      * Format duration in seconds to readable format
      */
     formatDuration(seconds) {

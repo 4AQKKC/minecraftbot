@@ -40,6 +40,7 @@ const commands = {
         console.log('  autologin <on/off> - Bật/tắt tự động đăng nhập'.white);
         console.log('  hidemessages <on/off> - Ẩn/hiện thông báo damage/death'.white);
         console.log('  setpassword <mật khẩu> - Đổi mật khẩu đăng nhập cho tất cả bot'.white);
+        console.log('  setregformat <single/double> - Đổi format lệnh /register'.white);
         console.log('  status - Xem trạng thái và log lỗi gần đây'.white);
         console.log('');
         console.log('  Test Servers:'.cyan.bold);
@@ -763,6 +764,30 @@ const commands = {
         
         console.log(`Đã đổi mật khẩu thành: "${newPassword}"`.green);
         console.log(`Cập nhật cho ${updatedCount} bot`.cyan);
+    },
+
+    // Set register format
+    setregformat: (args) => {
+        if (args.length < 1) {
+            console.log('Cách dùng: setregformat <single/double>'.red);
+            console.log(`Format hiện tại: ${config.registerFormat}`.gray);
+            console.log('single: /register <password>'.gray);
+            console.log('double: /register <password> <password>'.gray);
+            return;
+        }
+
+        const format = args[0].toLowerCase();
+        if (format === 'single' || format === 'double') {
+            config.registerFormat = format;
+            
+            // Update format for all existing bots
+            const updatedCount = botManager.updateAllBotsRegisterFormat(format);
+            
+            console.log(`Đã đổi register format thành: ${format}`.green);
+            console.log(`Cập nhật cho ${updatedCount} bot`.cyan);
+        } else {
+            console.log('Format không hợp lệ. Sử dụng: single hoặc double'.red);
+        }
     },
 
     // Enhanced status command

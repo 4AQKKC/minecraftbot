@@ -1117,3 +1117,12 @@
 {"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T03:11:03.397Z"}
 {"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T03:11:52.497Z"}
 {"botId":"bot_1","botName":"DaBDZ162","level":"info","message":"Bot created","timestamp":"2025-06-22T03:12:11.760Z"}
+{"botId":"bot_1","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.36.1:32768","timestamp":"2025-06-22T03:12:46.797Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:12:46.798Z","username":"DaBDZ162","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:12:46.962Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:12:48.551Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:12:48.737Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:12:48.748Z"}
+{"botId":"bot_1","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:12:48.751Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T03:15:10.725Z"}
+{"botId":"bot_1","botName":"Wrm81","level":"info","message":"Bot created","timestamp":"2025-06-22T03:15:27.056Z"}
