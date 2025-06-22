@@ -39,6 +39,8 @@ const commands = {
         console.log('  login - Gửi lệnh đăng ký + đăng nhập thủ công'.white);
         console.log('  autologin <on/off> - Bật/tắt tự động đăng nhập'.white);
         console.log('  hidemessages <on/off> - Ẩn/hiện thông báo damage/death'.white);
+        console.log('  setpassword <mật khẩu> - Đổi mật khẩu đăng nhập cho tất cả bot'.white);
+        console.log('  status - Xem trạng thái và log lỗi gần đây'.white);
         console.log('');
         console.log('  Test Servers:'.cyan.bold);
         console.log('  testlocal - Thử kết nối localhost:25565'.white);
@@ -737,6 +739,58 @@ const commands = {
             console.log('Đã HIỆN tất cả thông báo damage/death'.yellow);
         } else {
             console.log('Giá trị không hợp lệ. Sử dụng: on hoặc off'.red);
+        }
+    },
+
+    // Set password for all bots
+    setpassword: (args) => {
+        if (args.length < 1) {
+            console.log('Cách dùng: setpassword <mật khẩu mới>'.red);
+            console.log(`Mật khẩu hiện tại: ${config.loginPassword}`.gray);
+            return;
+        }
+
+        const newPassword = args.join(' ');
+        config.loginPassword = newPassword;
+        
+        // Update password for all existing bots
+        const updatedCount = botManager.updateAllBotsPassword(newPassword);
+        
+        console.log(`Đã đổi mật khẩu thành: "${newPassword}"`.green);
+        console.log(`Cập nhật cho ${updatedCount} bot`.cyan);
+    },
+
+    // Enhanced status command
+    status: () => {
+        if (isConnected && bot) {
+            console.log('\nTrạng thái Bot Chính:'.cyan.bold);
+            console.log(`  Kết nối: ${'✓ Đã kết nối'.green}`);
+            console.log(`  Server: ${bot.bot?.host || 'N/A'}:${bot.bot?.port || 'N/A'}`);
+            console.log(`  Username: ${bot.bot?.username || 'N/A'}`);
+            console.log(`  Health: ${bot.bot?.health || 'N/A'}`);
+            console.log(`  Position: ${bot.bot?.entity?.position || 'N/A'}`);
+        } else {
+            console.log('\nTrạng thái Bot Chính:'.cyan.bold);
+            console.log(`  Kết nối: ${'✗ Chưa kết nối'.red}`);
+        }
+
+        // Multi-bot status
+        const connectedCount = botManager.getConnectedBotsCount();
+        const totalCount = botManager.getTotalBotsCount();
+        
+        console.log('\nTrạng thái Đa Bot:'.cyan.bold);
+        console.log(`  Tổng số bot: ${totalCount}`);
+        console.log(`  Đã kết nối: ${connectedCount}`.green);
+        console.log(`  Chưa kết nối: ${totalCount - connectedCount}`.yellow);
+
+        // Recent errors
+        console.log('\nLỗi gần đây:'.cyan.bold);
+        try {
+            const { execSync } = require('child_process');
+            const recentErrors = execSync('tail -5 logs/error.log 2>/dev/null || echo "Không có lỗi"', { encoding: 'utf8' });
+            console.log(recentErrors.gray);
+        } catch (error) {
+            console.log('Không thể đọc log lỗi'.gray);
         }
     },
 

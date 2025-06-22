@@ -391,6 +391,23 @@ class BotManager {
     }
 
     /**
+     * Update password for all bots
+     */
+    updateAllBotsPassword(newPassword) {
+        let updatedCount = 0;
+        
+        for (const [botId, botInfo] of this.bots) {
+            botInfo.config.loginPassword = newPassword;
+            if (botInfo.bot) {
+                botInfo.bot.config.loginPassword = newPassword;
+            }
+            updatedCount++;
+        }
+        
+        return updatedCount;
+    }
+
+    /**
      * Format duration in seconds to readable format
      */
     formatDuration(seconds) {

@@ -206,17 +206,19 @@ class MinecraftBot {
         // Error handling
         this.bot.on('error', (error) => {
             logger.error('Bot error', error);
-            console.log(`Bot error: ${error.message}`.red);
+            console.log(`Lỗi bot: ${error.message}`.red);
             
             // Handle specific errors
             if (error.message.includes('ENOTFOUND')) {
-                console.log('Server not found. Check the server address.'.yellow);
+                console.log('Không tìm thấy server. Kiểm tra địa chỉ server.'.yellow);
             } else if (error.message.includes('ECONNREFUSED')) {
-                console.log('Connection refused. Server might be offline or port blocked.'.yellow);
+                console.log('Kết nối bị từ chối. Server có thể offline hoặc port bị chặn.'.yellow);
             } else if (error.message.includes('ETIMEDOUT')) {
-                console.log('Connection timed out. Server might be slow or unreachable.'.yellow);
+                console.log('Hết thời gian kết nối. Server có thể chậm hoặc không thể truy cập.'.yellow);
+            } else if (error.message.includes('ECONNRESET')) {
+                console.log('Kết nối bị reset bởi server - có thể do anti-bot.'.yellow);
             } else if (error.message.includes('Invalid username')) {
-                console.log('Invalid username format. Try a different username.'.yellow);
+                console.log('Tên người dùng không hợp lệ. Thử tên khác.'.yellow);
             }
         });
 
@@ -250,13 +252,20 @@ class MinecraftBot {
             console.log(`Bot bị kick: ${reasonText}`.red);
             
             // Handle specific kick reasons
-            if (reason.includes('Connection throttled') || reason.includes('Please wait before reconnecting')) {
+            if (reasonText.includes('Connection throttled') || reasonText.includes('Please wait before reconnecting')) {
                 console.log(`Đợi ${this.config.throttleDelay / 1000} giây trước khi thử kết nối lại...`.yellow);
                 setTimeout(() => {
                     this.handleThrottledReconnection();
                 }, this.config.throttleDelay);
-            } else if (reason.includes('You are already connected')) {
+            } else if (reasonText.includes('You are already connected')) {
                 console.log('Lỗi đã kết nối - đợi trước khi thử lại...'.yellow);
+                setTimeout(() => {
+                    this.handleThrottledReconnection();
+                }, this.config.retryDelay);
+            } else if (reasonText.includes('failed to connect') || reasonText.includes('verification')) {
+                console.log('Lỗi xác minh server - có thể server có anti-bot'.yellow);
+            } else if (reasonText.includes('Login timed out')) {
+                console.log('Hết thời gian đăng nhập - thử lại sau'.yellow);
                 setTimeout(() => {
                     this.handleThrottledReconnection();
                 }, this.config.retryDelay);
