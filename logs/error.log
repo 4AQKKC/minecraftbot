@@ -28,3 +28,9 @@
 {"botId":"bot_3","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T04:51:31.538Z"}
 {"botId":"bot_4","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T04:51:36.790Z"}
 {"botId":"bot_5","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T04:51:41.547Z"}
+{"code":"ECONNRESET","errno":-104,"level":"error","message":"Bot error read ECONNRESET","stack":"Error: read ECONNRESET\n    at TCP.onStreamRead (node:internal/stream_base_commons:218:20)","syscall":"read","timestamp":"2025-06-22T14:32:09.314Z"}
+{"botId":"bot_6","error":"Server closed the connection. This might be due to:\n  - Server anti-bot protection\n  - Invalid client version\n  - Server whitelist/IP restrictions","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T14:32:09.315Z"}
+{"code":"ECONNRESET","errno":-104,"level":"error","message":"Bot error read ECONNRESET","stack":"Error: read ECONNRESET\n    at TCP.onStreamRead (node:internal/stream_base_commons:218:20)","syscall":"read","timestamp":"2025-06-22T14:32:19.255Z"}
+{"botId":"bot_8","error":"Server closed the connection. This might be due to:\n  - Server anti-bot protection\n  - Invalid client version\n  - Server whitelist/IP restrictions","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T14:32:19.255Z"}
+{"botId":"bot_17","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T14:33:16.251Z"}
+{"botId":"bot_18","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T14:33:20.097Z"}

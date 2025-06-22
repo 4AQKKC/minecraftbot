@@ -215,15 +215,14 @@ class MinecraftBot {
         this.bot.on('message', (jsonMsg, position) => {
             const text = jsonMsg.toString();
             
-            // Chỉ hiển thị tin nhắn server nếu không bị ẩn
-            if (!this.config.hideServerMessages) {
-                console.log(`📨 Tin nhắn server (${position}): ${text}`.gray);
+            // Hiển thị tất cả tin nhắn quan trọng từ server
+            if (text.includes('register') || text.includes('login') || text.includes('Please') || 
+                text.includes('welcome') || text.includes('successfully') || text.includes('error')) {
+                console.log(`📨 Tin nhắn server (system): ${text}`.blue);
             }
             
-            // Chỉ phản hồi server messages nếu được phép
-            if (this.config.autoLogin) {
-                this.handleServerMessage(text);
-            }
+            // Tự động xử lý yêu cầu đăng ký/đăng nhập
+            this.handleServerMessage(text);
         });
 
         // Listen for kick events that might be related to chat
@@ -571,23 +570,25 @@ class MinecraftBot {
 
     handleServerMessage(text) {
         // Kiểm tra yêu cầu đăng ký/đăng nhập
-        if (text.includes('Please register using /register') || text.includes('Vui lòng đăng ký')) {
-            console.log('🔐 Server yêu cầu đăng ký - tự động gửi lệnh register'.blue);
+        if (text.includes('Please register using /register') || text.includes('Vui lòng đăng ký') || text.includes('Please register')) {
+            console.log(`🔐 ${this.config.username} - Server yêu cầu đăng ký, tự động register...`.blue);
             setTimeout(() => {
                 this.autoRegister();
-            }, 2000);
+            }, 500);
         } else if (text.includes('Please login using /login') || text.includes('Vui lòng đăng nhập')) {
-            console.log('🔑 Server yêu cầu đăng nhập - tự động gửi lệnh login'.blue);
+            console.log(`🔑 ${this.config.username} - Server yêu cầu đăng nhập, tự động login...`.blue);
             setTimeout(() => {
                 this.autoLoginOnly();
-            }, 2000);
-        } else if (text.includes('You have successfully registered') || text.includes('đăng ký thành công')) {
-            console.log('✅ Đăng ký thành công - tự động đăng nhập'.green);
+            }, 500);
+        } else if (text.includes('You have successfully registered') || text.includes('đăng ký thành công') || text.includes('successfully registered')) {
+            console.log(`✅ ${this.config.username} - Đăng ký thành công, tự động đăng nhập...`.green);
             setTimeout(() => {
                 this.autoLoginOnly();
-            }, 1000);
+            }, 500);
+        } else if (text.includes('You have successfully logged in') || text.includes('đăng nhập thành công') || text.includes('successfully logged in') || text.includes('Welcome')) {
+            console.log(`✅ ${this.config.username} - Đăng nhập thành công!`.green);
         } else if (text.includes('muted') || text.includes('silence') || text.includes('không thể chat')) {
-            console.log('⚠️ Bot có thể bị mute hoặc hạn chế chat'.yellow);
+            console.log(`⚠️ ${this.config.username} - Bot có thể bị mute hoặc hạn chế chat`.yellow);
         }
     }
 
