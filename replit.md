@@ -130,6 +130,9 @@ Preferred communication style: Simple, everyday language.
 - **New**: Sequential connection system - each bot logs in completely before next bot connects
 - **New**: Removed unnecessary chat testing to focus on stable connections
 - **New**: Enhanced login detection using server message monitoring
+- **New**: Anti-mass-ban system - dedicated proxy per bot with intelligent distribution
+- **New**: Automatic proxy switching when IP banned with instant reconnection
+- **New**: Smart proxy allocation to minimize shared IP usage
 
 ## User Preferences
 
@@ -143,4 +146,7 @@ Preferred communication style: Simple, everyday language in Vietnamese when appr
   - Enhanced login detection using server message monitoring
   - Removed unnecessary chat testing for improved stability
   - Each bot now completes login process before next bot connects
+  - Fixed mass IP ban issue with dedicated proxy per bot system
+  - Added automatic proxy switching and reconnection on IP bans
+  - Improved proxy distribution to minimize shared IP usage
 - June 17, 2025: Initial setup and comprehensive bot development

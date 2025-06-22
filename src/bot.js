@@ -230,12 +230,29 @@ class MinecraftBot {
             const reason = packet.reason || JSON.stringify(packet);
             console.log(`🚫 Bot bị kick: ${reason}`.red);
             
-            // Xử lý kick do ban IP/proxy
-            if (reason.includes('banned_ip') || reason.includes('Banned by an operator') || reason.includes('IP') || reason.includes('blacklist')) {
-                console.log(`🚫 Bot ${this.config.username} bị kick do IP ban - XÓA proxy`.red.bold);
+            // Xử lý kick do ban IP/proxy - tự động đổi proxy và thử lại
+            if (reason.includes('banned_ip') || reason.includes('Banned by an operator') || reason.includes('IP') || reason.includes('blacklist') || reason.includes('ban')) {
+                console.log(`🚫 Bot ${this.config.username} bị kick do IP ban - TỰ ĐỘNG ĐỔI PROXY`.red.bold);
                 if (this.proxyManager && this.currentProxy) {
+                    // Xóa proxy bị ban
                     this.proxyManager.markProxyAsBanned(this.currentProxy);
-                    this.currentProxy = null;
+                    
+                    // Lấy proxy mới ngay lập tức
+                    const newProxy = this.proxyManager.getDedicatedProxy(this.config.username);
+                    if (newProxy) {
+                        this.currentProxy = newProxy;
+                        console.log(`🔄 Bot ${this.config.username} đã được gán proxy mới: ${newProxy}`.green);
+                        
+                        // Tự động thử kết nối lại sau 5 giây
+                        setTimeout(() => {
+                            console.log(`🔁 Bot ${this.config.username} tự động thử kết nối lại với proxy mới...`.cyan);
+                            this.reconnect();
+                        }, 5000);
+                    } else {
+                        console.log(`❌ Không còn proxy khả dụng cho bot ${this.config.username}`.red);
+                    }
+                } else {
+                    console.log(`⚠️ Bot ${this.config.username} không có proxy manager hoặc proxy`.yellow);
                 }
             }
         });
@@ -262,11 +279,25 @@ class MinecraftBot {
                     this.reconnect();
                 }, 10000);
             } else if (error.message.includes('banned_ip') || error.message.includes('Banned by an operator') || error.message.includes('ECONNREFUSED')) {
-                console.log(`🚫 Bot ${this.config.username} có thể bị ban IP/proxy`.red);
+                console.log(`🚫 Bot ${this.config.username} có thể bị ban IP/proxy - TỰ ĐỘNG ĐỔI PROXY`.red);
                 if (this.proxyManager && this.currentProxy) {
                     console.log(`🗑️ Xóa proxy bị ban: ${this.currentProxy}`.red.bold);
                     this.proxyManager.markProxyAsBanned(this.currentProxy);
-                    this.currentProxy = null;
+                    
+                    // Lấy proxy mới và thử kết nối lại
+                    const newProxy = this.proxyManager.getDedicatedProxy(this.config.username);
+                    if (newProxy) {
+                        this.currentProxy = newProxy;
+                        console.log(`🔄 Bot ${this.config.username} sử dụng proxy mới: ${newProxy}`.green);
+                        
+                        // Tự động thử kết nối lại
+                        setTimeout(() => {
+                            console.log(`🔁 Bot ${this.config.username} tự động kết nối lại...`.cyan);
+                            this.reconnect();
+                        }, 3000);
+                    } else {
+                        console.log(`❌ Không còn proxy cho bot ${this.config.username}`.red);
+                    }
                 }
             }
         });

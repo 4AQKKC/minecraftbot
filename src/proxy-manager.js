@@ -199,38 +199,69 @@ class ProxyManager {
     }
 
     /**
-     * Get dedicated proxy for specific bot (one proxy per account)
+     * Get dedicated proxy for specific bot (one proxy per account) - tránh ban hàng loạt
      */
     getDedicatedProxy(botId) {
         if (!this.proxyRotationEnabled || this.proxies.length === 0) {
             return null;
         }
         
-        // If bot already has a dedicated proxy, return it
+        // If bot already has a dedicated proxy, check if it's still valid
         if (this.botProxyMap.has(botId)) {
             const existingProxy = this.botProxyMap.get(botId);
-            // Check if proxy still exists (not deleted due to ban)
-            if (this.proxies.includes(existingProxy)) {
+            // Check if proxy is banned or deleted
+            if (!this.bannedProxies.has(existingProxy) && this.proxies.includes(existingProxy)) {
                 return existingProxy;
             } else {
-                // Proxy was deleted, need new one
+                // Proxy was banned or deleted, remove mapping
                 this.botProxyMap.delete(botId);
+                console.log(`🔄 Bot ${botId} cần proxy mới - proxy cũ bị ban/xóa`.yellow);
             }
         }
         
-        // Find unused proxy for this bot
+        // Find unused proxy for this bot - tránh trùng lặp để tối đa hóa phân tán
         const usedProxies = new Set(this.botProxyMap.values());
-        const availableProxy = this.proxies.find(proxy => !usedProxies.has(proxy));
+        const availableProxies = this.proxies.filter(proxy => 
+            !usedProxies.has(proxy) && !this.bannedProxies.has(proxy)
+        );
         
-        if (!availableProxy) {
-            console.log(`⚠️ Không còn proxy trống cho bot ${botId}!`.red);
-            return null;
+        if (availableProxies.length === 0) {
+            // Nếu không còn proxy trống, dùng proxy ít được sử dụng nhất
+            const proxyUsage = new Map();
+            for (const proxy of this.proxies) {
+                if (!this.bannedProxies.has(proxy)) {
+                    proxyUsage.set(proxy, 0);
+                }
+            }
+            
+            for (const assignedProxy of this.botProxyMap.values()) {
+                if (proxyUsage.has(assignedProxy)) {
+                    proxyUsage.set(assignedProxy, proxyUsage.get(assignedProxy) + 1);
+                }
+            }
+            
+            if (proxyUsage.size === 0) {
+                console.log(`⚠️ Không còn proxy khả dụng cho bot ${botId}!`.red);
+                return null;
+            }
+            
+            // Chọn proxy ít được dùng nhất
+            const leastUsedProxy = [...proxyUsage.entries()]
+                .sort((a, b) => a[1] - b[1])[0][0];
+            
+            this.botProxyMap.set(botId, leastUsedProxy);
+            console.log(`🔗 Bot ${botId} dùng chung proxy (ít dùng nhất): ${leastUsedProxy}`.yellow);
+            return leastUsedProxy;
         }
         
+        // Chọn ngẫu nhiên từ danh sách proxy khả dụng để phân tán tốt hơn
+        const randomIndex = Math.floor(Math.random() * availableProxies.length);
+        const selectedProxy = availableProxies[randomIndex];
+        
         // Assign dedicated proxy to this bot
-        this.botProxyMap.set(botId, availableProxy);
-        console.log(`🔗 Bot ${botId} được gán proxy riêng: ${availableProxy}`.cyan);
-        return availableProxy;
+        this.botProxyMap.set(botId, selectedProxy);
+        console.log(`🔗 Bot ${botId} được gán proxy riêng: ${selectedProxy}`.cyan);
+        return selectedProxy;
     }
 
     /**
