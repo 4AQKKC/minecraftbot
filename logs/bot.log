@@ -4026,3 +4026,97 @@
 {"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T04:41:05.161Z"}
 {"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T04:41:27.291Z"}
 {"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T04:41:27.472Z"}
+{"botId":"bot_1","botName":"ofND15","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.696Z"}
+{"botId":"bot_2","botName":"zEZs7143","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.696Z"}
+{"botId":"bot_3","botName":"BNu3495","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.697Z"}
+{"botId":"bot_4","botName":"Ejrps66","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.697Z"}
+{"botId":"bot_5","botName":"cEkR8327","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.697Z"}
+{"botId":"bot_6","botName":"qAh60","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.698Z"}
+{"botId":"bot_7","botName":"oHfC888","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.698Z"}
+{"botId":"bot_8","botName":"IWf9648","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.698Z"}
+{"botId":"bot_9","botName":"NEhEz8723","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.699Z"}
+{"botId":"bot_10","botName":"ZmkNQ913","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.699Z"}
+{"botId":"bot_11","botName":"fDh637","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.700Z"}
+{"botId":"bot_12","botName":"ukxA1193","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.700Z"}
+{"botId":"bot_13","botName":"QYZOW5416","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.700Z"}
+{"botId":"bot_14","botName":"dOWkQ448","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.700Z"}
+{"botId":"bot_15","botName":"abz455","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.701Z"}
+{"botId":"bot_16","botName":"mVCQ3060","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.701Z"}
+{"botId":"bot_17","botName":"gtVE156","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.701Z"}
+{"botId":"bot_18","botName":"AVH20","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.701Z"}
+{"botId":"bot_19","botName":"BKqzI11","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.701Z"}
+{"botId":"bot_20","botName":"RjyG0282","level":"info","message":"Bot created","timestamp":"2025-06-22T04:47:47.702Z"}
+{"botId":"bot_1","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.36.1:32768","timestamp":"2025-06-22T04:50:29.324Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T04:50:29.325Z","username":"ofND15","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T04:50:29.473Z"}
+{"level":"warn","message":"Bot was kicked","reason":"{\"translate\":\"multiplayer.disconnect.banned_ip.reason\",\"with\":[\"Banned by an operator.\"]}","timestamp":"2025-06-22T04:50:30.536Z"}
+{"level":"warn","message":"Kicked during verification","reason":"\"{\\\"translate\\\":\\\"multiplayer.disconnect.banned_ip.reason\\\",\\\"with\\\":[\\\"Banned by an operator.\\\"]}\"","timestamp":"2025-06-22T04:50:30.537Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T04:50:30.538Z"}
+{"botId":"bot_1","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T04:50:30.540Z"}
+{"botId":"bot_2","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.46.1:32768","timestamp":"2025-06-22T04:50:42.540Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T04:50:42.541Z","username":"zEZs7143","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T04:50:42.543Z"}
+{"level":"warn","message":"Bot was kicked","reason":"{\"translate\":\"multiplayer.disconnect.banned_ip.reason\",\"with\":[\"Banned by an operator.\"]}","timestamp":"2025-06-22T04:50:43.431Z"}
+{"level":"warn","message":"Kicked during verification","reason":"\"{\\\"translate\\\":\\\"multiplayer.disconnect.banned_ip.reason\\\",\\\"with\\\":[\\\"Banned by an operator.\\\"]}\"","timestamp":"2025-06-22T04:50:43.432Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T04:50:43.432Z"}
+{"botId":"bot_2","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T04:50:43.433Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T04:50:51.325Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T04:50:51.357Z"}
+{"botId":"bot_1","botName":"aahdj7478","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.355Z"}
+{"botId":"bot_2","botName":"dbc44","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.356Z"}
+{"botId":"bot_3","botName":"NFwsn9974","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.356Z"}
+{"botId":"bot_4","botName":"oeLv569","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.357Z"}
+{"botId":"bot_5","botName":"NuNuD4517","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.357Z"}
+{"botId":"bot_6","botName":"TFKkU8587","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.357Z"}
+{"botId":"bot_7","botName":"vtg73","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.358Z"}
+{"botId":"bot_8","botName":"YCIJH608","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.358Z"}
+{"botId":"bot_9","botName":"AEAR4053","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.359Z"}
+{"botId":"bot_10","botName":"kWb47","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.359Z"}
+{"botId":"bot_11","botName":"vcale634","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.359Z"}
+{"botId":"bot_12","botName":"OQws49","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.359Z"}
+{"botId":"bot_13","botName":"mzPpl05","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.360Z"}
+{"botId":"bot_14","botName":"wTS598","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.360Z"}
+{"botId":"bot_15","botName":"fBjC8794","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.360Z"}
+{"botId":"bot_16","botName":"XSeb20","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.360Z"}
+{"botId":"bot_17","botName":"MGC911","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.361Z"}
+{"botId":"bot_18","botName":"Skcu07","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.361Z"}
+{"botId":"bot_19","botName":"JXeWU838","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.361Z"}
+{"botId":"bot_20","botName":"ZeFha3232","level":"info","message":"Bot created","timestamp":"2025-06-22T04:51:07.361Z"}
+{"botId":"bot_1","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.36.1:32768","timestamp":"2025-06-22T04:51:20.722Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T04:51:20.723Z","username":"aahdj7478","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T04:51:20.873Z"}
+{"level":"warn","message":"Bot was kicked","reason":"{\"translate\":\"multiplayer.disconnect.banned_ip.reason\",\"with\":[\"Banned by an operator.\"]}","timestamp":"2025-06-22T04:51:22.183Z"}
+{"level":"warn","message":"Kicked during verification","reason":"\"{\\\"translate\\\":\\\"multiplayer.disconnect.banned_ip.reason\\\",\\\"with\\\":[\\\"Banned by an operator.\\\"]}\"","timestamp":"2025-06-22T04:51:22.184Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T04:51:22.185Z"}
+{"botId":"bot_1","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T04:51:22.187Z"}
+{"botId":"bot_2","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.46.1:32768","timestamp":"2025-06-22T04:51:25.725Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T04:51:25.725Z","username":"dbc44","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T04:51:25.729Z"}
+{"level":"warn","message":"Bot was kicked","reason":"{\"translate\":\"multiplayer.disconnect.banned_ip.reason\",\"with\":[\"Banned by an operator.\"]}","timestamp":"2025-06-22T04:51:26.896Z"}
+{"level":"warn","message":"Kicked during verification","reason":"\"{\\\"translate\\\":\\\"multiplayer.disconnect.banned_ip.reason\\\",\\\"with\\\":[\\\"Banned by an operator.\\\"]}\"","timestamp":"2025-06-22T04:51:26.897Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T04:51:26.897Z"}
+{"botId":"bot_2","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T04:51:26.898Z"}
+{"botId":"bot_3","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.192.1:32768","timestamp":"2025-06-22T04:51:30.725Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T04:51:30.725Z","username":"NFwsn9974","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T04:51:30.729Z"}
+{"level":"warn","message":"Bot was kicked","reason":"{\"translate\":\"multiplayer.disconnect.banned_ip.reason\",\"with\":[\"Banned by an operator.\"]}","timestamp":"2025-06-22T04:51:31.536Z"}
+{"level":"warn","message":"Kicked during verification","reason":"\"{\\\"translate\\\":\\\"multiplayer.disconnect.banned_ip.reason\\\",\\\"with\\\":[\\\"Banned by an operator.\\\"]}\"","timestamp":"2025-06-22T04:51:31.537Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T04:51:31.538Z"}
+{"botId":"bot_3","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T04:51:31.538Z"}
+{"botId":"bot_4","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.195.1:32768","timestamp":"2025-06-22T04:51:35.727Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T04:51:35.728Z","username":"oeLv569","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T04:51:35.732Z"}
+{"level":"warn","message":"Bot was kicked","reason":"{\"translate\":\"multiplayer.disconnect.banned_ip.reason\",\"with\":[\"Banned by an operator.\"]}","timestamp":"2025-06-22T04:51:36.788Z"}
+{"level":"warn","message":"Kicked during verification","reason":"\"{\\\"translate\\\":\\\"multiplayer.disconnect.banned_ip.reason\\\",\\\"with\\\":[\\\"Banned by an operator.\\\"]}\"","timestamp":"2025-06-22T04:51:36.788Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T04:51:36.789Z"}
+{"botId":"bot_4","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T04:51:36.790Z"}
+{"botId":"bot_5","level":"info","message":"Using proxy for connection","proxy":"http://proxy1.example.com:8080","timestamp":"2025-06-22T04:51:40.730Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T04:51:40.731Z","username":"NuNuD4517","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T04:51:40.732Z"}
+{"level":"warn","message":"Bot was kicked","reason":"{\"translate\":\"multiplayer.disconnect.banned_ip.reason\",\"with\":[\"Banned by an operator.\"]}","timestamp":"2025-06-22T04:51:41.546Z"}
+{"level":"warn","message":"Kicked during verification","reason":"\"{\\\"translate\\\":\\\"multiplayer.disconnect.banned_ip.reason\\\",\\\"with\\\":[\\\"Banned by an operator.\\\"]}\"","timestamp":"2025-06-22T04:51:41.546Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T04:51:41.547Z"}
+{"botId":"bot_5","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T04:51:41.547Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T04:52:29.974Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T04:53:06.687Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T04:53:06.865Z"}

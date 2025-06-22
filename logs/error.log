@@ -21,3 +21,10 @@
 {"botId":"bot_2","error":"Server not found. Check the server address","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T03:37:43.703Z"}
 {"code":"ENOTFOUND","errno":-3008,"hostname":"git","level":"error","message":"Bot error getaddrinfo ENOTFOUND git","stack":"Error: getaddrinfo ENOTFOUND git\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)","syscall":"getaddrinfo","timestamp":"2025-06-22T03:37:48.705Z"}
 {"botId":"bot_3","error":"Server not found. Check the server address","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T03:37:48.706Z"}
+{"botId":"bot_1","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T04:50:30.540Z"}
+{"botId":"bot_2","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T04:50:43.433Z"}
+{"botId":"bot_1","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T04:51:22.187Z"}
+{"botId":"bot_2","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T04:51:26.898Z"}
+{"botId":"bot_3","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T04:51:31.538Z"}
+{"botId":"bot_4","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T04:51:36.790Z"}
+{"botId":"bot_5","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T04:51:41.547Z"}

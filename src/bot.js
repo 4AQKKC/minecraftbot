@@ -232,7 +232,14 @@ class MinecraftBot {
 
         // Listen for kick events that might be related to chat
         this.bot.on('kick_disconnect', (packet) => {
-            console.log(`🚫 Kick packet: ${JSON.stringify(packet)}`.red);
+            const reason = packet.reason || JSON.stringify(packet);
+            console.log(`🚫 Bot bị kick: ${reason}`.red);
+            
+            // Xử lý kick do ban IP
+            if (reason.includes('banned_ip') || reason.includes('Banned by an operator')) {
+                console.log(`⚠️ ${this.bot.username} bị ban IP - tắt proxy và thử kết nối trực tiếp`.yellow);
+                this.config.useProxy = false;
+            }
         });
 
         // Xử lý lỗi
@@ -256,6 +263,9 @@ class MinecraftBot {
                 setTimeout(() => {
                     this.reconnect();
                 }, 10000);
+            } else if (error.message.includes('banned_ip') || error.message.includes('Banned by an operator')) {
+                console.log('🚫 IP bị ban bởi server - thử kết nối trực tiếp không qua proxy'.red);
+                this.config.useProxy = false; // Tắt proxy cho lần kết nối tiếp theo
             }
         });
 

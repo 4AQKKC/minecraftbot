@@ -312,9 +312,9 @@ class BotManager {
                         await new Promise(resolve => setTimeout(resolve, staggerDelay));
                     }
                     
-                    console.log(`🔗 Đang kết nối bot ${botInfo.name}... (${index + 1}/${group.length})`.cyan);
+                    console.log(`🔗 Đang kết nối bot ${botInfo.name}... (${index + 1}/${group.length}) - kết nối trực tiếp`.cyan);
                     await this.connectBot(botInfo.id, host, port);
-                    console.log(`✅ Bot ${botInfo.name} đã kết nối thành công và ổn định`.green);
+                    console.log(`✅ Bot ${botInfo.name} kết nối thành công không qua proxy`.green);
                     return true;
                 } catch (error) {
                     console.log(`❌ Bot ${botInfo.name} kết nối thất bại: ${error.message}`.red);
