@@ -82,15 +82,15 @@ const commands = {
         console.log('  quit/exit - Thoát bot'.white);
         console.log('');
         console.log('Ví dụ:'.yellow.bold);
-        console.log('  create 20'.gray + '                    # Tạo 20 bot (số lượng vừa phải)');
-        console.log('  connectfast cherry.pikamc.vn'.gray + ' # KẾT NỐI TẬP TRUNG (từng bot một)');
+        console.log('  create 20'.gray + '                    # Tạo 20 bot với proxy rotation');
+        console.log('  connectfast cherry.pikamc.vn'.gray + ' # KẾT NỐI với auto-switch proxy');
         console.log('  list'.gray + '                         # Kiểm tra trạng thái kết nối');
         console.log('  autologin on'.gray + '                # Bật đăng nhập nếu server yêu cầu');
-        console.log('  hidechat on'.gray + '                  # Ẩn debug để output sạch');
+        console.log('  proxystats'.gray + '                   # Xem thống kê proxy');
         console.log('  chatall Xin chào!'.gray + '           # Test chat CHỈ sau khi kết nối xong');
         console.log('');
-        console.log('🎯 WORKFLOW TẬP TRUNG KẾT NỐI:'.green.bold);
-        console.log('  1. create → 2. connectfast → 3. list → 4. autologin on → 5. chatall'.cyan);
+        console.log('🎯 WORKFLOW VỚI PROXY PROTECTION:'.green.bold);
+        console.log('  1. create → 2. connectfast → 3. proxystats → 4. list → 5. chatall'.cyan);
         console.log('');
     },
 
