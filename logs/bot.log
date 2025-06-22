@@ -1275,3 +1275,681 @@
 {"level":"info","message":"Chat sent to all bots admin ngu","sentCount":1,"successCount":1,"timestamp":"2025-06-22T03:26:09.599Z"}
 {"level":"info","message":"Chat message sent admin ngu","timestamp":"2025-06-22T03:26:10.100Z","username":"UpHW836"}
 {"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T03:26:31.911Z"}
+{"botId":"bot_1","botName":"Img037","level":"info","message":"Bot created","timestamp":"2025-06-22T03:26:53.399Z"}
+{"botId":"bot_2","botName":"PEit3789","level":"info","message":"Bot created","timestamp":"2025-06-22T03:26:53.399Z"}
+{"botId":"bot_3","botName":"rTvh281","level":"info","message":"Bot created","timestamp":"2025-06-22T03:26:53.400Z"}
+{"botId":"bot_4","botName":"EMGa182","level":"info","message":"Bot created","timestamp":"2025-06-22T03:26:53.400Z"}
+{"botId":"bot_5","botName":"DtiPa355","level":"info","message":"Bot created","timestamp":"2025-06-22T03:26:53.400Z"}
+{"botId":"bot_6","botName":"MBmKY27","level":"info","message":"Bot created","timestamp":"2025-06-22T03:26:53.401Z"}
+{"botId":"bot_7","botName":"NxY178","level":"info","message":"Bot created","timestamp":"2025-06-22T03:26:53.401Z"}
+{"botId":"bot_8","botName":"iAh0909","level":"info","message":"Bot created","timestamp":"2025-06-22T03:26:53.401Z"}
+{"botId":"bot_9","botName":"sbpOc54","level":"info","message":"Bot created","timestamp":"2025-06-22T03:26:53.402Z"}
+{"botId":"bot_10","botName":"tVgB24","level":"info","message":"Bot created","timestamp":"2025-06-22T03:26:53.402Z"}
+{"botId":"bot_1","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.36.1:32768","timestamp":"2025-06-22T03:27:07.683Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:07.684Z","username":"Img037","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:27:07.905Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:27:09.453Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:27:09.644Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:27:09.656Z"}
+{"botId":"bot_1","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:09.659Z"}
+{"level":"info","message":"Auto-register triggered by server message","password":"botminecraft","timestamp":"2025-06-22T03:27:11.848Z"}
+{"botId":"bot_2","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.46.1:32768","timestamp":"2025-06-22T03:27:12.683Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:12.684Z","username":"PEit3789","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:27:12.688Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:27:14.045Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:27:14.215Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:27:14.223Z"}
+{"botId":"bot_2","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:14.225Z"}
+{"level":"info","message":"Auto-register triggered by server message","password":"botminecraft","timestamp":"2025-06-22T03:27:16.734Z"}
+{"botId":"bot_3","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.192.1:32768","timestamp":"2025-06-22T03:27:17.683Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:17.684Z","username":"rTvh281","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:27:17.689Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:27:18.997Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:27:19.166Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:27:19.175Z"}
+{"botId":"bot_3","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:19.176Z"}
+{"level":"info","message":"Auto-register triggered by server message","password":"botminecraft","timestamp":"2025-06-22T03:27:21.703Z"}
+{"botId":"bot_4","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.195.1:32768","timestamp":"2025-06-22T03:27:22.683Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:22.683Z","username":"EMGa182","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:27:22.687Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:27:23.841Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:27:23.842Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:27:23.842Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:27:23.842Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:27:23.842Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:27:23.842Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:27:23.843Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:27:23.844Z","username":"CMILib"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:27:24.041Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:27:24.214Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:27:24.219Z"}
+{"botId":"bot_4","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:24.219Z"}
+{"level":"info","message":"Auto-register triggered by server message","password":"botminecraft","timestamp":"2025-06-22T03:27:26.758Z"}
+{"health":20,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:27.035Z"}
+{"botId":"bot_5","level":"info","message":"Using proxy for connection","proxy":"http://proxy1.example.com:8080","timestamp":"2025-06-22T03:27:27.682Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:27.683Z","username":"DtiPa355","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:27:27.685Z"}
+{"health":19.81999969482422,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:28.037Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:27:28.509Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:27:28.510Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:27:28.510Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:27:28.511Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:27:28.511Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:27:28.511Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:27:28.512Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:27:28.512Z","username":"CMILib"}
+{"health":18.97333335876465,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:29.034Z"}
+{"health":17.793333053588867,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:30.038Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:27:30.136Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:27:30.705Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:27:30.711Z"}
+{"botId":"bot_5","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:30.712Z"}
+{"health":16.446664810180664,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:31.040Z"}
+{"health":20,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:31.635Z"}
+{"health":14.933331489562988,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:32.037Z"}
+{"health":19.81999969482422,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:32.638Z"}
+{"botId":"bot_6","level":"info","message":"Using proxy for connection","proxy":"http://proxy2.example.com:3128","timestamp":"2025-06-22T03:27:32.712Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:32.712Z","username":"MBmKY27","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:27:32.715Z"}
+{"health":13.253331184387207,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:33.037Z"}
+{"level":"info","message":"Auto-register triggered by server message","password":"botminecraft","timestamp":"2025-06-22T03:27:33.375Z"}
+{"health":18.97333335876465,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:33.635Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:27:33.739Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:27:33.740Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:27:33.741Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:27:33.741Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:27:33.741Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:27:33.742Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:27:33.742Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:27:33.742Z","username":"CMILib"}
+{"health":11.573330879211426,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:34.033Z"}
+{"health":17.793333053588867,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:34.631Z"}
+{"health":9.893330574035645,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:35.038Z"}
+{"health":16.446664810180664,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:35.633Z"}
+{"health":9.213330268859863,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:36.031Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:27:36.036Z"}
+{"health":20,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:36.537Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:27:36.554Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:27:36.561Z"}
+{"botId":"bot_6","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:36.561Z"}
+{"health":14.933331489562988,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:36.635Z"}
+{"health":7.533329963684082,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:37.035Z"}
+{"health":19.81999969482422,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:37.537Z"}
+{"health":13.253331184387207,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:37.634Z"}
+{"health":5.853329658508301,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:38.033Z"}
+{"health":4.1733293533325195,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:38.033Z"}
+{"health":18.97333335876465,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:38.542Z"}
+{"botId":"bot_7","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.36.1:32768","timestamp":"2025-06-22T03:27:38.562Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:38.563Z","username":"NxY178","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:27:38.565Z"}
+{"health":11.573330879211426,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:38.636Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:27:39.028Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:27:39.028Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:27:39.029Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:27:39.029Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:27:39.029Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:27:39.029Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:27:39.030Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:27:39.030Z","username":"CMILib"}
+{"health":4.1733293533325195,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:39.061Z"}
+{"health":2.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:39.061Z"}
+{"level":"info","message":"Auto-register triggered by server message","password":"botminecraft","timestamp":"2025-06-22T03:27:39.273Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:39.482Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:39.542Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:39.543Z"}
+{"health":17.793333053588867,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:39.544Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:39.588Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:39.589Z"}
+{"health":9.893330574035645,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:39.643Z"}
+{"health":3.4933292865753174,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:40.051Z"}
+{"health":1.8133292198181152,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:40.051Z"}
+{"health":16.446664810180664,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:40.536Z"}
+{"health":9.213330268859863,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:40.637Z"}
+{"health":1.8133292198181152,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:41.033Z"}
+{"health":0.13332915306091309,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:41.033Z"}
+{"health":14.933331489562988,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:41.532Z"}
+{"health":7.533329963684082,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:41.641Z"}
+{"health":20,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:41.985Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:27:41.987Z"}
+{"health":0.13332915306091309,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:42.041Z"}
+{"health":0,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:42.043Z"}
+{"level":"info","message":"Bot died","timestamp":"2025-06-22T03:27:42.043Z"}
+{"level":"info","message":"Bot respawned","timestamp":"2025-06-22T03:27:42.449Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:27:42.461Z"}
+{"health":13.253331184387207,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:42.534Z"}
+{"health":5.853329658508301,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:42.633Z"}
+{"health":4.1733293533325195,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:42.634Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:27:42.948Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:27:42.956Z"}
+{"botId":"bot_7","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:42.957Z"}
+{"health":19.81999969482422,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:42.996Z"}
+{"health":11.573330879211426,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:43.539Z"}
+{"health":4.1733293533325195,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:43.633Z"}
+{"health":2.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:43.633Z"}
+{"health":18.97333335876465,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:44.001Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:44.093Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:44.137Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:44.138Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:44.188Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:44.189Z"}
+{"health":9.893330574035645,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:44.544Z"}
+{"health":3.4933292865753174,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:44.642Z"}
+{"health":1.8133292198181152,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:44.642Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:27:44.955Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:27:44.956Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:27:44.956Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:27:44.956Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:27:44.957Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:27:44.957Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:27:44.957Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:27:44.957Z","username":"CMILib"}
+{"botId":"bot_8","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.46.1:32768","timestamp":"2025-06-22T03:27:44.958Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:44.958Z","username":"iAh0909","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:27:44.960Z"}
+{"health":17.793333053588867,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:44.996Z"}
+{"health":9.213330268859863,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:45.540Z"}
+{"health":1.8133292198181152,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:45.639Z"}
+{"health":0.13332915306091309,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:45.639Z"}
+{"level":"info","message":"Auto-register triggered by server message","password":"botminecraft","timestamp":"2025-06-22T03:27:45.962Z"}
+{"health":16.446664810180664,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:45.988Z"}
+{"health":7.533329963684082,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:46.539Z"}
+{"health":0.13332915306091309,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:46.645Z"}
+{"health":0,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:46.660Z"}
+{"level":"info","message":"Bot died","timestamp":"2025-06-22T03:27:46.660Z"}
+{"level":"info","message":"Bot respawned","timestamp":"2025-06-22T03:27:46.871Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:27:46.880Z"}
+{"health":14.933331489562988,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:46.992Z"}
+{"health":5.853329658508301,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:47.534Z"}
+{"health":4.1733293533325195,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:47.534Z"}
+{"health":13.253331184387207,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:47.995Z"}
+{"health":20,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:48.084Z"}
+{"health":4.1733293533325195,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:48.539Z"}
+{"health":2.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:48.539Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:48.988Z"}
+{"health":11.573330879211426,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:48.990Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:49.034Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:49.034Z"}
+{"health":19.81999969482422,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:49.082Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:49.085Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:49.086Z"}
+{"health":3.4933292865753174,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:49.533Z"}
+{"health":1.8133292198181152,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:49.533Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:27:49.653Z"}
+{"health":9.893330574035645,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:49.989Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:27:50.010Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:27:50.015Z"}
+{"botId":"bot_8","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:50.015Z"}
+{"health":18.97333335876465,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:50.088Z"}
+{"health":1.8133292198181152,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:50.532Z"}
+{"health":0.13332915306091309,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:50.533Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:27:50.937Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:27:50.938Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:27:50.938Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:27:50.938Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:27:50.939Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:27:50.939Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:27:50.939Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:27:50.940Z","username":"CMILib"}
+{"health":9.213330268859863,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:50.988Z"}
+{"health":17.793333053588867,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:51.086Z"}
+{"health":0.13332915306091309,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:51.543Z"}
+{"health":0,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:51.546Z"}
+{"level":"info","message":"Bot died","timestamp":"2025-06-22T03:27:51.546Z"}
+{"health":7.533329963684082,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:51.989Z"}
+{"botId":"bot_9","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.192.1:32768","timestamp":"2025-06-22T03:27:52.016Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:52.016Z","username":"sbpOc54","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:27:52.018Z"}
+{"health":16.446664810180664,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:52.082Z"}
+{"level":"info","message":"Auto-register triggered by server message","password":"botminecraft","timestamp":"2025-06-22T03:27:52.156Z"}
+{"health":5.853329658508301,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:52.990Z"}
+{"health":4.1733293533325195,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:52.990Z"}
+{"health":14.933331489562988,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:53.084Z"}
+{"level":"info","message":"Bot respawned","timestamp":"2025-06-22T03:27:53.485Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:27:53.506Z"}
+{"health":20,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:53.949Z"}
+{"health":4.1733293533325195,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:53.994Z"}
+{"health":2.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:53.995Z"}
+{"health":13.253331184387207,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:54.090Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:54.447Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:54.497Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:54.497Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:54.550Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:54.550Z"}
+{"health":19.81999969482422,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:54.972Z"}
+{"health":3.4933292865753174,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:55.029Z"}
+{"health":1.8133292198181152,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:55.029Z"}
+{"health":11.573330879211426,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:55.123Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:27:55.737Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:27:55.913Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:27:55.919Z"}
+{"botId":"bot_9","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:55.919Z"}
+{"health":18.97333335876465,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:56.004Z"}
+{"health":1.8133292198181152,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:56.056Z"}
+{"health":0.13332915306091309,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:56.056Z"}
+{"health":9.893330574035645,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:56.145Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:27:56.656Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:27:56.656Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:27:56.656Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:27:56.657Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:27:56.657Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:27:56.657Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:27:56.658Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:27:56.658Z","username":"CMILib"}
+{"health":17.793333053588867,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:56.937Z"}
+{"health":0.13332915306091309,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:56.996Z"}
+{"health":0,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:57.003Z"}
+{"level":"info","message":"Bot died","timestamp":"2025-06-22T03:27:57.003Z"}
+{"health":9.213330268859863,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:57.091Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:27:57.240Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:27:57.241Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:27:57.241Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:27:57.242Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:27:57.242Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:27:57.242Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:27:57.243Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:27:57.243Z","username":"CMILib"}
+{"level":"info","message":"Bot respawned","timestamp":"2025-06-22T03:27:57.260Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:27:57.287Z"}
+{"botId":"bot_10","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.195.1:32768","timestamp":"2025-06-22T03:27:57.920Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:27:57.920Z","username":"tVgB24","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:27:57.923Z"}
+{"health":16.446664810180664,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:57.941Z"}
+{"health":7.533329963684082,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:58.088Z"}
+{"level":"info","message":"Auto-register triggered by server message","password":"botminecraft","timestamp":"2025-06-22T03:27:58.759Z"}
+{"health":14.933331489562988,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:58.941Z"}
+{"health":5.853329658508301,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:59.092Z"}
+{"health":4.1733293533325195,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:27:59.093Z"}
+{"health":13.253331184387207,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:27:59.937Z"}
+{"health":4.1733293533325195,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:00.087Z"}
+{"health":2.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:00.087Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:00.534Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:00.583Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:00.583Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:00.634Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:00.635Z"}
+{"health":11.573330879211426,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:00.941Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:28:01.054Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:28:01.055Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:28:01.055Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:28:01.055Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:28:01.055Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:28:01.055Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:28:01.056Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:28:01.056Z","username":"CMILib"}
+{"health":3.4933292865753174,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:01.082Z"}
+{"health":1.8133292198181152,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:01.083Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:28:01.339Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:28:01.515Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:28:01.521Z"}
+{"botId":"bot_10","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:28:01.521Z"}
+{"health":9.893330574035645,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:01.953Z"}
+{"health":1.8133292198181152,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:02.108Z"}
+{"health":0.13332915306091309,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:02.108Z"}
+{"health":9.213330268859863,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:02.939Z"}
+{"health":0.13332915306091309,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:03.092Z"}
+{"health":0,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:03.106Z"}
+{"level":"info","message":"Bot died","timestamp":"2025-06-22T03:28:03.106Z"}
+{"health":20,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:03.889Z"}
+{"health":7.533329963684082,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:03.936Z"}
+{"level":"info","message":"Bot respawned","timestamp":"2025-06-22T03:28:03.998Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:28:04.029Z"}
+{"level":"info","message":"Auto-register triggered by server message","password":"botminecraft","timestamp":"2025-06-22T03:28:04.034Z"}
+{"health":19.81999969482422,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:04.888Z"}
+{"health":5.853329658508301,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:04.942Z"}
+{"health":4.1733293533325195,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:04.943Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:28:05.348Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:28:05.348Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:28:05.349Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:28:05.349Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:28:05.349Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:28:05.349Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:28:05.350Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:28:05.350Z","username":"CMILib"}
+{"health":18.97333335876465,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:05.890Z"}
+{"health":4.1733293533325195,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:05.935Z"}
+{"health":2.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:05.936Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:06.384Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:06.433Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:06.434Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:06.490Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:06.490Z"}
+{"health":17.793333053588867,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:06.892Z"}
+{"health":3.4933292865753174,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:06.942Z"}
+{"health":1.8133292198181152,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:06.943Z"}
+{"health":20,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:07.784Z"}
+{"health":16.446664810180664,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:07.886Z"}
+{"health":1.8133292198181152,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:07.932Z"}
+{"health":0.13332915306091309,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:07.933Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:28:08.396Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:28:08.396Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:28:08.396Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:28:08.396Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:28:08.397Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:28:08.397Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:28:08.397Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:28:08.398Z","username":"CMILib"}
+{"health":19.81999969482422,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:08.792Z"}
+{"health":14.933331489562988,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:08.889Z"}
+{"health":0.13332915306091309,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:08.942Z"}
+{"health":0,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:08.945Z"}
+{"level":"info","message":"Bot died","timestamp":"2025-06-22T03:28:08.945Z"}
+{"level":"info","message":"Bot respawned","timestamp":"2025-06-22T03:28:09.199Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:28:09.249Z"}
+{"health":18.97333335876465,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:09.784Z"}
+{"health":13.253331184387207,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:09.891Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:28:10.692Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:28:10.692Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:28:10.692Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:28:10.693Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:28:10.693Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:28:10.693Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:28:10.693Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:28:10.693Z","username":"CMILib"}
+{"health":17.793333053588867,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:10.787Z"}
+{"health":11.573330879211426,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:10.888Z"}
+{"health":16.446664810180664,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:11.788Z"}
+{"health":9.893330574035645,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:11.891Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:28:12.062Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:28:12.062Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:28:12.062Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:28:12.063Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:28:12.063Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:28:12.063Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:28:12.063Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:28:12.064Z","username":"CMILib"}
+{"health":14.933331489562988,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:12.788Z"}
+{"health":9.213330268859863,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:12.885Z"}
+{"health":13.253331184387207,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:13.784Z"}
+{"health":7.533329963684082,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:13.884Z"}
+{"health":20,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:13.891Z"}
+{"health":11.573330879211426,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:14.784Z"}
+{"health":5.853329658508301,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:14.888Z"}
+{"health":4.1733293533325195,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:14.888Z"}
+{"health":19.81999969482422,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:14.894Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:28:15.692Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:28:15.692Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:28:15.692Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:28:15.693Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:28:15.693Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:28:15.693Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:28:15.693Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:28:15.694Z","username":"CMILib"}
+{"health":9.893330574035645,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:15.789Z"}
+{"health":4.1733293533325195,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:15.890Z"}
+{"health":2.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:15.891Z"}
+{"health":18.97333335876465,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:15.896Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:16.340Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:16.390Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:16.391Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:16.433Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:16.434Z"}
+{"health":9.213330268859863,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:16.787Z"}
+{"health":3.4933292865753174,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:16.883Z"}
+{"health":1.8133292198181152,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:16.883Z"}
+{"health":17.793333053588867,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:16.889Z"}
+{"health":7.533329963684082,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:17.786Z"}
+{"health":1.8133292198181152,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:17.889Z"}
+{"health":0.13332915306091309,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:17.889Z"}
+{"health":16.446664810180664,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:17.895Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:28:18.198Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:28:18.199Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:28:18.199Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:28:18.199Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:28:18.199Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:28:18.200Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:28:18.200Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:28:18.200Z","username":"CMILib"}
+{"health":5.853329658508301,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:18.788Z"}
+{"health":4.1733293533325195,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:18.789Z"}
+{"health":0.13332915306091309,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:18.887Z"}
+{"health":0,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:18.890Z"}
+{"level":"info","message":"Bot died","timestamp":"2025-06-22T03:28:18.890Z"}
+{"health":14.933331489562988,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:18.892Z"}
+{"level":"info","message":"Bot respawned","timestamp":"2025-06-22T03:28:19.299Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:28:19.334Z"}
+{"health":4.1733293533325195,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:19.788Z"}
+{"health":2.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:19.788Z"}
+{"health":13.253331184387207,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:19.889Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:20.236Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:20.282Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:20.282Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:20.331Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:20.331Z"}
+{"health":3.4933292865753174,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:20.794Z"}
+{"health":1.8133292198181152,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:20.794Z"}
+{"health":20,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:20.890Z"}
+{"health":11.573330879211426,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:20.895Z"}
+{"health":1.8133292198181152,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:21.786Z"}
+{"health":0.13332915306091309,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:21.787Z"}
+{"health":19.81999969482422,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:21.887Z"}
+{"health":9.893330574035645,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:21.893Z"}
+{"health":0.13332915306091309,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:22.794Z"}
+{"health":0,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:22.798Z"}
+{"level":"info","message":"Bot died","timestamp":"2025-06-22T03:28:22.798Z"}
+{"health":18.97333335876465,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:22.889Z"}
+{"health":9.213330268859863,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:22.895Z"}
+{"level":"info","message":"Bot respawned","timestamp":"2025-06-22T03:28:23.551Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:28:23.584Z"}
+{"health":17.793333053588867,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:23.885Z"}
+{"health":7.533329963684082,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:23.892Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:28:24.042Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:28:24.043Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:28:24.043Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:28:24.043Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:28:24.044Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:28:24.044Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:28:24.044Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:28:24.044Z","username":"CMILib"}
+{"health":16.446664810180664,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:24.896Z"}
+{"health":5.853329658508301,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:24.903Z"}
+{"health":4.1733293533325195,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:24.904Z"}
+{"health":14.933331489562988,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:25.881Z"}
+{"health":4.1733293533325195,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:25.887Z"}
+{"health":2.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:25.887Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:26.342Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:26.387Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:26.387Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:26.445Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:26.445Z"}
+{"health":13.253331184387207,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:26.886Z"}
+{"health":3.4933292865753174,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:26.892Z"}
+{"health":1.8133292198181152,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:26.894Z"}
+{"health":11.573330879211426,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:27.887Z"}
+{"health":1.8133292198181152,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:27.893Z"}
+{"health":0.13332915306091309,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:27.894Z"}
+{"health":9.893330574035645,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:28.902Z"}
+{"health":0.13332915306091309,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:28.907Z"}
+{"health":0,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:28.908Z"}
+{"level":"info","message":"Bot died","timestamp":"2025-06-22T03:28:28.908Z"}
+{"level":"info","message":"Bot respawned","timestamp":"2025-06-22T03:28:29.449Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:28:29.504Z"}
+{"health":9.213330268859863,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:29.886Z"}
+{"health":7.533329963684082,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:30.882Z"}
+{"health":5.853329658508301,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:31.897Z"}
+{"health":4.1733293533325195,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:31.897Z"}
+{"health":4.1733293533325195,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:32.884Z"}
+{"health":2.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:32.884Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:33.333Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:33.378Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:33.378Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:33.428Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:33.429Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:28:33.692Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:28:33.693Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:28:33.693Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:28:33.693Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:28:33.694Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:28:33.694Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:28:33.694Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:28:33.694Z","username":"CMILib"}
+{"health":3.4933292865753174,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:33.884Z"}
+{"health":1.8133292198181152,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:33.884Z"}
+{"health":1.8133292198181152,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:34.896Z"}
+{"health":0.13332915306091309,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:34.896Z"}
+{"health":0.13332915306091309,"level":"info","message":"Bot took damage","timestamp":"2025-06-22T03:28:35.890Z"}
+{"health":0,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T03:28:35.892Z"}
+{"level":"info","message":"Bot died","timestamp":"2025-06-22T03:28:35.892Z"}
+{"level":"info","message":"Bot respawned","timestamp":"2025-06-22T03:28:36.114Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:28:36.160Z"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:28:37.757Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:28:37.757Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:28:37.757Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:28:37.758Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:28:37.758Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:28:37.759Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:28:37.759Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:28:37.760Z","username":"CMILib"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:28:44.210Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:28:44.211Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:28:44.211Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:28:44.211Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:28:44.212Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:28:44.212Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:28:44.212Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:28:44.212Z","username":"CMILib"}
+{"level":"info","message":"Chat message received All commands for AdvancedE...","timestamp":"2025-06-22T03:28:50.337Z","username":"AdvancedEnchantments"}
+{"level":"info","message":"Chat message received Lists command aliases","timestamp":"2025-06-22T03:28:50.337Z","username":"Aliases"}
+{"level":"info","message":"Chat message received All commands for AuraSkills","timestamp":"2025-06-22T03:28:50.338Z","username":"AuraSkills"}
+{"level":"info","message":"Chat message received All commands for BetterRTP","timestamp":"2025-06-22T03:28:50.338Z","username":"BetterRTP"}
+{"level":"info","message":"Chat message received All commands for Bukkit","timestamp":"2025-06-22T03:28:50.338Z","username":"Bukkit"}
+{"level":"info","message":"Chat message received All commands for Citizens","timestamp":"2025-06-22T03:28:50.338Z","username":"Citizens"}
+{"level":"info","message":"Chat message received All commands for CMI","timestamp":"2025-06-22T03:28:50.338Z","username":"CMI"}
+{"level":"info","message":"Chat message received All commands for CMILib","timestamp":"2025-06-22T03:28:50.339Z","username":"CMILib"}
+{"level":"info","message":"Chat sent to all bots adminnguuu","sentCount":10,"successCount":10,"timestamp":"2025-06-22T03:29:12.756Z"}
+{"level":"info","message":"Chat sent to all bots adminnguuu","sentCount":10,"successCount":10,"timestamp":"2025-06-22T03:29:12.858Z"}
+{"level":"info","message":"Chat sent to all bots adminnguuu","sentCount":10,"successCount":10,"timestamp":"2025-06-22T03:29:12.958Z"}
+{"level":"info","message":"Chat sent to all bots adminnguuu","sentCount":10,"successCount":10,"timestamp":"2025-06-22T03:29:13.058Z"}
+{"level":"info","message":"Chat sent to all bots adminnguuu","sentCount":10,"successCount":10,"timestamp":"2025-06-22T03:29:13.165Z"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.257Z","username":"Img037"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.258Z","username":"PEit3789"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.258Z","username":"rTvh281"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.258Z","username":"EMGa182"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.259Z","username":"DtiPa355"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.259Z","username":"MBmKY27"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.259Z","username":"NxY178"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.259Z","username":"iAh0909"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.260Z","username":"sbpOc54"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.260Z","username":"tVgB24"}
+{"level":"info","message":"Chat sent to all bots adminnguuu","sentCount":10,"successCount":10,"timestamp":"2025-06-22T03:29:13.265Z"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.358Z","username":"Img037"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.358Z","username":"PEit3789"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.359Z","username":"rTvh281"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.359Z","username":"EMGa182"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.359Z","username":"DtiPa355"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.359Z","username":"MBmKY27"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.360Z","username":"NxY178"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.360Z","username":"iAh0909"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.360Z","username":"sbpOc54"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.361Z","username":"tVgB24"}
+{"level":"info","message":"Chat sent to all bots adminnguuu","sentCount":10,"successCount":10,"timestamp":"2025-06-22T03:29:13.365Z"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.460Z","username":"Img037"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.461Z","username":"PEit3789"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.461Z","username":"rTvh281"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.461Z","username":"EMGa182"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.462Z","username":"DtiPa355"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.462Z","username":"MBmKY27"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.462Z","username":"NxY178"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.462Z","username":"iAh0909"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.462Z","username":"sbpOc54"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.463Z","username":"tVgB24"}
+{"level":"info","message":"Chat sent to all bots adminnguuu","sentCount":10,"successCount":10,"timestamp":"2025-06-22T03:29:13.466Z"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.559Z","username":"Img037"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.559Z","username":"PEit3789"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.560Z","username":"rTvh281"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.560Z","username":"EMGa182"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.560Z","username":"DtiPa355"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.560Z","username":"MBmKY27"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.561Z","username":"NxY178"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.561Z","username":"iAh0909"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.561Z","username":"sbpOc54"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.561Z","username":"tVgB24"}
+{"level":"info","message":"Chat sent to all bots adminnguuu","sentCount":10,"successCount":10,"timestamp":"2025-06-22T03:29:13.567Z"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.665Z","username":"Img037"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.666Z","username":"PEit3789"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.667Z","username":"rTvh281"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.667Z","username":"EMGa182"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.667Z","username":"DtiPa355"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.667Z","username":"MBmKY27"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.668Z","username":"NxY178"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.668Z","username":"iAh0909"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.668Z","username":"sbpOc54"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.668Z","username":"tVgB24"}
+{"level":"info","message":"Chat sent to all bots adminnguuu","sentCount":10,"successCount":10,"timestamp":"2025-06-22T03:29:13.669Z"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.765Z","username":"Img037"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.765Z","username":"PEit3789"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.766Z","username":"rTvh281"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.766Z","username":"EMGa182"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.766Z","username":"DtiPa355"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.766Z","username":"MBmKY27"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.766Z","username":"NxY178"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.767Z","username":"iAh0909"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.767Z","username":"sbpOc54"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.767Z","username":"tVgB24"}
+{"level":"info","message":"Chat sent to all bots adminnguuu","sentCount":10,"successCount":10,"timestamp":"2025-06-22T03:29:13.769Z"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.866Z","username":"Img037"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.866Z","username":"PEit3789"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.866Z","username":"rTvh281"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.866Z","username":"EMGa182"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.867Z","username":"DtiPa355"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.867Z","username":"MBmKY27"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.867Z","username":"NxY178"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.867Z","username":"iAh0909"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.867Z","username":"sbpOc54"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.868Z","username":"tVgB24"}
+{"level":"info","message":"Chat sent to all bots adminnguuu","sentCount":10,"successCount":10,"timestamp":"2025-06-22T03:29:13.869Z"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.966Z","username":"Img037"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.966Z","username":"PEit3789"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.966Z","username":"rTvh281"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.967Z","username":"EMGa182"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.967Z","username":"DtiPa355"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.967Z","username":"MBmKY27"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.967Z","username":"NxY178"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.967Z","username":"iAh0909"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.968Z","username":"sbpOc54"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:13.968Z","username":"tVgB24"}
+{"level":"info","message":"Chat sent to all bots adminnguuu","sentCount":10,"successCount":10,"timestamp":"2025-06-22T03:29:13.969Z"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.067Z","username":"Img037"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.068Z","username":"PEit3789"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.069Z","username":"rTvh281"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.069Z","username":"EMGa182"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.069Z","username":"DtiPa355"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.069Z","username":"MBmKY27"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.069Z","username":"NxY178"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.069Z","username":"iAh0909"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.070Z","username":"sbpOc54"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.070Z","username":"tVgB24"}
+{"level":"info","message":"Chat sent to all bots adminnguuu","sentCount":10,"successCount":10,"timestamp":"2025-06-22T03:29:14.071Z"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.170Z","username":"Img037"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.170Z","username":"PEit3789"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.170Z","username":"rTvh281"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.171Z","username":"EMGa182"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.171Z","username":"DtiPa355"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.171Z","username":"MBmKY27"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.171Z","username":"NxY178"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.171Z","username":"iAh0909"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.171Z","username":"sbpOc54"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.172Z","username":"tVgB24"}
+{"level":"info","message":"Chat sent to all bots adminnguuu","sentCount":10,"successCount":10,"timestamp":"2025-06-22T03:29:14.172Z"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.270Z","username":"Img037"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.270Z","username":"PEit3789"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.270Z","username":"rTvh281"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.271Z","username":"EMGa182"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.271Z","username":"DtiPa355"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.271Z","username":"MBmKY27"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.271Z","username":"NxY178"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.272Z","username":"iAh0909"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.272Z","username":"sbpOc54"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.272Z","username":"tVgB24"}
+{"level":"info","message":"Chat sent to all bots adminnguuu","sentCount":10,"successCount":10,"timestamp":"2025-06-22T03:29:14.273Z"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.370Z","username":"Img037"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.370Z","username":"PEit3789"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.370Z","username":"rTvh281"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.371Z","username":"EMGa182"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.371Z","username":"DtiPa355"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.371Z","username":"MBmKY27"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.371Z","username":"NxY178"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.372Z","username":"iAh0909"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.372Z","username":"sbpOc54"}
+{"level":"info","message":"Chat message sent adminnguuu","timestamp":"2025-06-22T03:29:14.372Z","username":"tVgB24"}
+{"level":"info","message":"Chat sent to all bots adminnguuu","sentCount":10,"successCount":10,"timestamp":"2025-06-22T03:29:14.374Z"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"compound","value":{"translate":{"type":"string","value":"disconnect.spam"}}},"timestamp":"2025-06-22T03:29:14.458Z"}
