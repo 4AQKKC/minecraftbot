@@ -152,3 +152,72 @@
 {"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T02:37:00.894Z"}
 {"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T02:39:19.683Z"}
 {"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T02:39:20.026Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005:25565","timestamp":"2025-06-22T02:40:04.804Z","username":"eVZZ99","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T02:40:04.945Z"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"cherry.pikamc.vn:25005","level":"error","message":"Bot error getaddrinfo ENOTFOUND cherry.pikamc.vn:25005","stack":"Error: getaddrinfo ENOTFOUND cherry.pikamc.vn:25005\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)","syscall":"getaddrinfo","timestamp":"2025-06-22T02:40:05.002Z"}
+{"level":"info","message":"Bot disconnected","reason":"disconnect.quitting","timestamp":"2025-06-22T02:40:05.004Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T02:40:13.695Z","username":"eVZZ99","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T02:40:13.699Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T02:40:15.704Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T02:40:15.881Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T02:40:15.889Z"}
+{"level":"info","message":"Auto-register command sent","password":"botminecraft","timestamp":"2025-06-22T02:40:18.883Z"}
+{"level":"info","message":"Auto-login command sent","password":"botminecraft","timestamp":"2025-06-22T02:40:19.884Z"}
+{"level":"info","message":"Bot disconnected manually","timestamp":"2025-06-22T02:40:35.147Z"}
+{"botId":"bot_1","botName":"CGS2739","level":"info","message":"Bot created","timestamp":"2025-06-22T02:40:42.827Z"}
+{"botId":"bot_2","botName":"YejJi64","level":"info","message":"Bot created","timestamp":"2025-06-22T02:40:42.828Z"}
+{"botId":"bot_3","botName":"OBxr30","level":"info","message":"Bot created","timestamp":"2025-06-22T02:40:42.828Z"}
+{"botId":"bot_1","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.36.1:32768","timestamp":"2025-06-22T02:40:58.377Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T02:40:58.378Z","username":"CGS2739","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T02:40:58.515Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T02:41:00.476Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T02:41:00.659Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T02:41:00.667Z"}
+{"botId":"bot_1","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T02:41:00.669Z"}
+{"botId":"bot_2","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.46.1:32768","timestamp":"2025-06-22T02:41:02.671Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T02:41:02.671Z","username":"YejJi64","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T02:41:02.675Z"}
+{"level":"info","message":"Auto-register command sent","password":"botminecraft","timestamp":"2025-06-22T02:41:03.660Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T02:41:04.453Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T02:41:04.630Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T02:41:04.639Z"}
+{"botId":"bot_2","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T02:41:04.640Z"}
+{"level":"info","message":"Auto-login command sent","password":"botminecraft","timestamp":"2025-06-22T02:41:04.668Z"}
+{"botId":"bot_3","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.192.1:32768","timestamp":"2025-06-22T02:41:06.641Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T02:41:06.641Z","username":"OBxr30","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T02:41:06.645Z"}
+{"level":"warn","message":"Bot was kicked","reason":"\"Connection throttled! Please wait before reconnecting.\"","timestamp":"2025-06-22T02:41:06.980Z"}
+{"level":"warn","message":"Kicked during verification","reason":"\"\\\"Connection throttled! Please wait before reconnecting.\\\"\"","timestamp":"2025-06-22T02:41:06.981Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T02:41:06.981Z"}
+{"botId":"bot_3","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T02:41:06.983Z"}
+{"level":"info","message":"Auto-register command sent","password":"botminecraft","timestamp":"2025-06-22T02:41:07.631Z"}
+{"level":"info","message":"Auto-login command sent","password":"botminecraft","timestamp":"2025-06-22T02:41:08.631Z"}
+{"health":4.1733293533325195,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T02:41:28.974Z"}
+{"health":2.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T02:41:29.977Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T02:41:30.433Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T02:41:30.472Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T02:41:30.473Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T02:41:30.528Z"}
+{"health":3.4933292865753174,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T02:41:30.528Z"}
+{"health":1.8133292198181152,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T02:41:30.974Z"}
+{"health":0.13332915306091309,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T02:41:31.976Z"}
+{"health":0,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T02:41:32.978Z"}
+{"level":"info","message":"Bot died","timestamp":"2025-06-22T02:41:32.978Z"}
+{"health":4.1733293533325195,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T02:41:33.026Z"}
+{"health":2.7382311820983887,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T02:41:33.137Z"}
+{"level":"info","message":"Bot respawned","timestamp":"2025-06-22T02:41:33.171Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T02:41:33.174Z"}
+{"health":1.0582311153411865,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T02:41:34.030Z"}
+{"health":0,"level":"warn","message":"Bot health is low","timestamp":"2025-06-22T02:41:34.130Z"}
+{"level":"info","message":"Bot died","timestamp":"2025-06-22T02:41:34.130Z"}
+{"level":"info","message":"Bot respawned","timestamp":"2025-06-22T02:41:34.310Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T02:41:34.324Z"}
+{"level":"info","message":"Auto-register command sent","password":"botminecraft","timestamp":"2025-06-22T02:41:36.178Z"}
+{"level":"info","message":"Auto-login command sent","password":"botminecraft","timestamp":"2025-06-22T02:41:37.178Z"}
+{"level":"info","message":"Auto-register command sent","password":"botminecraft","timestamp":"2025-06-22T02:41:37.324Z"}
+{"level":"info","message":"Auto-login command sent","password":"botminecraft","timestamp":"2025-06-22T02:41:38.325Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T02:43:54.963Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T02:43:54.985Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T02:44:15.442Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T02:44:47.975Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T02:44:48.277Z"}

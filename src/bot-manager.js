@@ -96,6 +96,22 @@ class BotManager {
             botInfo.config.host = host;
             botInfo.config.port = port;
             
+            // Add connection delay to prevent throttling
+            const timeSinceLastConnection = Date.now() - (this.lastConnectionTime || 0);
+            const minDelay = botInfo.config.connectionDelay || 5000;
+            
+            if (timeSinceLastConnection < minDelay) {
+                const waitTime = minDelay - timeSinceLastConnection;
+                console.log(`Đợi ${waitTime / 1000} giây để tránh bị giới hạn kết nối...`.yellow);
+                await new Promise(resolve => setTimeout(resolve, waitTime));
+            }
+            
+            this.lastConnectionTime = Date.now();
+        
+        // Initialize lastConnectionTime if not set
+        if (!this.lastConnectionTime) {
+            this.lastConnectionTime = 0;
+        }
             await botInfo.bot.connect();
             
             botInfo.connectedTo = `${host}:${port}`;

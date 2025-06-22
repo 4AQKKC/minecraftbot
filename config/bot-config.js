@@ -62,5 +62,11 @@ module.exports = {
     followDistance: parseFloat(process.env.FOLLOW_DISTANCE) || 3.0,
     
     // Pathfinding settings
-    pathfindingTimeout: parseInt(process.env.PATHFINDING_TIMEOUT) || 10000
+    pathfindingTimeout: parseInt(process.env.PATHFINDING_TIMEOUT) || 10000,
+    
+    // Connection throttling settings
+    connectionDelay: parseInt(process.env.CONNECTION_DELAY) || 5000, // 5 seconds between connections
+    maxRetries: parseInt(process.env.MAX_RETRIES) || 3,
+    retryDelay: parseInt(process.env.RETRY_DELAY) || 10000, // 10 seconds between retries
+    throttleDelay: parseInt(process.env.THROTTLE_DELAY) || 30000 // 30 seconds if throttled
 };

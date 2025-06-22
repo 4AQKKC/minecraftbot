@@ -15,10 +15,21 @@ class MinecraftBot {
         this.antiKickInterval = null;
         this.proxyManager = proxyManager;
         this.currentProxy = null;
+        this.retryCount = 0;
+        this.lastConnectionAttempt = 0;
     }
 
     async connect() {
         try {
+            // Check if we need to wait due to connection throttling
+            const timeSinceLastAttempt = Date.now() - this.lastConnectionAttempt;
+            if (timeSinceLastAttempt < this.config.connectionDelay) {
+                const waitTime = this.config.connectionDelay - timeSinceLastAttempt;
+                console.log(`Đợi ${waitTime / 1000} giây trước khi kết nối để tránh bị giới hạn...`.yellow);
+                await new Promise(resolve => setTimeout(resolve, waitTime));
+            }
+            
+            this.lastConnectionAttempt = Date.now();
             // Setup bot options with better compatibility
             const botOptions = {
                 host: this.config.host,
@@ -222,10 +233,23 @@ class MinecraftBot {
             }
         });
 
-        // Kicked handling
+        // Kicked handling with reconnection logic
         this.bot.on('kicked', (reason) => {
             logger.warn('Bot was kicked', { reason });
             console.log(`Bot was kicked: ${reason}`.red);
+            
+            // Handle specific kick reasons
+            if (reason.includes('Connection throttled') || reason.includes('Please wait before reconnecting')) {
+                console.log(`Đợi ${this.config.throttleDelay / 1000} giây trước khi thử kết nối lại...`.yellow);
+                setTimeout(() => {
+                    this.handleThrottledReconnection();
+                }, this.config.throttleDelay);
+            } else if (reason.includes('You are already connected')) {
+                console.log('Lỗi đã kết nối - đợi trước khi thử lại...'.yellow);
+                setTimeout(() => {
+                    this.handleThrottledReconnection();
+                }, this.config.retryDelay);
+            }
         });
     }
 
@@ -249,6 +273,28 @@ class MinecraftBot {
                 behaviors.antiKick(this.bot);
             }
         }, this.config.antiKickInterval);
+    }
+
+    handleThrottledReconnection() {
+        if (this.retryCount < this.config.maxRetries) {
+            this.retryCount++;
+            console.log(`Đang thử kết nối lại (${this.retryCount}/${this.config.maxRetries})...`.cyan);
+            
+            // Wait additional time for each retry attempt
+            const retryWait = this.config.retryDelay * this.retryCount;
+            setTimeout(() => {
+                this.connect().catch(error => {
+                    console.log(`Lần thử kết nối lại ${this.retryCount} thất bại: ${error.message}`.red);
+                    if (this.retryCount >= this.config.maxRetries) {
+                        console.log('Đã đạt số lần thử tối đa. Dừng việc kết nối lại.'.red);
+                        this.retryCount = 0;
+                    }
+                });
+            }, retryWait);
+        } else {
+            console.log('Đã đạt số lần thử tối đa cho kết nối bị giới hạn.'.red);
+            this.retryCount = 0;
+        }
     }
 
     handleChatCommands(username, message) {
