@@ -68,7 +68,7 @@ const commands = {
         console.log('  removeall - Xóa tất cả bot'.white);
         console.log('');
         console.log('  Lệnh Proxy:'.cyan.bold);
-        console.log('  proxyadd <proxy_url> - Thêm proxy (socks5://ip:port hoặc http://ip:port)'.white);
+        console.log('  proxyadd <proxy_url> hoặc proxyadd bulk - Thêm proxy'.white);
         console.log('  proxyremove <proxy_url> - Xóa proxy'.white);
         console.log('  proxylist - Hiển thị tất cả proxy và trạng thái'.white);
         console.log('  proxytest - Kiểm tra tất cả proxy'.white);
