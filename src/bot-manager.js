@@ -256,108 +256,140 @@ class BotManager {
     }
 
     /**
-     * Connect all bots to same server with delays
+     * Chờ bot đăng nhập hoàn tất - theo dõi sự kiện chat từ server
      */
-    async connectAllBots(host, port = 25565, delayMs = 2000) {
+    async waitForBotLogin(botId, timeoutMs = 15000) {
+        const botInfo = this.bots.get(botId);
+        if (!botInfo || !botInfo.bot) {
+            throw new Error('Bot not found or not connected');
+        }
+
+        return new Promise((resolve, reject) => {
+            const timeout = setTimeout(() => {
+                reject(new Error('Login timeout - bot không đăng nhập được'));
+            }, timeoutMs);
+
+            let loginAttempted = false;
+            
+            // Lắng nghe tin nhắn từ server để xác định trạng thái đăng nhập
+            const messageHandler = (jsonMsg) => {
+                try {
+                    const text = jsonMsg.toString().toLowerCase();
+                    
+                    // Phát hiện thông báo đăng nhập thành công
+                    if (text.includes('successfully') || text.includes('logged in') || 
+                        text.includes('welcome') || text.includes('spawn') ||
+                        text.includes('thành công') || text.includes('đăng nhập')) {
+                        clearTimeout(timeout);
+                        botInfo.bot.removeListener('message', messageHandler);
+                        resolve();
+                    }
+                    
+                    // Phát hiện yêu cầu đăng nhập/đăng ký
+                    if ((text.includes('register') || text.includes('login') || 
+                         text.includes('đăng ký') || text.includes('đăng nhập')) && !loginAttempted) {
+                        loginAttempted = true;
+                        setTimeout(() => {
+                            if (botInfo.bot && botInfo.bot.isConnected) {
+                                botInfo.bot.instance.autoLogin();
+                            }
+                        }, 1000);
+                    }
+                } catch (error) {
+                    // Bỏ qua lỗi parse message
+                }
+            };
+
+            // Đăng ký lắng nghe tin nhắn
+            botInfo.bot.on('message', messageHandler);
+            
+            // Fallback: Kiểm tra player entity sau 3 giây
+            setTimeout(() => {
+                if (botInfo.bot && botInfo.bot.player && botInfo.bot.entity) {
+                    clearTimeout(timeout);
+                    botInfo.bot.removeListener('message', messageHandler);
+                    resolve();
+                }
+            }, 3000);
+        });
+    }
+
+    /**
+     * Connect all bots to same server with delays - mỗi bot login hoàn tất mới kết nối bot tiếp theo
+     */
+    async connectAllBots(host, port = 25565, delayMs = 3000) {
         const bots = Array.from(this.bots.values());
         let successCount = 0;
         
-        console.log(`Starting mass connection: ${bots.length} bots to ${host}:${port}...`.yellow);
+        console.log(`🚀 Bắt đầu kết nối tuần tự: ${bots.length} bot tới ${host}:${port}`.yellow.bold);
+        console.log(`⏱️ Mỗi bot sẽ đăng nhập hoàn tất mới kết nối bot tiếp theo`.cyan);
         
         for (let i = 0; i < bots.length; i++) {
             const botInfo = bots[i];
             
             try {
-                console.log(`[${i+1}/${bots.length}] Connecting ${botInfo.name}...`.cyan);
+                console.log(`[${i+1}/${bots.length}] 🔗 Kết nối ${botInfo.name}...`.cyan);
                 await this.connectBot(botInfo.id, host, port);
-                successCount++;
-                console.log(`✓ ${botInfo.name} connected successfully`.green);
                 
-                // Add delay between connections to avoid rate limiting
+                // Chờ bot đăng nhập hoàn tất
+                await this.waitForBotLogin(botInfo.id);
+                
+                successCount++;
+                console.log(`✅ ${botInfo.name} đã kết nối và đăng nhập thành công`.green);
+                
+                // Delay trước khi kết nối bot tiếp theo
                 if (i < bots.length - 1) {
-                    console.log(`Waiting ${delayMs}ms before next connection...`.gray);
+                    console.log(`⏳ Chờ ${delayMs/1000}s trước khi kết nối bot tiếp theo...`.gray);
                     await new Promise(resolve => setTimeout(resolve, delayMs));
                 }
             } catch (error) {
-                console.log(`✗ ${botInfo.name} failed: ${error.message}`.red);
+                console.log(`❌ ${botInfo.name} thất bại: ${error.message}`.red);
             }
         }
         
-        console.log(`Mass connection completed: ${successCount}/${bots.length} bots connected`.cyan);
+        console.log(`🎯 Hoàn thành kết nối tuần tự: ${successCount}/${bots.length} bot đã kết nối`.cyan.bold);
         return successCount;
     }
 
     /**
-     * Connect bots in parallel groups to improve speed
+     * Connect bots tuần tự với auto-login - tối ưu hóa cho tính ổn định
      */
-    async connectAllBotsParallel(host, port = 25565, groupSize = 5, delayBetweenGroups = 12000) {
+    async connectAllBotsParallel(host, port = 25565, groupSize = 1, delayBetweenGroups = 4000) {
         const bots = Array.from(this.bots.values());
         let successCount = 0;
-        let connectedBots = [];
         
-        console.log(`🎯 BẮT ĐẦU KẾT NỐI THEO NHÓM: ${bots.length} bot, mỗi nhóm ${groupSize} bot`.yellow.bold);
-        console.log(`🔒 CHẾ ĐỘ: Kết nối ${groupSize} bot cùng lúc, auto /register mỗi 5 bot`.cyan);
+        console.log(`🎯 Kết nối tuần tự tối ưu: ${bots.length} bot tới ${host}:${port}`.yellow.bold);
+        console.log(`🔒 Mỗi bot sẽ kết nối → đăng nhập → chờ ổn định → bot tiếp theo`.cyan);
         
-        for (let i = 0; i < bots.length; i += groupSize) {
-            const group = bots.slice(i, i + groupSize);
-            const groupNumber = Math.floor(i / groupSize) + 1;
-            const totalGroups = Math.ceil(bots.length / groupSize);
+        for (let i = 0; i < bots.length; i++) {
+            const botInfo = bots[i];
+            const botNumber = i + 1;
             
-            console.log(`[Nhóm ${groupNumber}/${totalGroups}] Kết nối ${group.length} bot...`.cyan);
-            
-            // Kết nối 5 bot song song với delay nhỏ
-            const promises = group.map(async (botInfo, index) => {
-                try {
-                    // Delay nhỏ giữa các bot trong cùng nhóm
-                    const staggerDelay = index * 1000; // 1s giữa mỗi bot trong nhóm
-                    if (staggerDelay > 0) {
-                        await new Promise(resolve => setTimeout(resolve, staggerDelay));
-                    }
-                    
-                    console.log(`🔗 Kết nối bot ${botInfo.name}... (${index + 1}/${group.length}) nhóm ${groupNumber}`.cyan);
-                    await this.connectBot(botInfo.id, host, port);
-                    console.log(`✅ Bot ${botInfo.name} kết nối thành công`.green);
-                    
-                    // Thêm bot vào danh sách đã kết nối
-                    connectedBots.push(botInfo);
-                    
-                    return true;
-                } catch (error) {
-                    console.log(`❌ Bot ${botInfo.name} kết nối thất bại: ${error.message}`.red);
-                    return false;
+            try {
+                console.log(`[${botNumber}/${bots.length}] 🚀 Kết nối ${botInfo.name}...`.cyan);
+                
+                // Kết nối bot
+                await this.connectBot(botInfo.id, host, port);
+                
+                // Chờ bot đăng nhập hoàn tất
+                console.log(`⏳ Chờ ${botInfo.name} đăng nhập...`.yellow);
+                await this.waitForBotLogin(botInfo.id);
+                
+                successCount++;
+                console.log(`✅ ${botInfo.name} hoàn tất (${successCount}/${bots.length})`.green);
+                
+                // Delay trước bot tiếp theo để tránh rate limit
+                if (i < bots.length - 1) {
+                    console.log(`⏱️ Chờ ${delayBetweenGroups/1000}s trước bot tiếp theo...`.gray);
+                    await new Promise(resolve => setTimeout(resolve, delayBetweenGroups));
                 }
-            });
-            
-            const results = await Promise.allSettled(promises);
-            const groupSuccessCount = results.filter(r => r.status === 'fulfilled' && r.value).length;
-            successCount += groupSuccessCount;
-            
-            console.log(`📊 Nhóm ${groupNumber} hoàn thành: ${groupSuccessCount}/${group.length} bot kết nối thành công`.cyan);
-            
-            // Tự động register cho nhóm vừa kết nối (nếu có bot thành công)
-            if (groupSuccessCount > 0) {
-                const recentlyConnected = connectedBots.slice(-groupSuccessCount);
-                console.log(`🔐 Auto /register cho ${groupSuccessCount} bot vừa kết nối...`.blue.bold);
-                await this.autoRegisterBatch(recentlyConnected);
-            }
-            
-            // Delay cực dài giữa các nhóm để đảm bảo server không phát hiện
-            if (i + groupSize < bots.length) {
-                console.log(`⏳ Đợi ${delayBetweenGroups/1000}s trước nhóm tiếp theo (tránh hoàn toàn spam detection)...`.gray);
-                console.log(`📊 Tiến độ: ${Math.min(i + groupSize, bots.length)}/${bots.length} bot đã xử lý`.blue);
-                await new Promise(resolve => setTimeout(resolve, delayBetweenGroups));
+                
+            } catch (error) {
+                console.log(`❌ Bot ${botInfo.name} kết nối thất bại: ${error.message}`.red);
             }
         }
         
-        console.log(`🎯 HOÀN TẤT KẾT NỐI THEO NHÓM: ${successCount}/${bots.length} bot đã kết nối ổn định`.green.bold);
-        console.log(`🔐 Đã auto-register cho tất cả bot theo từng nhóm`.yellow);
-        console.log(`⚡ Tất cả bot đã sẵn sàng và đã đăng ký`.green);
-        
-        if (successCount > 0) {
-            console.log(`🏁 BƯỚC TIẾP THEO:`.cyan.bold);
-            console.log(`   - "list" → Kiểm tra trạng thái đăng nhập`.cyan);
-            console.log(`   - "chatall <tin nhắn>" → Test chat ngay`.cyan);
-        }
+        console.log(`🎯 Hoàn tất kết nối tuần tự tối ưu: ${successCount}/${bots.length} bot đã kết nối và đăng nhập`.green.bold);
         return successCount;
     }
 

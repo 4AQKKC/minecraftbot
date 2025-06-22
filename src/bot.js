@@ -109,7 +109,16 @@ class MinecraftBot {
                     clearTimeout(timeout);
                     this.isConnected = true;
                     this.setupBehaviors();
-                    console.log(`Successfully connected to ${this.config.host}:${this.config.port}`.green);
+                    console.log(`✅ ${this.config.username} đã kết nối thành công tới ${this.config.host}:${this.config.port}`.green);
+                    
+                    // Tự động đăng nhập ngay sau khi spawn
+                    if (this.config.autoLogin) {
+                        setTimeout(() => {
+                            console.log(`🔑 Đang đăng nhập ${this.config.username}...`.cyan);
+                            this.autoLogin();
+                        }, 1000); // Delay 1 giây để server ổn định
+                    }
+                    
                     resolve();
                 });
 
@@ -165,23 +174,9 @@ class MinecraftBot {
 
         this.bot.on('spawn', () => {
             logger.info('Bot spawned in the world');
-            console.log(`🎮 Bot đã xuất hiện trong thế giới tại: ${this.bot.entity.position}`.green);
+            console.log(`🎮 ${this.bot.username} đã spawn thành công`.green);
             
-            // Tập trung hoàn toàn vào kết nối - chỉ xử lý login khi cần thiết
-            console.log(`🎯 Bot ${this.bot.username} đã spawn - chỉ tập trung vào duy trì kết nối`.green);
-            
-            // Chỉ auto-login nếu được bật và server yêu cầu
-            if (this.config.autoLogin) {
-                setTimeout(() => {
-                    console.log(`🔑 Bắt đầu quá trình đăng nhập cho ${this.bot.username}`.cyan);
-                    this.autoLogin();
-                }, this.config.loginDelay);
-            } else {
-                console.log(`⏸️ Auto-login tắt - bot ${this.bot.username} đợi yêu cầu từ server`.gray);
-            }
-            
-            // Hoàn toàn tắt permission commands để tập trung kết nối
-            // Tất cả lệnh khác sẽ chỉ chạy khi được gọi thủ công
+            // Không có thêm logic spawn ở đây vì đã xử lý trong connect()
         });
 
         this.bot.on('respawn', () => {

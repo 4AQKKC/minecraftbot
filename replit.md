@@ -127,6 +127,9 @@ Preferred communication style: Simple, everyday language.
 - **New**: Cloudflare proxy integration for IP ban protection
 - **New**: Mass connection commands (connectall/connectfast)
 - **New**: Proxy rotation system with SOCKS5/HTTP support
+- **New**: Sequential connection system - each bot logs in completely before next bot connects
+- **New**: Removed unnecessary chat testing to focus on stable connections
+- **New**: Enhanced login detection using server message monitoring
 
 ## User Preferences
 
@@ -134,4 +137,10 @@ Preferred communication style: Simple, everyday language in Vietnamese when appr
 
 ## Changelog
 
+- June 22, 2025: 
+  - Migrated project from Replit Agent to Replit environment
+  - Implemented sequential connection system with auto-login
+  - Enhanced login detection using server message monitoring
+  - Removed unnecessary chat testing for improved stability
+  - Each bot now completes login process before next bot connects
 - June 17, 2025: Initial setup and comprehensive bot development
