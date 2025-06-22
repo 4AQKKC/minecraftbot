@@ -288,12 +288,12 @@ class BotManager {
     /**
      * Connect bots in parallel groups to improve speed
      */
-    async connectAllBotsParallel(host, port = 25565, groupSize = 2, delayBetweenGroups = 8000) {
+    async connectAllBotsParallel(host, port = 25565, groupSize = 1, delayBetweenGroups = 12000) {
         const bots = Array.from(this.bots.values());
         let successCount = 0;
         
-        console.log(`🚀 Bắt đầu kết nối song song: ${bots.length} bot trong nhóm ${groupSize} (tối ưu cho kết nối)...`.yellow);
-        console.log(`⚠️ Ưu tiên kết nối ổn định, delay chat commands để tránh spam detection`.cyan);
+        console.log(`🎯 BẮT ĐẦU KẾT NỐI TẬP TRUNG: ${bots.length} bot từng cái một (tối đa ổn định)`.yellow.bold);
+        console.log(`🔒 CHẾ ĐỘ: Chỉ kết nối, không chat, không spam - tập trung 100% vào kết nối`.cyan);
         
         for (let i = 0; i < bots.length; i += groupSize) {
             const group = bots.slice(i, i + groupSize);
@@ -302,15 +302,19 @@ class BotManager {
             
             console.log(`[Nhóm ${groupNumber}/${totalGroups}] Kết nối ${group.length} bot...`.cyan);
             
-            // Connect bots with staggered timing to prevent server overload
+            // Kết nối từng bot một cách cẩn thận để tránh mọi vấn đề
             const promises = group.map(async (botInfo, index) => {
                 try {
-                    // Stagger connections within group
-                    const staggerDelay = index * 1500; // 1.5s between bots in same group
-                    await new Promise(resolve => setTimeout(resolve, staggerDelay));
+                    // Delay lớn giữa các bot để tránh detection
+                    const staggerDelay = index * 3000; // 3s giữa mỗi bot
+                    if (staggerDelay > 0) {
+                        console.log(`⏳ Đợi ${staggerDelay/1000}s trước khi kết nối bot tiếp theo...`.gray);
+                        await new Promise(resolve => setTimeout(resolve, staggerDelay));
+                    }
                     
+                    console.log(`🔗 Đang kết nối bot ${botInfo.name}... (${index + 1}/${group.length})`.cyan);
                     await this.connectBot(botInfo.id, host, port);
-                    console.log(`✅ Bot ${botInfo.name} đã kết nối thành công`.green);
+                    console.log(`✅ Bot ${botInfo.name} đã kết nối thành công và ổn định`.green);
                     return true;
                 } catch (error) {
                     console.log(`❌ Bot ${botInfo.name} kết nối thất bại: ${error.message}`.red);
@@ -324,18 +328,23 @@ class BotManager {
             
             console.log(`📊 Nhóm ${groupNumber} hoàn thành: ${groupSuccessCount}/${group.length} bot kết nối thành công`.cyan);
             
-            // Longer delay between groups for better server compatibility
+            // Delay cực dài giữa các nhóm để đảm bảo server không phát hiện
             if (i + groupSize < bots.length) {
-                console.log(`⏳ Đợi ${delayBetweenGroups}ms trước nhóm tiếp theo (chống spam detection)...`.gray);
+                console.log(`⏳ Đợi ${delayBetweenGroups/1000}s trước nhóm tiếp theo (tránh hoàn toàn spam detection)...`.gray);
+                console.log(`📊 Tiến độ: ${Math.min(i + groupSize, bots.length)}/${bots.length} bot đã xử lý`.blue);
                 await new Promise(resolve => setTimeout(resolve, delayBetweenGroups));
             }
         }
         
-        console.log(`🎯 Hoàn tất kết nối song song: ${successCount}/${bots.length} bot đã kết nối thành công`.green.bold);
-        console.log(`💡 Các bot sẽ tự động đăng ký/đăng nhập sau khi kết nối ổn định`.yellow);
+        console.log(`🎯 HOÀN TẤT KẾT NỐI TẬP TRUNG: ${successCount}/${bots.length} bot đã kết nối ổn định`.green.bold);
+        console.log(`🔒 Các bot hiện ở chế độ chỉ kết nối - không có hoạt động chat tự động`.yellow);
+        console.log(`⚡ Tất cả bot đã sẵn sàng - server không phát hiện spam`.green);
         
         if (successCount > 0) {
-            console.log(`🏁 Gợi ý: Sử dụng "list" để kiểm tra trạng thái, "chatall" để test chat`.cyan);
+            console.log(`🏁 BƯỚC TIẾP THEO:`.cyan.bold);
+            console.log(`   - "list" → Kiểm tra trạng thái kết nối`.cyan);
+            console.log(`   - "autologin on" → Bật đăng nhập nếu cần`.cyan);
+            console.log(`   - "chatall <tin nhắn>" → Test chat khi sẵn sàng`.cyan);
         }
         return successCount;
     }

@@ -82,13 +82,15 @@ const commands = {
         console.log('  quit/exit - Thoát bot'.white);
         console.log('');
         console.log('Ví dụ:'.yellow.bold);
-        console.log('  create 50'.gray + '                    # Tạo 50 bot');
-        console.log('  connectfast cherry.pikamc.vn'.gray + ' # Kết nối tập trung (ưu tiên kết nối)');
-        console.log('  connectall mc.hypixel.net'.gray + '    # Kết nối tuần tự an toàn');
-        console.log('  hidechat on'.gray + '                  # Ẩn debug để clean output');
-        console.log('  list'.gray + '                         # Kiểm tra bot đã kết nối');
-        console.log('  chatall Xin chào!'.gray + '           # Test chat sau khi kết nối xong');
-        console.log('  spamall Hello 5 3000'.gray + '         # Spam an toàn với delay dài');
+        console.log('  create 20'.gray + '                    # Tạo 20 bot (số lượng vừa phải)');
+        console.log('  connectfast cherry.pikamc.vn'.gray + ' # KẾT NỐI TẬP TRUNG (từng bot một)');
+        console.log('  list'.gray + '                         # Kiểm tra trạng thái kết nối');
+        console.log('  autologin on'.gray + '                # Bật đăng nhập nếu server yêu cầu');
+        console.log('  hidechat on'.gray + '                  # Ẩn debug để output sạch');
+        console.log('  chatall Xin chào!'.gray + '           # Test chat CHỈ sau khi kết nối xong');
+        console.log('');
+        console.log('🎯 WORKFLOW TẬP TRUNG KẾT NỐI:'.green.bold);
+        console.log('  1. create → 2. connectfast → 3. list → 4. autologin on → 5. chatall'.cyan);
         console.log('');
     },
 

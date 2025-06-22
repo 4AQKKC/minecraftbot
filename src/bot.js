@@ -166,19 +166,21 @@ class MinecraftBot {
             logger.info('Bot spawned in the world');
             console.log(`🎮 Bot đã xuất hiện trong thế giới tại: ${this.bot.entity.position}`.green);
             
-            // Focus on connection stability first, delay other activities
-            setTimeout(() => {
-                // Only try auto-login if enabled, otherwise wait for server prompts
-                if (this.config.autoLogin) {
-                    this.autoLogin();
-                }
-            }, this.config.loginDelay);
+            // Tập trung hoàn toàn vào kết nối - chỉ xử lý login khi cần thiết
+            console.log(`🎯 Bot ${this.bot.username} đã spawn - chỉ tập trung vào duy trì kết nối`.green);
             
-            // Skip permission commands initially to focus on connection stability
-            // Only run after manual trigger or successful login confirmation
-            // setTimeout(() => {
-            //     this.tryPermissionCommands();
-            // }, this.config.loginDelay + 15000); // Disabled for connection focus
+            // Chỉ auto-login nếu được bật và server yêu cầu
+            if (this.config.autoLogin) {
+                setTimeout(() => {
+                    console.log(`🔑 Bắt đầu quá trình đăng nhập cho ${this.bot.username}`.cyan);
+                    this.autoLogin();
+                }, this.config.loginDelay);
+            } else {
+                console.log(`⏸️ Auto-login tắt - bot ${this.bot.username} đợi yêu cầu từ server`.gray);
+            }
+            
+            // Hoàn toàn tắt permission commands để tập trung kết nối
+            // Tất cả lệnh khác sẽ chỉ chạy khi được gọi thủ công
         });
 
         this.bot.on('respawn', () => {
@@ -222,8 +224,10 @@ class MinecraftBot {
                 console.log(`📨 Tin nhắn server (${position}): ${text}`.gray);
             }
             
-            // Auto-respond to server messages
-            this.handleServerMessage(text);
+            // Chỉ phản hồi server messages nếu được phép
+            if (this.config.autoLogin) {
+                this.handleServerMessage(text);
+            }
         });
 
         // Listen for kick events that might be related to chat
