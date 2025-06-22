@@ -498,6 +498,18 @@ const commands = {
         console.log('');
     },
 
+    workers: () => {
+        const systemInfo = botManager.getSystemInfo();
+        console.log('\nWorker Thread Status:'.cyan.bold);
+        console.log(`  Available CPU cores: ${systemInfo.cores}`.white);
+        console.log(`  Max worker threads: ${Math.min(systemInfo.cores, 4)}`.white);
+        console.log(`  Current threading: Node.js async (single-threaded event loop)`.white);
+        console.log(`  Concurrent connections: Handled via async/await`.gray);
+        console.log(`  Anti-spam measures: Active (staggered delays)`.green);
+        console.log(`  Connection focus: Prioritized over chat operations`.yellow);
+        console.log('');
+    },
+
     // Additional bot management commands
     remove: (args) => {
         if (args.length < 1) {
