@@ -20,11 +20,11 @@ const botManager = new BotManager();
 console.log('='.repeat(50).green);
 console.log('  Bộ Điều Khiển Bot Minecraft v1.0'.green.bold);
 console.log('='.repeat(50).green);
-console.log('Gõ "trogiup" để xem các lệnh có sẵn\n'.yellow);
+console.log('Gõ "help" để xem các lệnh có sẵn\n'.yellow);
 
 // Command handlers
 const commands = {
-    trogiup: () => {
+    help: () => {
         console.log('\nCác lệnh có sẵn:'.cyan.bold);
         console.log('  connect <host> [port] - Kết nối đến server Minecraft'.white);
         console.log('  disconnect - Ngắt kết nối khỏi server'.white);
@@ -68,34 +68,34 @@ const commands = {
         console.log('  removeall - Xóa tất cả bot'.white);
         console.log('');
         console.log('  Lệnh Proxy:'.cyan.bold);
-        console.log('  themproxy <đường_dẫn_proxy> hoặc themproxy hàngloạt - Thêm proxy'.white);
-        console.log('  xoaproxy <đường_dẫn_proxy> - Xóa proxy'.white);
-        console.log('  danhsachproxy - Hiển thị tất cả proxy và trạng thái'.white);
-        console.log('  kiemtraproxy - Kiểm tra tất cả proxy'.white);
-        console.log('  daoproxy [nhanh|đầyđủ] - Tự động đào proxy từ internet'.white);
-        console.log('  batproxy - Bật xoay proxy'.white);
-        console.log('  tatproxy - Tắt xoay proxy'.white);
+        console.log('  proxyadd <proxy_url> hoặc proxyadd bulk - Thêm proxy'.white);
+        console.log('  proxyremove <proxy_url> - Xóa proxy'.white);
+        console.log('  proxylist - Hiển thị tất cả proxy và trạng thái'.white);
+        console.log('  proxytest - Kiểm tra tất cả proxy'.white);
+        console.log('  proxyscrape [quick|full] - Tự động đào proxy từ internet'.white);
+        console.log('  proxyon - Bật xoay proxy'.white);
+        console.log('  proxyoff - Tắt xoay proxy'.white);
         console.log('');
         console.log('  Lệnh Hệ Thống:'.cyan.bold);
-        console.log('  loicpu - Hiển thị số lõi CPU có sẵn'.white);
-        console.log('  ram - Hiển thị thông tin sử dụng bộ nhớ'.white);
-        console.log('  luongxuly - Hiển thị trạng thái luồng xử lý'.white);
-        console.log('  thoat - Thoát bot'.white);
+        console.log('  core - Hiển thị số lõi CPU có sẵn'.white);
+        console.log('  ram - Hiển thị thông tin sử dụng RAM'.white);
+        console.log('  workers - Hiển thị trạng thái worker threads'.white);
+        console.log('  quit/exit - Thoát bot'.white);
         console.log('');
         console.log('Ví dụ:'.yellow.bold);
-        console.log('  taobot 20'.gray + '                    # Tạo 20 bot với xoay proxy');
-        console.log('  ketnoinhanhbot cherry.pikamc.vn'.gray + ' # KẾT NỐI 5 bot/lần với tự động đăng ký');
-        console.log('  daoproxy nhanh'.gray + '               # Tự động đào proxy từ internet');
-        console.log('  danhsach'.gray + '                     # Kiểm tra trạng thái kết nối');
-        console.log('  thongkeproxy'.gray + '                 # Xem thống kê proxy');
-        console.log('  chattoanbo Xin chào!'.gray + '         # Kiểm tra chat sau khi đăng ký xong');
+        console.log('  create 20'.gray + '                    # Tạo 20 bot với proxy rotation');
+        console.log('  connectfast cherry.pikamc.vn'.gray + ' # KẾT NỐI 5 bot/lần với auto-register');
+        console.log('  proxyscrape quick'.gray + '            # Tự động đào proxy từ internet');
+        console.log('  list'.gray + '                         # Kiểm tra trạng thái kết nối');
+        console.log('  proxystats'.gray + '                   # Xem thống kê proxy');
+        console.log('  chatall Xin chào!'.gray + '           # Test chat sau khi register xong');
         console.log('');
-        console.log('🎯 QUY TRÌNH LÀM VIỆC VỚI TỰ ĐỘNG ĐÀO PROXY:'.green.bold);
-        console.log('  1. daoproxy → 2. taobot → 3. ketnoinhanhbot → 4. chattoanbo'.cyan);
+        console.log('🎯 WORKFLOW VỚI TỰ ĐỘNG ĐÀO PROXY:'.green.bold);
+        console.log('  1. proxyscrape → 2. create → 3. connectfast → 4. chatall'.cyan);
         console.log('');
     },
 
-    ketloi: (args) => {
+    connect: (args) => {
         if (args.length < 1) {
             console.log('Cách dùng: connect <host> [port] HOẶC connect <số_bot> <host> [port]'.red);
             console.log('Ví dụ:'.yellow);
@@ -155,7 +155,7 @@ const commands = {
         }
     },
 
-    ngatketnoi: () => {
+    disconnect: () => {
         if (!isConnected || !bot) {
             console.log('Not connected to any server.'.yellow);
             return;
@@ -281,7 +281,7 @@ const commands = {
         }
     },
 
-    cauhinh: () => {
+    config: () => {
         console.log('\nCurrent Configuration:'.cyan.bold);
         console.log(`  Username: ${config.username}`.white);
         console.log(`  Version: ${config.version}`.white);
@@ -294,7 +294,7 @@ const commands = {
         console.log('');
     },
 
-    thoat: () => {
+    quit: () => {
         if (isConnected && bot) {
             bot.disconnect();
         }
@@ -302,7 +302,7 @@ const commands = {
         process.exit(0);
     },
 
-    dangnhap: () => {
+    login: () => {
         if (!isConnected || !bot) {
             console.log('Not connected to any server.'.red);
             return;
@@ -317,7 +317,7 @@ const commands = {
     },
 
     // Multi-bot commands
-    taobot: (args) => {
+    create: (args) => {
         const count = args.length > 0 ? parseInt(args[0]) : 1;
         if (isNaN(count) || count < 1 || count > 50) {
             console.log('Usage: create <count> (1-50 bots)'.red);
@@ -340,7 +340,7 @@ const commands = {
         console.log(`Successfully created ${createdBots.length}/${count} bots`.green);
     },
 
-    ketnoitoanbobot: (args) => {
+    connectall: (args) => {
         if (args.length < 1) {
             console.log('Usage: connectall <host> [port]'.red);
             return;
@@ -385,7 +385,7 @@ const commands = {
         });
     },
 
-    danhsach: () => {
+    list: () => {
         const bots = botManager.listBots();
         const systemInfo = botManager.getSystemInfo();
         
@@ -418,7 +418,7 @@ const commands = {
         console.log('');
     },
 
-    chattoanbo: (args) => {
+    chatall: (args) => {
         if (args.length === 0) {
             console.log('Cách dùng: chatall <tin nhắn>'.red);
             return;
@@ -429,7 +429,7 @@ const commands = {
         console.log(`Đã gửi tin nhắn từ ${sentCount} bot: "${message}"`.green);
     },
 
-    spamtoanbo: async (args) => {
+    spamall: async (args) => {
         if (args.length < 2) {
             console.log('Cách dùng: spamall <tin nhắn> <số lần> [delay_ms]'.red);
             console.log('Ví dụ:'.yellow);
@@ -475,7 +475,7 @@ const commands = {
         }
     },
 
-    xoatatcabot: () => {
+    removeall: () => {
         const count = botManager.getTotalBotsCount();
         botManager.cleanup();
         console.log(`Removed all ${count} bots`.yellow);
@@ -606,7 +606,7 @@ const commands = {
     },
 
     // Proxy management commands
-    themproxy: (args) => {
+    proxyadd: (args) => {
         if (args.length < 1) {
             console.log('Usage: proxyadd <proxy_url>'.red);
             console.log('Examples:'.yellow);
@@ -639,7 +639,7 @@ const commands = {
         }
     },
 
-    danhsachproxy: () => {
+    proxylist: () => {
         const stats = botManager.getProxyStats();
         
         console.log('\nProxy Status:'.cyan.bold);
@@ -718,7 +718,7 @@ const commands = {
     },
 
     // Auto-login control
-    tudangnhap: (args) => {
+    autologin: (args) => {
         if (args.length < 1) {
             console.log('Cách dùng: autologin <on/off>'.red);
             console.log('Hiện tại: ' + (config.autoLogin ? 'BẬT' : 'TẮT').green);
@@ -765,7 +765,7 @@ const commands = {
     },
 
     // Hide chat control
-    anchat: (args) => {
+    hidechat: (args) => {
         if (args.length < 1) {
             console.log('Cách dùng: hidechat <on/off>'.red);
             console.log('Hiện tại:'.white);
@@ -873,7 +873,7 @@ const commands = {
     },
 
     // Test chat function
-    kiemtrachat: (args) => {
+    testchat: (args) => {
         if (args.length === 0) {
             console.log('Cách dùng: testchat <tin nhắn>'.red);
             return;
