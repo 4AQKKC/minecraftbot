@@ -4124,3 +4124,4 @@
 {"level":"info","message":"Proxy manager initialized","proxyCount":51,"rotationEnabled":true,"timestamp":"2025-06-22T04:56:36.708Z"}
 {"level":"info","message":"Proxy manager initialized","proxyCount":51,"rotationEnabled":true,"timestamp":"2025-06-22T04:56:36.732Z"}
 {"level":"info","message":"Proxy manager initialized","proxyCount":111,"rotationEnabled":true,"timestamp":"2025-06-22T05:20:32.073Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":111,"rotationEnabled":true,"timestamp":"2025-06-22T05:31:56.004Z"}

@@ -89,8 +89,8 @@ const commands = {
         console.log('  proxystats'.gray + '                   # Xem thống kê proxy');
         console.log('  chatall Xin chào!'.gray + '           # Test chat CHỈ sau khi kết nối xong');
         console.log('');
-        console.log('🎯 WORKFLOW VỚI PROXY PROTECTION:'.green.bold);
-        console.log('  1. create → 2. connectfast → 3. proxystats → 4. list → 5. chatall'.cyan);
+        console.log('🎯 WORKFLOW VỚI AUTO-REGISTER:'.green.bold);
+        console.log('  1. create → 2. connectfast → 3. auto /register mỗi 5 bot → 4. chatall'.cyan);
         console.log('');
     },
 

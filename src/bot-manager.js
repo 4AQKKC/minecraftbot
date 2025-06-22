@@ -291,9 +291,10 @@ class BotManager {
     async connectAllBotsParallel(host, port = 25565, groupSize = 1, delayBetweenGroups = 12000) {
         const bots = Array.from(this.bots.values());
         let successCount = 0;
+        let connectedBots = [];
         
         console.log(`🎯 BẮT ĐẦU KẾT NỐI TẬP TRUNG: ${bots.length} bot từng cái một (tối đa ổn định)`.yellow.bold);
-        console.log(`🔒 CHẾ ĐỘ: Chỉ kết nối, không chat, không spam - tập trung 100% vào kết nối`.cyan);
+        console.log(`🔒 CHẾ ĐỘ: Chỉ kết nối, tự động /register mỗi 5 bot`.cyan);
         
         for (let i = 0; i < bots.length; i += groupSize) {
             const group = bots.slice(i, i + groupSize);
@@ -315,6 +316,10 @@ class BotManager {
                     console.log(`🔗 Đang kết nối bot ${botInfo.name}... (${index + 1}/${group.length}) với proxy rotation`.cyan);
                     await this.connectBot(botInfo.id, host, port);
                     console.log(`✅ Bot ${botInfo.name} kết nối thành công với proxy protection`.green);
+                    
+                    // Thêm bot vào danh sách đã kết nối
+                    connectedBots.push(botInfo);
+                    
                     return true;
                 } catch (error) {
                     console.log(`❌ Bot ${botInfo.name} kết nối thất bại: ${error.message}`.red);
@@ -328,6 +333,12 @@ class BotManager {
             
             console.log(`📊 Nhóm ${groupNumber} hoàn thành: ${groupSuccessCount}/${group.length} bot kết nối thành công`.cyan);
             
+            // Tự động register mỗi 5 bot
+            if (connectedBots.length >= 5 && connectedBots.length % 5 === 0) {
+                console.log(`🔐 Đã có ${connectedBots.length} bot kết nối - bắt đầu auto /register...`.blue.bold);
+                await this.autoRegisterBatch(connectedBots.slice(-5)); // 5 bot gần đây nhất
+            }
+            
             // Delay cực dài giữa các nhóm để đảm bảo server không phát hiện
             if (i + groupSize < bots.length) {
                 console.log(`⏳ Đợi ${delayBetweenGroups/1000}s trước nhóm tiếp theo (tránh hoàn toàn spam detection)...`.gray);
@@ -337,14 +348,20 @@ class BotManager {
         }
         
         console.log(`🎯 HOÀN TẤT KẾT NỐI TẬP TRUNG: ${successCount}/${bots.length} bot đã kết nối ổn định`.green.bold);
-        console.log(`🔒 Các bot hiện ở chế độ chỉ kết nối - không có hoạt động chat tự động`.yellow);
-        console.log(`⚡ Tất cả bot đã sẵn sàng - server không phát hiện spam`.green);
+        console.log(`🔐 Đã auto-register theo batch 5 bot`.yellow);
+        console.log(`⚡ Tất cả bot đã sẵn sàng và đã đăng ký`.green);
+        
+        // Register batch cuối cùng nếu còn sót lại
+        const remainingBots = connectedBots.length % 5;
+        if (remainingBots > 0) {
+            console.log(`🔐 Register ${remainingBots} bot còn lại...`.blue);
+            await this.autoRegisterBatch(connectedBots.slice(-remainingBots));
+        }
         
         if (successCount > 0) {
             console.log(`🏁 BƯỚC TIẾP THEO:`.cyan.bold);
-            console.log(`   - "list" → Kiểm tra trạng thái kết nối`.cyan);
-            console.log(`   - "autologin on" → Bật đăng nhập nếu cần`.cyan);
-            console.log(`   - "chatall <tin nhắn>" → Test chat khi sẵn sàng`.cyan);
+            console.log(`   - "list" → Kiểm tra trạng thái đăng nhập`.cyan);
+            console.log(`   - "chatall <tin nhắn>" → Test chat ngay`.cyan);
         }
         return successCount;
     }
