@@ -670,6 +670,31 @@ const commands = {
         console.log('');
     },
 
+    // Scrape proxies from internet
+    proxyscrape: async (args) => {
+        const mode = args[0] || 'quick';
+        
+        if (!['quick', 'full'].includes(mode)) {
+            console.log('Cách dùng: proxyscrape [quick|full]'.red);
+            console.log('  quick - Đào nhanh từ 1 nguồn đáng tin cậy'.gray);
+            console.log('  full  - Đào đầy đủ từ tất cả nguồn (chậm hơn)'.gray);
+            return;
+        }
+        
+        console.log(`🕸️ Bắt đầu đào proxy chế độ: ${mode}`.cyan);
+        const addedCount = await botManager.scrapeProxies(mode);
+        
+        if (addedCount > 0) {
+            console.log(`✅ Đã thêm ${addedCount} proxy mới vào hệ thống`.green);
+            
+            // Show updated stats
+            const stats = botManager.getProxyStats();
+            console.log(`📊 Tổng proxy hiện tại: ${stats.totalProxies}`.cyan);
+        } else {
+            console.log(`⚠️ Không thể đào thêm proxy mới`.yellow);
+        }
+    },
+
     proxytest: async () => {
         console.log('Testing all proxies...'.yellow);
         try {
