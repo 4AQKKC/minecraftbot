@@ -331,13 +331,13 @@ const commands = {
             try {
                 const botInfo = botManager.createBot(config);
                 createdBots.push(botInfo);
-                console.log(`Created bot: ${botInfo.name} (${botInfo.id})`.green);
+                console.log(`✅ Tạo bot: ${botInfo.name} (ID: ${botInfo.id})`.green);
             } catch (error) {
-                console.log(`Failed to create bot ${i + 1}: ${error.message}`.red);
+                console.log(`❌ Lỗi tạo bot ${i + 1}: ${error.message}`.red);
             }
         }
         
-        console.log(`Successfully created ${createdBots.length}/${count} bots`.green);
+        console.log(`🎯 Hoàn thành: ${createdBots.length}/${count} bot đã được tạo`.green.bold);
     },
 
     connectall: (args) => {

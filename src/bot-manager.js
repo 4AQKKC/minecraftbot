@@ -57,7 +57,7 @@ class BotManager {
     /**
      * Create a new bot
      */
-    async createBot(config = {}) {
+    createBot(config = {}) {
         const botId = `bot_${this.nextBotId++}`;
         const botName = this.generateRandomBotName();
         
