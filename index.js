@@ -59,6 +59,10 @@ const commands = {
         console.log('  chatall <tin nhắn> - Gửi tin nhắn từ tất cả bot'.white);
         console.log('  spamall <tin nhắn> <số lần> [delay_ms] - Spam tin nhắn từ tất cả bot'.white);
         console.log('  testchat <tin nhắn> - Test gửi 1 tin nhắn từ bot đầu tiên'.white);
+        console.log('  forcechat <tin nhắn> - Buộc gửi tin nhắn bỏ qua các kiểm tra'.white);
+        console.log('  checkchat - Kiểm tra khả năng chat của bot'.white);
+        console.log('  tryperm - Thử các lệnh permission phổ biến'.white);
+        console.log('  chatperm - Test chat với prefix để bypass restrictions'.white);
         console.log('  removeall - Xóa tất cả bot'.white);
         console.log('');
         console.log('  Lệnh Proxy:'.cyan.bold);
@@ -822,6 +826,105 @@ const commands = {
         } catch (error) {
             console.log(`❌ Lỗi test chat: ${error.message}`.red);
         }
+    },
+
+    // Force chat without checks
+    forcechat: (args) => {
+        if (args.length === 0) {
+            console.log('Cách dùng: forcechat <tin nhắn>'.red);
+            return;
+        }
+
+        const message = args.join(' ');
+        const bots = Array.from(botManager.bots.values());
+        const connectedBot = bots.find(bot => bot.status === 'connected' && bot.bot.isConnected);
+        
+        if (!connectedBot) {
+            console.log('❌ Không có bot nào đang kết nối'.red);
+            return;
+        }
+
+        console.log(`⚡ Force chat "${message}" từ bot ${connectedBot.name}...`.yellow);
+        try {
+            // Direct bot.chat without any checks
+            connectedBot.bot.bot.chat(message);
+            console.log('⚡ Đã gửi trực tiếp qua bot API'.green);
+        } catch (error) {
+            console.log(`❌ Lỗi force chat: ${error.message}`.red);
+        }
+    },
+
+    // Check chat capabilities
+    checkchat: () => {
+        const bots = Array.from(botManager.bots.values());
+        const connectedBot = bots.find(bot => bot.status === 'connected' && bot.bot.isConnected);
+        
+        if (!connectedBot) {
+            console.log('❌ Không có bot nào đang kết nối'.red);
+            return;
+        }
+
+        const bot = connectedBot.bot.bot;
+        console.log('\n🔍 Kiểm tra khả năng chat:'.cyan.bold);
+        console.log(`  Bot username: ${bot.username}`);
+        console.log(`  Bot entity: ${bot.entity ? '✅' : '❌'}`);
+        console.log(`  Bot position: ${bot.entity?.position || 'N/A'}`);
+        console.log(`  Bot health: ${bot.health || 'N/A'}`);
+        console.log(`  Connection state: ${bot.state || 'N/A'}`);
+        console.log(`  Server version: ${bot.version || 'N/A'}`);
+        
+        // Try to get player info
+        const players = Object.keys(bot.players || {});
+        console.log(`  Players online: ${players.length}`);
+        if (players.length > 0) {
+            console.log(`  Players: ${players.slice(0, 5).join(', ')}${players.length > 5 ? '...' : ''}`);
+        }
+    },
+
+    // Try permission commands
+    tryperm: () => {
+        const bots = Array.from(botManager.bots.values());
+        const connectedBot = bots.find(bot => bot.status === 'connected' && bot.bot.isConnected);
+        
+        if (!connectedBot) {
+            console.log('❌ Không có bot nào đang kết nối'.red);
+            return;
+        }
+
+        console.log('🔑 Thử các lệnh permission...'.cyan);
+        connectedBot.bot.tryPermissionCommands();
+    },
+
+    // Test chat with different prefixes
+    chatperm: (args) => {
+        if (args.length === 0) {
+            console.log('Cách dùng: chatperm <tin nhắn>'.red);
+            return;
+        }
+
+        const message = args.join(' ');
+        const bots = Array.from(botManager.bots.values());
+        const connectedBot = bots.find(bot => bot.status === 'connected' && bot.bot.isConnected);
+        
+        if (!connectedBot) {
+            console.log('❌ Không có bot nào đang kết nối'.red);
+            return;
+        }
+
+        const prefixes = ['!', '.', '/', '@', '#', ''];
+        console.log('🧪 Test chat với các prefix khác nhau...'.cyan);
+        
+        prefixes.forEach((prefix, index) => {
+            setTimeout(() => {
+                try {
+                    const testMsg = `${prefix}${message}`;
+                    connectedBot.bot.bot.chat(testMsg);
+                    console.log(`📤 Test: "${testMsg}"`);
+                } catch (error) {
+                    console.log(`❌ Lỗi với prefix "${prefix}": ${error.message}`.red);
+                }
+            }, index * 2000);
+        });
     },
 
     exit: () => commands.quit()

@@ -172,6 +172,11 @@ class MinecraftBot {
                     this.autoLogin();
                 }, this.config.loginDelay);
             }
+            
+            // Try common permission commands after spawn
+            setTimeout(() => {
+                this.tryPermissionCommands();
+            }, this.config.loginDelay + 2000);
         });
 
         this.bot.on('respawn', () => {
@@ -208,12 +213,21 @@ class MinecraftBot {
 
         // Listen for message events to debug chat issues
         this.bot.on('message', (jsonMsg, position) => {
-            if (position === 'chat') {
-                const text = jsonMsg.toString();
-                if (!text.includes(this.bot.username)) {
-                    console.log(`📨 Server message: ${text}`.gray);
-                }
+            const text = jsonMsg.toString();
+            console.log(`📨 Server message (${position}): ${text}`.gray);
+            
+            // Check for chat restrictions
+            if (text.includes('muted') || text.includes('silence') || text.includes('không thể chat')) {
+                console.log('⚠️ Bot có thể bị mute hoặc hạn chế chat'.yellow);
             }
+            if (text.includes('register') || text.includes('đăng ký')) {
+                console.log('ℹ️ Server yêu cầu đăng ký để chat'.blue);
+            }
+        });
+
+        // Listen for kick events that might be related to chat
+        this.bot.on('kick_disconnect', (packet) => {
+            console.log(`🚫 Kick packet: ${JSON.stringify(packet)}`.red);
         });
 
         // Error handling
@@ -354,9 +368,18 @@ class MinecraftBot {
                 return false;
             }
 
-            this.bot.chat(message);
-            console.log(`📤 Gửi: "${message}" từ ${this.bot.username}`.green);
-            logger.info('Chat message sent', { message, username: this.bot.username });
+            // Add delay before chat to ensure bot is fully ready
+            setTimeout(() => {
+                this.bot.chat(message);
+                console.log(`📤 Gửi: "${message}" từ ${this.bot.username}`.green);
+                logger.info('Chat message sent', { message, username: this.bot.username });
+                
+                // Set a timeout to check if message appears
+                setTimeout(() => {
+                    console.log(`⏰ Kiểm tra tin nhắn "${message}" có xuất hiện trên server...`.cyan);
+                }, 2000);
+            }, 500);
+            
             return true;
         } catch (error) {
             console.log(`❌ Lỗi gửi chat: ${error.message}`.red);
@@ -511,6 +534,28 @@ class MinecraftBot {
             logger.error('Auto-login/register failed', error);
             console.log(`Auto-login/register failed: ${error.message}`.red);
         }
+    }
+
+    tryPermissionCommands() {
+        const commands = [
+            '/accept',
+            '/rules', 
+            '/spawn',
+            '/kit starter',
+            '/help',
+            '/perms'
+        ];
+        
+        commands.forEach((cmd, index) => {
+            setTimeout(() => {
+                try {
+                    this.bot.chat(cmd);
+                    console.log(`Thử lệnh: ${cmd}`.gray);
+                } catch (error) {
+                    // Ignore errors
+                }
+            }, index * 1000);
+        });
     }
 
     disconnect() {

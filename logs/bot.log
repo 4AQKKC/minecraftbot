@@ -1101,3 +1101,19 @@
 {"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:07:09.276Z"}
 {"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T03:08:12.711Z"}
 {"botId":"bot_1","botName":"JgYQ09","level":"info","message":"Bot created","timestamp":"2025-06-22T03:08:33.225Z"}
+{"botId":"bot_1","level":"info","message":"Using proxy for connection","proxy":"socks5://162.159.36.1:32768","timestamp":"2025-06-22T03:08:52.743Z"}
+{"auth":"offline","level":"info","message":"Attempting to connect to cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:08:52.743Z","username":"JgYQ09","version":"1.21"}
+{"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-22T03:08:52.884Z"}
+{"level":"info","message":"Bot logged in successfully","timestamp":"2025-06-22T03:08:54.444Z"}
+{"level":"info","message":"Bot spawned in the world","timestamp":"2025-06-22T03:08:54.622Z"}
+{"level":"info","message":"Bot behaviors initialized","timestamp":"2025-06-22T03:08:54.629Z"}
+{"botId":"bot_1","level":"info","message":"Bot connected","server":"cherry.pikamc.vn:25005","timestamp":"2025-06-22T03:08:54.631Z"}
+{"level":"info","message":"Chat message sent hello","timestamp":"2025-06-22T03:09:10.601Z","username":"JgYQ09"}
+{"level":"info","message":"Chat message sent hello","timestamp":"2025-06-22T03:09:22.695Z","username":"JgYQ09"}
+{"level":"info","message":"Chat message sent hello","timestamp":"2025-06-22T03:10:00.712Z","username":"JgYQ09"}
+{"level":"warn","message":"Bot was kicked","reason":{"type":"string","value":"Login timed out!"},"timestamp":"2025-06-22T03:10:54.657Z"}
+{"level":"warn","message":"Kicked during verification","reason":"{\"type\":\"string\",\"value\":\"Login timed out!\"}","timestamp":"2025-06-22T03:10:54.658Z"}
+{"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-22T03:10:54.659Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T03:11:03.397Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T03:11:52.497Z"}
+{"botId":"bot_1","botName":"DaBDZ162","level":"info","message":"Bot created","timestamp":"2025-06-22T03:12:11.760Z"}
