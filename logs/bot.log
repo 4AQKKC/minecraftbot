@@ -148,3 +148,5 @@
 {"auth":"offline","level":"info","message":"Attempting to connect to mazerclub.net:25565","timestamp":"2025-06-17T01:34:46.903Z","username":"fXSQP23","version":"1.21"}
 {"level":"info","message":"Verification bypass setup completed","timestamp":"2025-06-17T01:34:46.905Z"}
 {"level":"info","message":"Bot disconnected","reason":"socketClosed","timestamp":"2025-06-17T01:34:47.461Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T02:36:56.596Z"}
+{"level":"info","message":"Proxy manager initialized","proxyCount":6,"rotationEnabled":true,"timestamp":"2025-06-22T02:37:00.894Z"}
