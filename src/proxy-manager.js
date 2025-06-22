@@ -7,6 +7,8 @@ class ProxyManager {
         this.proxies = [];
         this.currentProxyIndex = 0;
         this.proxyRotationEnabled = false;
+        this.botProxyMap = new Map(); // Track which bot uses which proxy
+        this.bannedProxies = new Set();
     }
 
     /**
@@ -197,48 +199,78 @@ class ProxyManager {
     }
 
     /**
-     * Get next proxy in rotation with failure handling
+     * Get dedicated proxy for specific bot (one proxy per account)
+     */
+    getDedicatedProxy(botId) {
+        if (!this.proxyRotationEnabled || this.proxies.length === 0) {
+            return null;
+        }
+        
+        // If bot already has a dedicated proxy, return it
+        if (this.botProxyMap.has(botId)) {
+            const existingProxy = this.botProxyMap.get(botId);
+            // Check if proxy still exists (not deleted due to ban)
+            if (this.proxies.includes(existingProxy)) {
+                return existingProxy;
+            } else {
+                // Proxy was deleted, need new one
+                this.botProxyMap.delete(botId);
+            }
+        }
+        
+        // Find unused proxy for this bot
+        const usedProxies = new Set(this.botProxyMap.values());
+        const availableProxy = this.proxies.find(proxy => !usedProxies.has(proxy));
+        
+        if (!availableProxy) {
+            console.log(`⚠️ Không còn proxy trống cho bot ${botId}!`.red);
+            return null;
+        }
+        
+        // Assign dedicated proxy to this bot
+        this.botProxyMap.set(botId, availableProxy);
+        console.log(`🔗 Bot ${botId} được gán proxy riêng: ${availableProxy}`.cyan);
+        return availableProxy;
+    }
+
+    /**
+     * Get next proxy in rotation with failure handling (fallback method)
      */
     getNextProxy(excludeBanned = true) {
         if (!this.proxyRotationEnabled || this.proxies.length === 0) {
             return null;
         }
         
-        let attempts = 0;
-        let proxy;
+        if (this.proxies.length === 0) {
+            console.log('⚠️ Không còn proxy khả dụng!'.red);
+            return null;
+        }
         
-        do {
-            proxy = this.proxies[this.currentProxyIndex];
-            this.currentProxyIndex = (this.currentProxyIndex + 1) % this.proxies.length;
-            attempts++;
-            
-            if (attempts >= this.proxies.length) {
-                break;
-            }
-        } while (excludeBanned && this.bannedProxies && this.bannedProxies.has(proxy));
+        // Get next proxy in rotation
+        this.currentProxyIndex = (this.currentProxyIndex + 1) % this.proxies.length;
+        const selectedProxy = this.proxies[this.currentProxyIndex];
         
-        return proxy;
+        return selectedProxy;
     }
     
     /**
-     * Mark proxy as banned and get alternative
+     * Mark proxy as banned and permanently remove it
      */
     markProxyAsBanned(proxyUrl) {
-        if (!this.bannedProxies) {
-            this.bannedProxies = new Set();
+        // Remove proxy completely instead of just marking as banned
+        this.removeProxy(proxyUrl);
+        console.log(`🗑️ Proxy bị ban IP - ĐÃ XÓA VĨNH VIỄN: ${proxyUrl}`.red.bold);
+        console.log(`📊 Còn lại ${this.proxies.length} proxy khả dụng`.yellow);
+        
+        // Remove from bot assignments
+        for (const [botId, assignedProxy] of this.botProxyMap.entries()) {
+            if (assignedProxy === proxyUrl) {
+                this.botProxyMap.delete(botId);
+                console.log(`🔄 Bot ${botId} sẽ được gán proxy mới do proxy cũ bị xóa`.blue);
+            }
         }
         
-        this.bannedProxies.add(proxyUrl);
-        console.log(`🚫 Proxy ${proxyUrl} đã bị đánh dấu là banned`.red);
-        
-        const nextProxy = this.getNextProxy(true);
-        if (nextProxy) {
-            console.log(`🔄 Chuyển sang proxy khác: ${nextProxy}`.cyan);
-            return nextProxy;
-        } else {
-            console.log(`⚠️ Tất cả proxy đã bị ban - sử dụng kết nối trực tiếp`.yellow);
-            return null;
-        }
+        return null;
     }
     
     /**
@@ -313,12 +345,11 @@ class ProxyManager {
     getStats() {
         return {
             totalProxies: this.proxies.length,
-            currentIndex: this.currentProxyIndex,
+            assignedProxies: this.botProxyMap.size,
+            availableProxies: this.proxies.length - this.botProxyMap.size,
+            currentProxy: this.proxies[this.currentProxyIndex] || 'None',
             rotationEnabled: this.proxyRotationEnabled,
-            proxies: this.proxies.map((proxy, index) => ({
-                url: proxy,
-                active: index === this.currentProxyIndex
-            }))
+            oneProxyPerBot: true
         };
     }
 
