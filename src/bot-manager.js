@@ -358,9 +358,9 @@ class BotManager {
     }
 
     /**
-     * Spam chat messages from all connected bots with intervals
+     * Spam chat messages from all connected bots with anti-kick measures
      */
-    async spamAllBots(message, count, delayMs = 500) {
+    async spamAllBots(message, count, delayMs = 2000) {
         const connectedBots = Array.from(this.bots.values()).filter(
             botInfo => botInfo.status === 'connected' && botInfo.bot.isConnected
         );
@@ -368,15 +368,39 @@ class BotManager {
         if (connectedBots.length === 0) {
             throw new Error('Không có bot nào đang kết nối để spam');
         }
+
+        // Adjust delay based on bot count to prevent kicks
+        const adjustedDelay = Math.max(delayMs, connectedBots.length * 150);
         
-        console.log(`Bắt đầu spam từ ${connectedBots.length} bot...`.cyan);
+        console.log(`Bắt đầu spam "${message}" ${count} lần từ ${connectedBots.length} bot với delay ${adjustedDelay}ms...`.cyan);
+        console.log(`⚠️ Sử dụng delay ${adjustedDelay}ms để tránh bị kick spam`.yellow);
         
         for (let i = 0; i < count; i++) {
-            const sentCount = this.chatAll(message);
-            console.log(`[${i + 1}/${count}] Gửi từ ${sentCount} bot: "${message}"`.green);
+            console.log(`[${i + 1}/${count}] Gửi từ ${connectedBots.length} bot: "${message}"`.yellow);
             
+            // Send messages with staggered timing to prevent server overload
+            const results = await Promise.allSettled(
+                connectedBots.map(async (botInfo, index) => {
+                    try {
+                        // Stagger messages by index to avoid simultaneous sending
+                        const staggerDelay = index * 200; // 200ms between each bot
+                        await new Promise(resolve => setTimeout(resolve, staggerDelay));
+                        
+                        await botInfo.bot.chat(message);
+                        return { success: true, botName: botInfo.name };
+                    } catch (error) {
+                        return { success: false, botName: botInfo.name, error: error.message };
+                    }
+                })
+            );
+            
+            const successCount = results.filter(r => r.value?.success).length;
+            console.log(`📤 Đã gửi từ ${successCount}/${connectedBots.length} bot thành công`.green);
+            logger.info(`Chat sent to all bots ${message}`, { sentCount: connectedBots.length, successCount });
+            
+            // Wait before next iteration (except for last one)
             if (i < count - 1) {
-                await new Promise(resolve => setTimeout(resolve, delayMs));
+                await new Promise(resolve => setTimeout(resolve, adjustedDelay));
             }
         }
         

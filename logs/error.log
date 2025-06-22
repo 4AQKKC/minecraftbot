@@ -15,3 +15,9 @@
 {"botId":"bot_8","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T02:57:59.955Z"}
 {"botId":"bot_9","error":"Connection timeout - server may be offline or unreachable","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T03:05:06.534Z"}
 {"botId":"bot_10","error":"Connection ended before spawn: socketClosed","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T03:05:07.799Z"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"git","level":"error","message":"Bot error getaddrinfo ENOTFOUND git","stack":"Error: getaddrinfo ENOTFOUND git\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)","syscall":"getaddrinfo","timestamp":"2025-06-22T03:37:38.956Z"}
+{"botId":"bot_1","error":"Server not found. Check the server address","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T03:37:38.960Z"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"git","level":"error","message":"Bot error getaddrinfo ENOTFOUND git","stack":"Error: getaddrinfo ENOTFOUND git\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)","syscall":"getaddrinfo","timestamp":"2025-06-22T03:37:43.702Z"}
+{"botId":"bot_2","error":"Server not found. Check the server address","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T03:37:43.703Z"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"git","level":"error","message":"Bot error getaddrinfo ENOTFOUND git","stack":"Error: getaddrinfo ENOTFOUND git\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)","syscall":"getaddrinfo","timestamp":"2025-06-22T03:37:48.705Z"}
+{"botId":"bot_3","error":"Server not found. Check the server address","level":"error","message":"Bot connection failed","timestamp":"2025-06-22T03:37:48.706Z"}

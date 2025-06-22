@@ -56,10 +56,10 @@ const commands = {
         console.log('  chat <số> <tin nhắn> - Gửi tin nhắn từ bot cụ thể'.white);
         console.log('  remove <số> - Xóa bot cụ thể theo số'.white);
         console.log('  connectall <host> [port] - Kết nối tất cả bot (tuần tự)'.white);
-        console.log('  connectfast <host> [port] - Kết nối tất cả bot (song song)'.white);
+        console.log('  connectfast <host> [port] - Kết nối tất cả bot (song song, chống spam)'.white);
         console.log('  list - Hiển thị trạng thái tất cả bot với số'.white);
         console.log('  chatall <tin nhắn> - Gửi tin nhắn từ tất cả bot'.white);
-        console.log('  spamall <tin nhắn> <số lần> [delay_ms] - Spam tin nhắn từ tất cả bot'.white);
+        console.log('  spamall <tin nhắn> <số lần> [delay_ms] - Spam tin nhắn (chống kick)'.white);
         console.log('  testchat <tin nhắn> - Test gửi 1 tin nhắn từ bot đầu tiên'.white);
         console.log('  forcechat <tin nhắn> - Buộc gửi tin nhắn bỏ qua các kiểm tra'.white);
         console.log('  checkchat - Kiểm tra khả năng chat của bot'.white);
@@ -78,6 +78,7 @@ const commands = {
         console.log('  Lệnh Hệ Thống:'.cyan.bold);
         console.log('  core - Hiển thị số lõi CPU có sẵn'.white);
         console.log('  ram - Hiển thị thông tin sử dụng RAM'.white);
+        console.log('  workers - Hiển thị trạng thái worker threads'.white);
         console.log('  quit/exit - Thoát bot'.white);
         console.log('');
         console.log('Ví dụ:'.yellow.bold);
