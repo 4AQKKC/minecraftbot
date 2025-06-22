@@ -164,7 +164,7 @@ class MinecraftBot {
 
         this.bot.on('spawn', () => {
             logger.info('Bot spawned in the world');
-            console.log(`Bot đã spawn tại vị trí: ${this.bot.entity.position}`.green);
+            console.log(`🎮 Bot đã xuất hiện trong thế giới tại: ${this.bot.entity.position}`.green);
             
             // Focus on connection stability first, delay other activities
             setTimeout(() => {
@@ -202,14 +202,14 @@ class MinecraftBot {
         // Chat events
         this.bot.on('chat', (username, message) => {
             if (username === this.bot.username) {
-                console.log(`✅ Tin nhắn của bot xuất hiện: ${message}`.green);
+                console.log(`✅ Tin nhắn của bot đã xuất hiện: ${message}`.green);
                 return;
             }
             
             logger.info('Chat message received', { username, message });
             console.log(`💬 [${username}] ${message}`.cyan);
             
-            // Handle basic commands from other players
+            // Xử lý lệnh cơ bản từ người chơi khác
             this.handleChatCommands(username, message);
         });
 
@@ -217,9 +217,9 @@ class MinecraftBot {
         this.bot.on('message', (jsonMsg, position) => {
             const text = jsonMsg.toString();
             
-            // Only show server messages if not hidden
+            // Chỉ hiển thị tin nhắn server nếu không bị ẩn
             if (!this.config.hideServerMessages) {
-                console.log(`📨 Server message (${position}): ${text}`.gray);
+                console.log(`📨 Tin nhắn server (${position}): ${text}`.gray);
             }
             
             // Auto-respond to server messages
@@ -231,22 +231,27 @@ class MinecraftBot {
             console.log(`🚫 Kick packet: ${JSON.stringify(packet)}`.red);
         });
 
-        // Error handling
+        // Xử lý lỗi
         this.bot.on('error', (error) => {
             logger.error('Bot error', error);
-            console.log(`Lỗi bot: ${error.message}`.red);
+            console.log(`❌ Lỗi bot: ${error.message}`.red);
             
-            // Handle specific errors
+            // Xử lý các lỗi cụ thể
             if (error.message.includes('ENOTFOUND')) {
-                console.log('Không tìm thấy server. Kiểm tra địa chỉ server.'.yellow);
+                console.log('⚠️ Không tìm thấy server. Kiểm tra địa chỉ server.'.yellow);
             } else if (error.message.includes('ECONNREFUSED')) {
-                console.log('Kết nối bị từ chối. Server có thể offline hoặc port bị chặn.'.yellow);
+                console.log('⚠️ Kết nối bị từ chối. Server có thể offline hoặc port bị chặn.'.yellow);
             } else if (error.message.includes('ETIMEDOUT')) {
-                console.log('Hết thời gian kết nối. Server có thể chậm hoặc không thể truy cập.'.yellow);
+                console.log('⚠️ Hết thời gian kết nối. Server có thể chậm hoặc không thể truy cập.'.yellow);
             } else if (error.message.includes('ECONNRESET')) {
-                console.log('Kết nối bị reset bởi server - có thể do anti-bot.'.yellow);
+                console.log('⚠️ Kết nối bị reset bởi server - có thể do anti-bot.'.yellow);
             } else if (error.message.includes('Invalid username')) {
-                console.log('Tên người dùng không hợp lệ. Thử tên khác.'.yellow);
+                console.log('⚠️ Tên người dùng không hợp lệ. Thử tên khác.'.yellow);
+            } else if (error.message.includes('keepAlive') || error.message.includes('Connection throttled')) {
+                console.log('🔄 Kết nối bị gián đoạn, đang thử kết nối lại sau 10 giây...'.cyan);
+                setTimeout(() => {
+                    this.reconnect();
+                }, 10000);
             }
         });
 
@@ -363,31 +368,31 @@ class MinecraftBot {
         }
 
         try {
-            // Check if bot can actually chat
+            // Kiểm tra xem bot có thể chat không
             if (!this.bot.entity || !this.bot.entity.position) {
-                console.log('Bot chưa spawn hoàn toàn, đợi trước khi chat...'.yellow);
+                console.log('⏳ Bot chưa spawn hoàn toàn, đợi trước khi gửi chat...'.yellow);
                 return false;
             }
 
-            // Add delay before chat to ensure bot is fully ready
+            // Thêm delay trước khi chat để đảm bảo bot sẵn sàng
             setTimeout(() => {
                 this.bot.chat(message);
                 if (!this.config.hideDebugChat) {
-                    console.log(`📤 Gửi: "${message}" từ ${this.bot.username}`.green);
+                    console.log(`📤 Đã gửi: "${message}" từ ${this.bot.username}`.green);
                 }
                 logger.info('Chat message sent', { message, username: this.bot.username });
                 
-                // Set a timeout to check if message appears (only if debug not hidden)
+                // Đặt timeout để kiểm tra tin nhắn xuất hiện (chỉ nếu debug không bị ẩn)
                 if (!this.config.hideDebugChat) {
                     setTimeout(() => {
-                        console.log(`⏰ Kiểm tra tin nhắn "${message}" có xuất hiện trên server...`.cyan);
+                        console.log(`⏰ Đang kiểm tra phản hồi từ server cho tin nhắn "${message}"...`.cyan);
                     }, 2000);
                 }
             }, 500);
             
             return true;
         } catch (error) {
-            console.log(`❌ Lỗi gửi chat: ${error.message}`.red);
+            console.log(`❌ Không thể gửi tin nhắn: ${error.message}`.red);
             logger.error('Chat failed', { error: error.message, message });
             return false;
         }
@@ -548,7 +553,7 @@ class MinecraftBot {
     }
 
     handleServerMessage(text) {
-        // Check for registration/login requests
+        // Kiểm tra yêu cầu đăng ký/đăng nhập
         if (text.includes('Please register using /register') || text.includes('Vui lòng đăng ký')) {
             console.log('🔐 Server yêu cầu đăng ký - tự động gửi lệnh register'.blue);
             setTimeout(() => {

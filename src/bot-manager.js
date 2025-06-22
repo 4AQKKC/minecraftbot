@@ -310,10 +310,10 @@ class BotManager {
                     await new Promise(resolve => setTimeout(resolve, staggerDelay));
                     
                     await this.connectBot(botInfo.id, host, port);
-                    console.log(`✅ ${botInfo.name} kết nối thành công`.green);
+                    console.log(`✅ Bot ${botInfo.name} đã kết nối thành công`.green);
                     return true;
                 } catch (error) {
-                    console.log(`❌ ${botInfo.name} thất bại: ${error.message}`.red);
+                    console.log(`❌ Bot ${botInfo.name} kết nối thất bại: ${error.message}`.red);
                     return false;
                 }
             });
@@ -322,7 +322,7 @@ class BotManager {
             const groupSuccessCount = results.filter(r => r.status === 'fulfilled' && r.value).length;
             successCount += groupSuccessCount;
             
-            console.log(`Nhóm ${groupNumber} hoàn thành: ${groupSuccessCount}/${group.length} kết nối`.cyan);
+            console.log(`📊 Nhóm ${groupNumber} hoàn thành: ${groupSuccessCount}/${group.length} bot kết nối thành công`.cyan);
             
             // Longer delay between groups for better server compatibility
             if (i + groupSize < bots.length) {
@@ -331,8 +331,12 @@ class BotManager {
             }
         }
         
-        console.log(`🎯 Kết nối song song hoàn thành: ${successCount}/${bots.length} bot kết nối thành công`.green.bold);
-        console.log(`💡 Bots sẽ tự động xử lý login/register sau khi kết nối ổn định`.yellow);
+        console.log(`🎯 Hoàn tất kết nối song song: ${successCount}/${bots.length} bot đã kết nối thành công`.green.bold);
+        console.log(`💡 Các bot sẽ tự động đăng ký/đăng nhập sau khi kết nối ổn định`.yellow);
+        
+        if (successCount > 0) {
+            console.log(`🏁 Gợi ý: Sử dụng "list" để kiểm tra trạng thái, "chatall" để test chat`.cyan);
+        }
         return successCount;
     }
 
@@ -401,7 +405,7 @@ class BotManager {
             );
             
             const successCount = results.filter(r => r.value?.success).length;
-            console.log(`📤 Đã gửi từ ${successCount}/${connectedBots.length} bot thành công`.green);
+            console.log(`📤 Đã gửi tin nhắn từ ${successCount}/${connectedBots.length} bot thành công`.green);
             logger.info(`Chat sent to all bots ${message}`, { sentCount: connectedBots.length, successCount });
             
             // Wait before next iteration (except for last one)
@@ -410,6 +414,7 @@ class BotManager {
             }
         }
         
+        console.log(`🎯 Hoàn tất spam ${count} lần từ ${connectedBots.length} bot thành công!`.green.bold);
         return connectedBots.length;
     }
 
