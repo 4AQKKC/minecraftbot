@@ -39,6 +39,7 @@ const commands = {
         console.log('  login - Gửi lệnh đăng ký + đăng nhập thủ công'.white);
         console.log('  autologin <on/off> - Bật/tắt tự động đăng nhập'.white);
         console.log('  hidemessages <on/off> - Ẩn/hiện thông báo damage/death'.white);
+        console.log('  hidechat <on/off> - Ẩn/hiện debug chat và server messages'.white);
         console.log('  setpassword <mật khẩu> - Đổi mật khẩu đăng nhập cho tất cả bot'.white);
         console.log('  setregformat <single/double> - Đổi format lệnh /register'.white);
         console.log('  status - Xem trạng thái và log lỗi gần đây'.white);
@@ -743,6 +744,38 @@ const commands = {
             config.hideDeathMessages = false;
             config.hideDamageMessages = false;
             console.log('Đã HIỆN tất cả thông báo damage/death'.yellow);
+        } else {
+            console.log('Giá trị không hợp lệ. Sử dụng: on hoặc off'.red);
+        }
+    },
+
+    // Hide chat control
+    hidechat: (args) => {
+        if (args.length < 1) {
+            console.log('Cách dùng: hidechat <on/off>'.red);
+            console.log('Hiện tại:'.white);
+            console.log(`  Ẩn server messages: ${config.hideServerMessages ? 'BẬT' : 'TẮT'}`);
+            console.log(`  Ẩn debug chat: ${config.hideDebugChat ? 'BẬT' : 'TẮT'}`);
+            return;
+        }
+
+        const setting = args[0].toLowerCase();
+        if (setting === 'on' || setting === 'true') {
+            config.hideServerMessages = true;
+            config.hideDebugChat = true;
+            
+            // Update for all bots
+            const updatedCount = botManager.updateAllBotsChatSettings(true, true);
+            console.log('Đã ẨN tất cả debug chat và server messages'.green);
+            console.log(`Cập nhật cho ${updatedCount} bot`.cyan);
+        } else if (setting === 'off' || setting === 'false') {
+            config.hideServerMessages = false;
+            config.hideDebugChat = false;
+            
+            // Update for all bots
+            const updatedCount = botManager.updateAllBotsChatSettings(false, false);
+            console.log('Đã HIỆN tất cả debug chat và server messages'.yellow);
+            console.log(`Cập nhật cho ${updatedCount} bot`.cyan);
         } else {
             console.log('Giá trị không hợp lệ. Sử dụng: on hoặc off'.red);
         }

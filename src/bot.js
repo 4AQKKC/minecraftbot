@@ -215,7 +215,11 @@ class MinecraftBot {
         // Listen for message events to debug chat issues and auto-respond
         this.bot.on('message', (jsonMsg, position) => {
             const text = jsonMsg.toString();
-            console.log(`📨 Server message (${position}): ${text}`.gray);
+            
+            // Only show server messages if not hidden
+            if (!this.config.hideServerMessages) {
+                console.log(`📨 Server message (${position}): ${text}`.gray);
+            }
             
             // Auto-respond to server messages
             this.handleServerMessage(text);
@@ -367,13 +371,17 @@ class MinecraftBot {
             // Add delay before chat to ensure bot is fully ready
             setTimeout(() => {
                 this.bot.chat(message);
-                console.log(`📤 Gửi: "${message}" từ ${this.bot.username}`.green);
+                if (!this.config.hideDebugChat) {
+                    console.log(`📤 Gửi: "${message}" từ ${this.bot.username}`.green);
+                }
                 logger.info('Chat message sent', { message, username: this.bot.username });
                 
-                // Set a timeout to check if message appears
-                setTimeout(() => {
-                    console.log(`⏰ Kiểm tra tin nhắn "${message}" có xuất hiện trên server...`.cyan);
-                }, 2000);
+                // Set a timeout to check if message appears (only if debug not hidden)
+                if (!this.config.hideDebugChat) {
+                    setTimeout(() => {
+                        console.log(`⏰ Kiểm tra tin nhắn "${message}" có xuất hiện trên server...`.cyan);
+                    }, 2000);
+                }
             }, 500);
             
             return true;

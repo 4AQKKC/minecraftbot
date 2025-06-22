@@ -74,5 +74,7 @@ module.exports = {
     // Display settings
     hideHealthMessages: process.env.HIDE_HEALTH_MESSAGES === 'true',
     hideDeathMessages: process.env.HIDE_DEATH_MESSAGES === 'true',
-    hideDamageMessages: process.env.HIDE_DAMAGE_MESSAGES === 'true'
+    hideDamageMessages: process.env.HIDE_DAMAGE_MESSAGES === 'true',
+    hideServerMessages: process.env.HIDE_SERVER_MESSAGES === 'true',
+    hideDebugChat: process.env.HIDE_DEBUG_CHAT === 'true'
 };

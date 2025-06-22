@@ -499,6 +499,25 @@ class BotManager {
     /**
      * Cleanup all bots
      */
+    /**
+     * Update chat settings for all bots
+     */
+    updateAllBotsChatSettings(hideServer, hideDebug) {
+        let updatedCount = 0;
+        
+        for (const [botId, botInfo] of this.bots) {
+            botInfo.config.hideServerMessages = hideServer;
+            botInfo.config.hideDebugChat = hideDebug;
+            if (botInfo.bot) {
+                botInfo.bot.config.hideServerMessages = hideServer;
+                botInfo.bot.config.hideDebugChat = hideDebug;
+            }
+            updatedCount++;
+        }
+        
+        return updatedCount;
+    }
+
     cleanup() {
         for (const [botId, botInfo] of this.bots) {
             if (botInfo.status === 'connected') {
